@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import Menu from '../components/menu/menu'
 import Instagram from '../components/instagram'
 import LeafletMap from '../components/leafletMap'
 import Footer from '../components/footer'
@@ -33,7 +32,7 @@ return (
     </section>
     <div className="parallax"></div>
     <section className="container">
-      <Menu />
+      {/* <Menu /> */}
       <Instagram />
     </section>
     {typeof window !== 'undefined' &&
