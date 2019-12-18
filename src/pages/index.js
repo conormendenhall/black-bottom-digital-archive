@@ -7,6 +7,7 @@ import Img from 'gatsby-image'
 import Instagram from '../components/instagram'
 import LeafletMap from '../components/leafletMap'
 import Footer from '../components/footer'
+import Media from '../components/media'
 
 const IndexPage = ({data}) => {
 
@@ -32,7 +33,7 @@ return (
     </section>
     <div className="parallax"></div>
     <section className="container">
-      {/* <Menu /> */}
+      <Media />
       <Instagram />
     </section>
     {typeof window !== 'undefined' &&
