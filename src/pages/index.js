@@ -14,17 +14,17 @@ const IndexPage = ({data}) => {
 return (
   <Layout>
     <SEO title="Home" />
-    <section className="hero">
+    {/* <section className="hero">
       <Img fluid={data.coffeeShop.childImageSharp.fluid} className="hero-image"/>
-    </section>
+    </section> */}
     <section className="container">
       <span className="description">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </span>
       <div className="gallery-grid">
-        <Img fluid={data.latte.childImageSharp.fluid} className="gallery-img1"/>
-        <Img fluid={data.coffeeBags.childImageSharp.fluid} className="gallery-img2"/>
-        <Img fluid={data.coffeePortrait.childImageSharp.fluid} className="gallery-img3"/>
+        <Img fluid={data.ebonyRoom.childImageSharp.fluid} className="gallery-img1"/>
+        <Img fluid={data.freewayMap.childImageSharp.fluid} className="gallery-img2"/>
+        <Img fluid={data.hastings.childImageSharp.fluid} className="gallery-img3"/>
       </div>
       <div className="about-grid">
         <h2>WE'RE CRAZY ABOUT COFFEE</h2>
@@ -63,13 +63,13 @@ export const pageQuery = graphql`
     coffeeShop: file(relativePath: { eq: "coffee-shop-exterior.jpg" }) {
       ...fluidImage
     }
-    coffeePortrait: file(relativePath: { eq: "coffee-portrait.jpg" }) {
+    freewayMap: file(relativePath: { eq: "freeway-map.jpg" }) {
       ...fluidImage
     }
-    latte: file(relativePath: { eq: "latte.jpg" }) {
+    ebonyRoom: file(relativePath: { eq: "ebony-room.jpg" }) {
       ...fluidImage
     }
-    coffeeBags: file(relativePath: { eq: "coffee-bags.jpg" }) {
+    hastings: file(relativePath: { eq: "hastings.jpg" }) {
       ...fluidImage
     }
   }
