@@ -6,9 +6,9 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Cafe`,
+    title: `Detroit Archive Demo`,
     description: `  `,
-    author: `Cristiano Crolla`,
+    author: `  `,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
