@@ -13,6 +13,7 @@ const Media = () => {
               src
               srcSet
             }
+            id
           }
         }
       }
@@ -24,7 +25,7 @@ const Media = () => {
     <div>
       <p className="sample">MEDIA</p>
       {items.map(({ node }) => {
-        return <img src={node.fluid.src}></img>
+        return <img key={node.id} src={node.fluid.src}></img>
       })}
     </div>
   )
