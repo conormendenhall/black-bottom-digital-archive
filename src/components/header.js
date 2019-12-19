@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 const Header = ({ siteTitle }) => (
   <header>
     <span>{siteTitle}</span>
-    <span>65 Park Row, EH1 4PE</span>
+    <a href="/media">Media</a>
   </header>
 )
 
