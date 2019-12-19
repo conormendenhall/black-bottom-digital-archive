@@ -1,39 +1,33 @@
 import React from 'react'
-import {useStaticQuery, graphql} from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 
 const Media = () => {
   const data = useStaticQuery(graphql`
-  query {
-    allContentfulImage(
-      filter: {
-      }
-    ) {
-      edges {
-        node {
-          title
+    query {
+      allContentfulAsset(limit: 10) {
+        edges {
+          node {
+            title
+            fluid(maxWidth: 613) {
+              sizes
+              src
+              srcSet
+            }
+          }
         }
       }
     }
-  }
   `)
 
-  const items = data.allContentfulImage.edges;
+  const items = data.allContentfulAsset.edges
   return (
     <div>
-      <p className="sample">SAMPLE MEDIA</p>
-      <ul className="menu-items-grid">
-        {
-          items.map(({ node }) => {
-            return (
-              <li className="menu-item">
-                <h3>{node.title}</h3>
-              </li>
-            )
-          })
-        }
-      </ul>
+      <p className="sample">MEDIA</p>
+      {items.map(({ node }) => {
+        return <img src={node.fluid.src}></img>
+      })}
     </div>
   )
 }
 
-export default Media;
+export default Media
