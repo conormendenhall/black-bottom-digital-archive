@@ -5,10 +5,11 @@ const Footer = () => {
   return (
     <footer>
       <section>
-        <div className="address">
-          <h3>WHERE ARE WE?</h3>
-          <span>65 Park Row</span>
-          <span>Edinburgh, EH1 4PE</span>
+        <div className="social">
+          <h3>Connect</h3>
+          <a href="http://twitter.com/_blackbottom">twitter</a>
+          <a href="https://www.facebook.com/BlackBottomArchives/">facebook</a>
+          <a href="http://www.instagram.com/blackbottomarchives">instagram</a>
         </div>
         <div className="hours">
           <h3>HOURS</h3>
