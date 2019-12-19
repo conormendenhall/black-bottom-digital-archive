@@ -37,14 +37,14 @@ const Instagram = () => {
   const instaPosts = data.allInstaNode.edges;
   return (
     <div className="insta">
-      <a href="https://www.instagram.com/blackbottomarchives/" target="_blank">
+      <a href="https://www.instagram.com/blackbottomarchives/" target="_blank" rel="noopener noreferrer">
         <h2>INSTAGRAM</h2>
         <span>@blackbottomarchives</span>
       </a>
       <ul className="insta-posts">
           {instaPosts.map(({ node }) => {
             return (
-              <a href={"https://www.instagram.com/p/" + node.id + "/"} target="_blank">
+              <a href={"https://www.instagram.com/p/" + node.id + "/"} target="_blank" rel="noopener noreferrer">
                 <li key={node.id} className="insta-post">
                   <Img fixed={node.localFile.childImageSharp.fixed} />
                   <div className="overlay">
