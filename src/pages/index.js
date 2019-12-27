@@ -10,35 +10,35 @@ import Footer from '../components/footer'
 
 const IndexPage = ({data}) => {
 
-return (
-  <Layout>
-    <SEO title="Home" />
-    <section className="hero">
-      <Img fluid={data.collage.childImageSharp.fluid} className="hero-image"/>
-    </section>
-    <section className="container">
-      <span className="description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </span>
-      <div className="gallery-grid">
-        <Img fluid={data.ebonyRoom.childImageSharp.fluid} className="gallery-img1"/>
-        <Img fluid={data.freewayMap.childImageSharp.fluid} className="gallery-img2"/>
-        <Img fluid={data.hastings.childImageSharp.fluid} className="gallery-img3"/>
-      </div>
-    </section>
-    <div className="parallax"></div>
-    {typeof window !== 'undefined' &&
-      <LeafletMap
-        position={[42.3408, -83.0370]} // Your Coordinates
-        zoom={15} // Zoom Level
-        markerText={"Black Bottom"} // Icon text
-      />
-    }
-    <section className="container">
-      <Instagram />
-    </section>
-    <Footer />
-  </Layout>
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <section className="hero">
+        <Img fluid={data.collage.childImageSharp.fluid} className="hero-image"/>
+      </section>
+      <section className="container">
+        <span className="description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </span>
+        <div className="gallery-grid">
+          <Img fluid={data.ebonyRoom.childImageSharp.fluid} className="gallery-img1"/>
+          <Img fluid={data.freewayMap.childImageSharp.fluid} className="gallery-img2"/>
+          <Img fluid={data.hastings.childImageSharp.fluid} className="gallery-img3"/>
+        </div>
+      </section>
+      <div className="parallax"></div>
+      {typeof window !== 'undefined' &&
+        <LeafletMap
+          position={[42.3408, -83.0370]} // Your Coordinates
+          zoom={15} // Zoom Level
+          places={data.places.edges}
+        />
+      }
+      <section className="container">
+        <Instagram />
+      </section>
+      <Footer />
+    </Layout>
   )
 }
 
@@ -65,6 +65,28 @@ export const pageQuery = graphql`
     }
     hastings: file(relativePath: { eq: "hastings.jpg" }) {
       ...fluidImage
+    }
+    places: allContentfulPlace(limit: 20) {
+      edges {
+        node {
+          id
+          coordinates {
+            lon
+            lat
+          }
+          media {
+            id
+            title
+            photo {
+              description
+              fixed(width: 400) {
+                ...GatsbyContentfulFixed
+              }
+            }
+          }
+          name
+        }
+      }
     }
   }
 `;
