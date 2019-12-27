@@ -1,5 +1,5 @@
 main {
-  background-color: $background;
+  background-color: $light;
 }
 
 .hero {
@@ -39,6 +39,7 @@ h2 {
       padding: 120px 140px;
     }
   }
+
   .gallery-grid {
     display: grid;
     justify-content: center;
@@ -78,6 +79,7 @@ h2 {
       }
     }
   }
+
   .about-grid {
     margin-top: 60px;
     display: grid;
@@ -106,6 +108,7 @@ h2 {
     }
   }
 }
+
 .parallax {
   background-image: url('../images/cut-rate-drug.jpg');
   background-attachment: fixed;
