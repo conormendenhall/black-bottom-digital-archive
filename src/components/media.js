@@ -4,28 +4,31 @@ import { useStaticQuery, graphql } from 'gatsby'
 const Media = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulAsset(limit: 10) {
+      allContentfulImage(limit: 20) {
         edges {
           node {
-            title
-            fluid(maxWidth: 613) {
-              sizes
-              src
-              srcSet
-            }
             id
+            title
+            photo {
+              fluid {
+                src
+              }
+            }
+            imageCaption {
+              imageCaption
+            }
           }
         }
       }
     }
   `)
 
-  const items = data.allContentfulAsset.edges
+  const items = data.allContentfulImage.edges
   return (
     <div>
       <p className="sample">MEDIA</p>
       {items.map(({ node }) => {
-        return <img key={node.id} src={node.fluid.src}></img>
+        return <img key={node.id} src={node.photo.fluid.src} alt={node.imageCaption?.imageCaption || node.title}></img>
       })}
     </div>
   )
