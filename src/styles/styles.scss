@@ -3,7 +3,14 @@
 @import './components/footer';
 @import './components/header';
 @import './components/instagram';
-@import './components/menu';
 @import './components/leafletMap';
 
 @import './pages/index';
+
+a {
+    text-decoration: none;
+    color: $light;
+    &:hover {
+        color: $gold;
+    }
+}
