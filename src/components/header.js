@@ -1,9 +1,9 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const Header = ({ siteTitle }) => (
   <header>
-    <span>{siteTitle}</span>
+    <a href="/">{siteTitle}</a>
     <a href="/media">Media</a>
   </header>
 )
