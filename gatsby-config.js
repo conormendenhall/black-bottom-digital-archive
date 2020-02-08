@@ -6,7 +6,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = {
   siteMetadata: {
-    title: `Detroit Archive Demo`,
+    title: `Black Bottom Archives`,
     description: `  `,
     author: `  `,
   },
