@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "black-bottom-digital-archive",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": " ",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "https://github.com/conormendenhall",
   "dependencies": {
     "gatsby": "^2.18.4",
     "gatsby-background-image": "^0.9.7",
@@ -47,9 +47,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/conormendenhall/black-bottom-digital-archive"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/conormendenhall/black-bottom-digital-archive/issues"
   }
 }

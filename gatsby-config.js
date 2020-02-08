@@ -24,8 +24,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `black-bottom-digital-archive`,
+        short_name: `bba`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
