@@ -6,9 +6,9 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = {
   siteMetadata: {
-    title: `Black Bottom Archives`,
+    title: `Black Bottom Digital Archive`,
     description: `  `,
-    author: `  `,
+    author: `https://github.com/conormendenhall`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
