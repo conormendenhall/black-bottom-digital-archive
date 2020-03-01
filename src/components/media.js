@@ -26,7 +26,7 @@ const Media = () => {
   const items = data.allContentfulImage.edges
   return (
     <div>
-      <p className="sample">MEDIA</p>
+      <h1 className="media">MEDIA</h1>
       {items.map(({ node }) => {
         return <img key={node.id} src={node.photo.fluid.src} alt={node.imageCaption?.imageCaption || node.title}></img>
       })}
