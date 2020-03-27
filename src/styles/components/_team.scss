@@ -1,0 +1,12 @@
+.team {
+  .team-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .team-member {
+      width: 400px;
+      margin: 10px;
+    }
+  }
+}
