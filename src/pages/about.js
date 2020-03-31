@@ -8,7 +8,7 @@ import Footer from '../components/footer'
 import Description from '../components/description'
 import Team from '../components/team'
 import Contact from '../components/contact'
-import News from '../components/news'
+import Events from '../components/events'
 
 const AboutPage = ({ data }) => {
   return (
@@ -16,9 +16,9 @@ const AboutPage = ({ data }) => {
       <SEO title="About" />
       <section className="container">
         <Description />
-        <Team team={data} />
+        <Team data={data} /> {/*how to do this without sending events to component? */}
         <Contact />
-        <News />
+        <Events data={data.events}/>
       </section>
       <Footer />
     </Layout>
@@ -47,6 +47,14 @@ export const query = graphql`
     }
     lawrielle: file(relativePath: { eq: "team/lawrielle-bio-pic.jpg" }) {
       ...fluidImage
+    }
+    events: allContentfulEvent {
+      edges {
+        node {
+          id
+          title
+        }
+      }
     }
   }
 `

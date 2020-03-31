@@ -2,13 +2,13 @@ import React from 'react'
 
 import Img from 'gatsby-image'
 
-const Team = ({ team }) => {
+const Team = ({ data }) => {
   return (
     <div className="team">
       <h1>The Black Bottom Archives Team</h1>
       <div className="team-container">
         <div className="team-member">
-          <Img fluid={team.kamau.childImageSharp.fluid} />
+          <Img fluid={data.kamau.childImageSharp.fluid} />
           <h3>Kamau Baaqi, Communications Associate</h3>
           <p>
             Kamau Baaqi is a composer, multimedia artist, and communications
@@ -18,7 +18,7 @@ const Team = ({ team }) => {
           </p>
         </div>
         <div className="team-member">
-          <Img fluid={team.tulani.childImageSharp.fluid} />
+          <Img fluid={data.tulani.childImageSharp.fluid} />
           <h3>Tulani Pryor, Digital Archive Assistant</h3>
           <p>
             Tulani Pryor is an artist, writer, and aspiring archivist with a
@@ -29,7 +29,7 @@ const Team = ({ team }) => {
           </p>
         </div>
         <div className="team-member">
-          <Img fluid={team.pg.childImageSharp.fluid} />
+          <Img fluid={data.pg.childImageSharp.fluid} />
           <h3>PG Watkins, Director</h3>
           <p>
             Paige PG Watkins (they/them) is a nonbinary organizer, facilitator
@@ -45,7 +45,7 @@ const Team = ({ team }) => {
           </p>
         </div>
         <div className="team-member">
-          <Img fluid={team.lawrielle.childImageSharp.fluid} />
+          <Img fluid={data.lawrielle.childImageSharp.fluid} />
           <h3>Lawrielle West, Community Engagement Coordinator</h3>
           <p>
             Lawrielle West is a Organizer hailing from the Westside of Detroit.
