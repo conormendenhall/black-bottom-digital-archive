@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const Header = ({ siteTitle }) => (
   <header>
-    <a href="/">{siteTitle}</a>
+    <a href="/" id="home">{siteTitle}</a>
     <a href="/about">About</a>
     <a href="/media">Media</a>
   </header>
