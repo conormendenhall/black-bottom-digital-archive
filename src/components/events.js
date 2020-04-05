@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Img from 'gatsby-image'
+
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
@@ -8,13 +10,17 @@ import '../styles/main.scss'
 
 const Events = ({ data }) => {
   let eventList = data.edges.map((item, key) => (
-    <h3 key={item.node.id}>{item.node.title}</h3>
+    <div key={item.node.id} className="event">
+      <h3>{item.node.title}</h3>
+      {item.node.eventImage && <Img fluid={item.node.eventImage.fluid} />}
+      <p>{item.node.description.description}</p>
+    </div>
   ))
 
   let calendarEvents = data.edges.map((item, key) => ({
     id: key,
     title: item.node.title,
-    date: item.node.dateAndTime
+    date: item.node.dateAndTime,
   }))
 
   function handleEventClick(arg) {
@@ -22,9 +28,9 @@ const Events = ({ data }) => {
   }
 
   return (
-    <div>
+    <div className="events">
       <h1>News and Upcoming Events</h1>
-      <div>{eventList}</div>
+      {eventList}
       <FullCalendar
         eventClick={handleEventClick}
         defaultView="dayGridMonth"
