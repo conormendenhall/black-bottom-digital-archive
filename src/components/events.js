@@ -1,4 +1,5 @@
 import React from 'react'
+import Moment from 'react-moment'
 
 import Img from 'gatsby-image'
 
@@ -11,8 +12,11 @@ import '../styles/main.scss'
 const Events = ({ data }) => {
   let eventList = data.edges.map((item, key) => (
     <div key={item.node.id} className="event">
-      <h3>{item.node.title}</h3>
       {item.node.eventImage && <Img fluid={item.node.eventImage.fluid} />}
+      <div className="headline">
+        <h3 className="title">{item.node.title}</h3>
+        <Moment format="MMMM Do, YYYY">{item.node.dateAndTime}</Moment>
+      </div>
       <p>{item.node.description.description}</p>
     </div>
   ))

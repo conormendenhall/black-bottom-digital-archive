@@ -1,5 +1,13 @@
 .events {
   .event {
     width: 800px;
+
+    .headline {
+      display: flex;
+
+      .title {
+        margin-right: 1em;
+      }
+    }
   }
 }

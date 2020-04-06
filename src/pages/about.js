@@ -53,6 +53,10 @@ export const query = graphql`
         node {
           id
           title
+          dateAndTime
+          description {
+            description
+          }
           eventImage {
             fluid {
               base64
@@ -64,9 +68,6 @@ export const query = graphql`
               srcSetWebp
               sizes
             }
-          }
-          description {
-            description
           }
         }
       }
