@@ -16,9 +16,9 @@ const AboutPage = ({ data }) => {
       <SEO title="About" />
       <section className="container">
         <Description />
-        <Team data={data} /> {/*how to do this without sending events to component? */}
+        <Team data={data} />
         <Contact />
-        <Events data={data.events}/>
+        <Events data={data.events} />
       </section>
       <Footer />
     </Layout>
@@ -53,6 +53,22 @@ export const query = graphql`
         node {
           id
           title
+          dateAndTime
+          description {
+            description
+          }
+          eventImage {
+            fluid {
+              base64
+              tracedSVG
+              aspectRatio
+              src
+              srcSet
+              srcWebp
+              srcSetWebp
+              sizes
+            }
+          }
         }
       }
     }
