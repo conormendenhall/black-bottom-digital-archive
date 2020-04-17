@@ -1,11 +1,8 @@
 import React from 'react'
+import Loadable from 'react-loadable'
 import Moment from 'react-moment'
 
 import Img from 'gatsby-image'
-
-import FullCalendar from '@fullcalendar/react'
-import dayGridPlugin from '@fullcalendar/daygrid'
-import interactionPlugin from '@fullcalendar/interaction'
 
 import '../styles/main.scss'
 
@@ -31,16 +28,24 @@ const Events = ({ data }) => {
     alert(arg.event.title)
   }
 
+  const LoadableCalendar = Loadable({
+    loader: () => import('../components/eventCalendar'),
+    loading() {
+      return <div>Loading...</div>
+    },
+  })
+
   return (
     <div className="events">
       <h1>News and Upcoming Events</h1>
       {eventList}
-      <FullCalendar
+      <LoadableCalendar />
+      {/* <FullCalendar
         eventClick={handleEventClick}
         defaultView="dayGridMonth"
         events={calendarEvents}
         plugins={[dayGridPlugin, interactionPlugin]}
-      />
+      /> */}
     </div>
   )
 }
