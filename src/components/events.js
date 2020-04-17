@@ -18,18 +18,14 @@ const Events = ({ data }) => {
     </div>
   ))
 
-  let calendarEvents = data.edges.map((item, key) => ({
+  let events = data.edges.map((item, key) => ({
     id: key,
     title: item.node.title,
     date: item.node.dateAndTime,
   }))
 
-  function handleEventClick(arg) {
-    alert(arg.event.title)
-  }
-
-  const LoadableCalendar = Loadable({
-    loader: () => import('../components/eventCalendar'),
+  const Calendar = Loadable({
+    loader: () => import('./calendar'),
     loading() {
       return <div>Loading...</div>
     },
@@ -39,13 +35,7 @@ const Events = ({ data }) => {
     <div className="events">
       <h1>News and Upcoming Events</h1>
       {eventList}
-      <LoadableCalendar />
-      {/* <FullCalendar
-        eventClick={handleEventClick}
-        defaultView="dayGridMonth"
-        events={calendarEvents}
-        plugins={[dayGridPlugin, interactionPlugin]}
-      /> */}
+      <Calendar data={events}/>
     </div>
   )
 }
