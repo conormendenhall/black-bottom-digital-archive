@@ -7,9 +7,17 @@ import LeafletMap from '../components/leafletMap'
 import Footer from '../components/footer'
 
 const IndexPage = ({ data }) => {
+  let sites = data.sites.edges.map((item, key) => (
+    <div key={item.node.id}>
+      <h3>{item.node.title}</h3>
+      <p>{item.node.abstract.abstract}</p>
+    </div>
+  ))
+
   return (
     <Layout>
       <SEO title="Home" />
+      <section className="container">{sites}</section>
       {typeof window !== 'undefined' && (
         <LeafletMap
           position={[42.3408, -83.037]} // Your Coordinates
@@ -34,17 +42,17 @@ export const fluidImage = graphql`
 
 export const pageQuery = graphql`
   query {
-    collage: file(relativePath: { eq: "collage.jpg" }) {
-      ...fluidImage
-    }
-    freewayMap: file(relativePath: { eq: "freeway-map.jpg" }) {
-      ...fluidImage
-    }
-    ebonyRoom: file(relativePath: { eq: "ebony-room.jpg" }) {
-      ...fluidImage
-    }
-    hastings: file(relativePath: { eq: "hastings.jpg" }) {
-      ...fluidImage
+    sites: allContentfulHistoricalSite {
+      edges {
+        node {
+          id
+          title
+          abstract {
+            id
+            abstract
+          }
+        }
+      }
     }
     places: allContentfulPlace(limit: 20) {
       edges {
