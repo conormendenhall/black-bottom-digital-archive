@@ -22,6 +22,7 @@ const Events = ({ data }) => {
     id: key,
     title: item.node.title,
     date: item.node.dateAndTime,
+    description: item.node.description.description,
   }))
 
   const Calendar = Loadable({
@@ -35,7 +36,7 @@ const Events = ({ data }) => {
     <div className="events">
       <h1>News and Upcoming Events</h1>
       {eventList}
-      <Calendar data={events}/>
+      <Calendar data={events} />
     </div>
   )
 }
