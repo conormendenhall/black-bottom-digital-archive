@@ -6,11 +6,15 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import LeafletMap from '../components/leafletMap'
 import Footer from '../components/footer'
+import Interview from '../components/interview'
 
 const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
+      <section className="container">
+        <Interview data={data.interviews}></Interview>
+      </section>
       {typeof window !== 'undefined' && (
         <LeafletMap
           position={[42.3408, -83.037]} // Your Coordinates
@@ -35,6 +39,17 @@ export const fluidImage = graphql`
 
 export const pageQuery = graphql`
   query {
+    interviews: allContentfulInterview {
+      edges {
+        node {
+          id
+          title
+          text {
+            text
+          }
+        }
+      }
+    }
     places: allContentfulPlace(limit: 20) {
       edges {
         node {
