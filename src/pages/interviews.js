@@ -3,18 +3,18 @@ import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Footer from '../components/footer'
-import Media from '../components/media'
+import Interview from '../components/interview'
 
-const MediaPage = () => {
+const InterviewsPage = () => {
   return (
     <Layout>
-      <SEO title="Media" />
+      <SEO title="Interviews" />
       <section className="container">
-        <Media />
+        <Interview />
       </section>
       <Footer />
     </Layout>
   )
 }
 
-export default MediaPage
+export default InterviewsPage

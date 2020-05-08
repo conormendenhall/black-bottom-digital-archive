@@ -6,7 +6,6 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import LeafletMap from '../components/leafletMap'
 import Footer from '../components/footer'
-import Interview from '../components/interview'
 import Tags from '../components/tags'
 
 const IndexPage = ({ data }) => {
@@ -15,9 +14,6 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
       <section className="container">
         <Tags></Tags>
-      </section>
-      <section className="container">
-        <Interview data={data.interviews}></Interview>
       </section>
       {typeof window !== 'undefined' && (
         <LeafletMap
@@ -43,17 +39,6 @@ export const fluidImage = graphql`
 
 export const pageQuery = graphql`
   query {
-    interviews: allContentfulInterview {
-      edges {
-        node {
-          id
-          title
-          text {
-            text
-          }
-        }
-      }
-    }
     places: allContentfulPlace(limit: 20) {
       edges {
         node {

@@ -24,6 +24,7 @@ const Media = () => {
   `)
 
   const items = data.allContentfulImage.edges
+  
   return (
     <div>
       <h1 className="media">Media</h1>
