@@ -7,11 +7,15 @@ import SEO from '../components/seo'
 import LeafletMap from '../components/leafletMap'
 import Footer from '../components/footer'
 import Interview from '../components/interview'
+import Tags from '../components/tags'
 
 const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
+      <section className="container">
+        <Tags></Tags>
+      </section>
       <section className="container">
         <Interview data={data.interviews}></Interview>
       </section>
