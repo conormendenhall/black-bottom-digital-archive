@@ -7,6 +7,7 @@ import SEO from '../components/seo'
 import LeafletMap from '../components/leafletMap'
 import Footer from '../components/footer'
 import Tags from '../components/tags'
+import HistoricalMap from '../components/historical-map'
 
 const IndexPage = ({ data }) => {
   return (
@@ -14,6 +15,9 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
       <section className="container">
         <Tags></Tags>
+      </section>
+      <section className="container">
+        <HistoricalMap></HistoricalMap>
       </section>
       {typeof window !== 'undefined' && (
         <LeafletMap
