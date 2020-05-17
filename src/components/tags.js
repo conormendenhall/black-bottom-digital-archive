@@ -7,29 +7,35 @@ const Tags = () => {
       allContentfulTag {
         edges {
           node {
-            id
             name
             slug
+            id
+            historical_site {
+              title
+              id
+            }
           }
         }
       }
     }
   `)
 
-  const items = data.allContentfulTag.edges
+  const tags = data.allContentfulTag.edges
   return (
     <div className="tags">
       <h1>Tags</h1>
-      {items.map(({ node }) => {
+      {tags.map(({ node }) => {
         return (
           <div key={node.id}>
             <b>name:</b> {node.name} <b>slug:</b> {node.slug}
+            <div className="sites">
+              {node.historical_site.map(site => {
+                return <div key={site.id}>{site.title}</div>
+              })}
+            </div>
           </div>
         )
       })}
-      <div className="tagged-entries">
-          
-      </div>
     </div>
   )
 }
