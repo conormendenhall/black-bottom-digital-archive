@@ -39,20 +39,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   // Create pages for each historical site
-  const historicalSiteComponent = path.resolve(
-    `src/components/historical-site.js`
-  )
+  const historicalSiteComponent = path.resolve(`src/pages/historical-site.js`)
   result.data.sites.edges.forEach(({ node }) => {
-    const path = node.slug
+    const path = 'historical-sites/' + node.slug
     createPage({
       path,
       component: historicalSiteComponent,
       // In your blog post template's graphql query, you can use pagePath
       // as a GraphQL variable to query for data from the markdown file.
-      context: {
-        pagePath: path,
-        title: node.title,
-      },
+      context: node,
     })
   })
 }
