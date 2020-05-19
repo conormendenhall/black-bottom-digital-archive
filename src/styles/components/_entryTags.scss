@@ -1,0 +1,18 @@
+.entry-tags {
+  display: flex;
+
+  .tag {
+    padding: 10px;
+    background-color: $gold;
+    border-radius: 7px;
+    margin: 0 5px 5px 0;
+
+    &:hover span {
+      border-bottom: 2px solid $dark;
+    }
+
+    span {
+      border-bottom: 2px solid $gold;
+    }
+  }
+}

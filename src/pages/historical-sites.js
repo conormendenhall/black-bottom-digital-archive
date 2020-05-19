@@ -8,9 +8,9 @@ import Footer from '../components/footer'
 
 const HistoricalSitesPage = ({ data }) => {
   let sites = data.sites.edges.map((item, key) => (
-    <div key={item.node.id}>
+    <div key={item.node.id} className="entry-link">
       <a href={`/historical-sites/${item.node.slug}`}>
-        <h3>{item.node.title}</h3>
+        <span>{item.node.title}</span>
       </a>
     </div>
   ))

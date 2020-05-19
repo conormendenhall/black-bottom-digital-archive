@@ -3,6 +3,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Footer from '../components/footer'
+import EntryTags from '../components/entry-tags'
 
 const HistoricalSitePage = ({ pageContext }) => {
   return (
@@ -14,6 +15,12 @@ const HistoricalSitePage = ({ pageContext }) => {
           <p>{pageContext.abstract?.abstract}</p>
         </div>
       </section>
+      {pageContext.tags && (
+        <section className="container">
+          <h3>Tags</h3>
+          <EntryTags data={pageContext.tags}></EntryTags>
+        </section>
+      )}
       <Footer />
     </Layout>
   )

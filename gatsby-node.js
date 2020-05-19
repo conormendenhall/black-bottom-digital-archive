@@ -25,6 +25,25 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 id
                 abstract
               }
+              tags {
+                id
+                name
+                slug
+              }
+            }
+          }
+        }
+        tags: allContentfulTag {
+          edges {
+            node {
+              id
+              name
+              slug
+              historical_site {
+                id
+                title
+                slug
+              }
             }
           }
         }
@@ -39,14 +58,25 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   // Create pages for each historical site
-  const historicalSiteComponent = path.resolve(`src/pages/historical-site.js`)
+  const historicalSitePageComponent = path.resolve(
+    `src/pages/historical-site.js`
+  )
   result.data.sites.edges.forEach(({ node }) => {
-    const path = 'historical-sites/' + node.slug
+    const path = `historical-sites/${node.slug}`
     createPage({
       path,
-      component: historicalSiteComponent,
-      // In your blog post template's graphql query, you can use pagePath
-      // as a GraphQL variable to query for data from the markdown file.
+      component: historicalSitePageComponent,
+      context: node,
+    })
+  })
+
+  // Create pages for each tag
+  const tagPageComponent = path.resolve(`src/pages/tag.js`)
+  result.data.tags.edges.forEach(({ node }) => {
+    const path = `tags/${node.slug}`
+    createPage({
+      path,
+      component: tagPageComponent,
       context: node,
     })
   })

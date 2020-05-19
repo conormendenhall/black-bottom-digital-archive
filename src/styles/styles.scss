@@ -1,3 +1,6 @@
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
+
 @import './variables/variables';
 
 @import './components/footer';
@@ -6,17 +9,31 @@
 @import './components/leafletMap';
 @import './components/team';
 @import './components/events';
+@import './components/entryTags';
 
 @import './pages/index';
+@import './pages/tag';
 
 a {
   text-decoration: none;
-  color: $light;
-  &:hover {
-    color: $gold;
+  color: $dark;
+
+  span {
+    border-bottom: 2px solid $light;
+
+    &:hover {
+      border-bottom: 2px solid black;
+    }
   }
 }
 
 div#layout {
   padding-top: 50px;
+}
+
+.tag {
+  padding: 10px;
+  background-color: #ffee8b;
+  border-radius: 7px;
+  margin: 0 5px 5px 0;
 }

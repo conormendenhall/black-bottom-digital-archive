@@ -4,8 +4,6 @@ import Moment from 'react-moment'
 
 import Img from 'gatsby-image'
 
-import '../styles/main.scss'
-
 const Events = ({ data }) => {
   let eventList = data.edges.map((item, key) => (
     <div key={item.node.id} className="event">
