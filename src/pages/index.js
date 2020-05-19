@@ -6,16 +6,12 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import LeafletMap from '../components/leafletMap'
 import Footer from '../components/footer'
-import Tags from '../components/tags'
 import HistoricalMap from '../components/historical-map'
 
 const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <section className="container">
-        <Tags></Tags>
-      </section>
       <section className="container">
         <HistoricalMap></HistoricalMap>
       </section>
