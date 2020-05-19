@@ -11,8 +11,8 @@ const TagPage = ({ pageContext }) => {
       <section className="container">
         <div className="tag-site">
           <h1>Tag: {pageContext.name}</h1>
-          <h3>Historical Sites</h3>
-          {pageContext.historical_site.map(site => {
+          {pageContext.historical_site && <h3>Historical Sites</h3>}
+          {pageContext.historical_site?.map(site => {
             return (
               <div className="entry-link">
                 <a href={`/historical-sites/${site.slug}`} className="link">
