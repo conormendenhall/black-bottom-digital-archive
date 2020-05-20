@@ -24,9 +24,13 @@ h2 {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  padding-top: 2em;
+  padding-bottom: 2em;
   @media screen and (min-width: 1024px) {
     width: 80%;
+  }
+
+  &:first-of-type {
+    padding-top: 2em;
   }
 
   .description {

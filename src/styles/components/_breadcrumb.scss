@@ -1,0 +1,37 @@
+.breadcrumb {
+  background-color: $dark;
+  margin: 0 auto 15px 0;
+  height: 40px;
+  position: relative;
+  display: flex;
+  padding: 10px;
+
+  a {
+    color: $light;
+    border-top: 2px solid $dark;
+    border-bottom: 2px solid $dark;
+    margin: 0 5px;
+    align-self: center;
+
+    &:before {
+      content: '';
+      position: absolute;
+      right: -10px;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-left: 10px solid $dark;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+    }
+
+    span {
+      border-bottom-color: $dark;
+
+      &:hover {
+        color: $gold;
+        border-bottom-color: $gold;
+      }
+    }
+  }
+}

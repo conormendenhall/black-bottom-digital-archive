@@ -4,12 +4,17 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Footer from '../components/footer'
 import EntryTags from '../components/entry-tags'
+import Breadcrumb from '../components/breadcrumb'
 
 const HistoricalSitePage = ({ pageContext }) => {
   return (
     <Layout>
       <SEO title="Historical Site" />
       <section className="container">
+        <Breadcrumb
+          text="View more historical sites"
+          href="/historical-sites"
+        />
         <div className="historical-site">
           <h1>{pageContext.title}</h1>
           <p>{pageContext.abstract?.abstract}</p>

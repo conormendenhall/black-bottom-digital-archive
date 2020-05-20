@@ -6,11 +6,11 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Footer from '../components/footer'
 
-const HistoricalSitesPage = ({ data }) => {
-  let sites = data.sites.edges.map((item, key) => (
+const TagsPage = ({ data }) => {
+  let tags = data.tags.edges.map((item, key) => (
     <div key={item.node.id} className="entry-link">
-      <a href={`/historical-sites/${item.node.slug}`}>
-        <span>{item.node.title}</span>
+      <a href={`/tags/${item.node.slug}`}>
+        <span>{item.node.name}</span>
       </a>
     </div>
   ))
@@ -19,8 +19,8 @@ const HistoricalSitesPage = ({ data }) => {
     <Layout>
       <SEO title="Historical Sites" />
       <section className="container">
-        <h1>Historical Sites</h1>
-        {sites}
+        <h1>Tags</h1>
+        {tags}
       </section>
       <Footer />
     </Layout>
@@ -29,11 +29,11 @@ const HistoricalSitesPage = ({ data }) => {
 
 export const pageQuery = graphql`
   query {
-    sites: allContentfulHistoricalSite {
+    tags: allContentfulTag {
       edges {
         node {
           id
-          title
+          name
           slug
         }
       }
@@ -41,4 +41,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default HistoricalSitesPage
+export default TagsPage
