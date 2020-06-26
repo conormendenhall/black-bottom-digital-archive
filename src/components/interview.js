@@ -12,6 +12,13 @@ const Interview = () => {
             text {
               text
             }
+            audio {
+              title
+              file {
+                url
+                contentType
+              }
+            }
           }
         }
       }
@@ -21,6 +28,12 @@ const Interview = () => {
   let interviews = data.interviews.edges.map((item, key) => (
     <div key={item.node.id}>
       <h3>{item.node.title}</h3>
+      {item.node.audio &&
+        item.node.audio.map((item, key) => (
+          <audio controls>
+            <source src={item.file.url} type={item.file.contentType}></source>
+          </audio>
+        ))}
       <pre>{item.node.text.text}</pre>
     </div>
   ))
