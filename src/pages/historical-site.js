@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Img from 'gatsby-image'
+
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Footer from '../components/footer'
@@ -16,6 +18,9 @@ const HistoricalSitePage = ({ pageContext }) => {
           href="/historical-sites"
         />
         <div className="historical-site">
+          {pageContext.historicalSiteImage && (
+            <Img fluid={pageContext.historicalSiteImage.fluid} />
+          )}
           <h1>{pageContext.title}</h1>
           <p>{pageContext.abstract?.abstract}</p>
         </div>
