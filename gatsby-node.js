@@ -28,7 +28,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               historicalSiteImage {
                 fluid {
                   base64
-                  tracedSVG
                   aspectRatio
                   src
                   srcSet
