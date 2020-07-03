@@ -78,6 +78,25 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
           }
         }
+        interviews: allContentfulInterview {
+          edges {
+            node {
+              id
+              title
+              slug
+              text {
+                text
+              }
+              interviewAudio {
+                title
+                file {
+                  url
+                  contentType
+                }
+              }
+            }
+          }
+        }
       }
     `
   )
@@ -90,7 +109,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  // Create pages for each historical site
+  // Create page for each Historical Site
   const historicalSitePageComponent = path.resolve(
     `src/pages/historical-site.js`
   )
@@ -103,13 +122,24 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
-  // Create pages for each tag
+  // Create page for each Tag
   const tagPageComponent = path.resolve(`src/pages/tag.js`)
   result.data.tags.edges.forEach(({ node }) => {
     const path = `tags/${node.slug}`
     createPage({
       path,
       component: tagPageComponent,
+      context: node,
+    })
+  })
+
+  // Create page for each Interview
+  const interviewPageComponent = path.resolve(`src/pages/interview.js`)
+  result.data.interviews.edges.forEach(({ node }) => {
+    const path = `interviews/${node.slug}`
+    createPage({
+      path,
+      component: interviewPageComponent,
       context: node,
     })
   })
