@@ -23,7 +23,7 @@ const InterviewPage = ({ pageContext }) => {
                 ></source>
               </audio>
             ))}
-          <pre>{pageContext.text.text}</pre>
+          {pageContext.text?.text && <pre>{pageContext.text.text}</pre>}
         </div>
       </section>
       {pageContext.tags && (
