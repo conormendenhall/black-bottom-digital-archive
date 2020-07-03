@@ -7,16 +7,16 @@ const typography = new Typography({
   blockMarginBottom: 0.75,
   googleFonts: [
     {
-      name: 'Nunito',
+      name: 'Arvo',
       styles: ['400'],
     },
     {
-      name: 'Raleway',
+      name: 'Cabin',
       styles: ['400', '400i', '700', '700i'],
     },
   ],
-  headerFontFamily: ['Nunito', 'sans-serif'],
-  bodyFontFamily: ['Raleway', 'sans-serif'],
+  headerFontFamily: ['Arvo', 'sans-serif'],
+  bodyFontFamily: ['Cabin', 'sans-serif'],
   headerColor: 'hsla(0,0%,0%,1)',
   bodyColor: 'hsla(0,0%,0%,0.8)',
   headerWeight: 400,
