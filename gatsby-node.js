@@ -44,6 +44,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
           }
         }
+        events: allContentfulEvent {
+          edges {
+            node {
+              id
+              title
+            }
+          }
+        }
         tags: allContentfulTag {
           edges {
             node {
@@ -54,6 +62,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 id
                 title
                 slug
+              }
+              place {
+                id
+                name
+              }
+              interview {
+                id
+                title
+              }
+              event {
+                id
+                title
               }
             }
           }
