@@ -7,12 +7,9 @@ import SEO from '../components/seo'
 
 const ThemesPage = ({ data }) => {
   let themes = data.themes.edges.map((item, key) => (
-    <a
-      key={item.node.id}
-      href={`/themes/${item.node.slug}`}
-      className="theme-link"
-    >
-      <div>
+    <a key={item.node.id} href={`/themes/${item.node.slug}`}>
+      <div className="theme-card">
+        {item.node.image && <img src={item.node.image.file.url}></img>}
         <span>{item.node.title}</span>
       </div>
     </a>
@@ -37,6 +34,11 @@ export const pageQuery = graphql`
           id
           title
           slug
+          image {
+            file {
+              url
+            }
+          }
         }
       }
     }
