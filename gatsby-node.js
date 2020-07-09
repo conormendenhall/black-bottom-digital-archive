@@ -9,7 +9,7 @@
 // data layer is bootstrapped to let plugins create pages from data.
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
-  const path = require('path')
+  const internalPath = require('path')
 
   // Query for entries to use in creating pages
   const result = await graphql(
@@ -97,6 +97,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
           }
         }
+        themes: allContentfulTheme {
+          edges {
+            node {
+              id
+              title
+              slug
+              body {
+                json
+              }
+            }
+          }
+        }
       }
     `
   )
@@ -110,36 +122,41 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   // Create page for each Historical Site
-  const historicalSitePageComponent = path.resolve(
-    `src/pages/historical-site.js`
-  )
   result.data.sites.edges.forEach(({ node }) => {
     const path = `historical-sites/${node.slug}`
     createPage({
       path,
-      component: historicalSitePageComponent,
+      component: internalPath.resolve(`src/pages/historical-site.js`),
       context: node,
     })
   })
 
   // Create page for each Tag
-  const tagPageComponent = path.resolve(`src/pages/tag.js`)
   result.data.tags.edges.forEach(({ node }) => {
     const path = `tags/${node.slug}`
     createPage({
       path,
-      component: tagPageComponent,
+      component: internalPath.resolve(`src/pages/tag.js`),
       context: node,
     })
   })
 
   // Create page for each Interview
-  const interviewPageComponent = path.resolve(`src/pages/interview.js`)
   result.data.interviews.edges.forEach(({ node }) => {
     const path = `interviews/${node.slug}`
     createPage({
       path,
-      component: interviewPageComponent,
+      component: internalPath.resolve(`src/pages/interview.js`),
+      context: node,
+    })
+  })
+
+  // Create page for each theme
+  result.data.themes.edges.forEach(({ node }) => {
+    const path = `themes/${node.slug}`
+    createPage({
+      path,
+      component: internalPath.resolve(`src/pages/theme.js`),
       context: node,
     })
   })

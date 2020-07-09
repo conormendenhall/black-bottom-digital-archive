@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "https://github.com/conormendenhall",
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^14.1.1",
+    "@contentful/rich-text-types": "^14.1.1",
     "@fullcalendar/core": "^4.4.0",
     "@fullcalendar/daygrid": "^4.4.0",
     "@fullcalendar/interaction": "^4.4.0",
