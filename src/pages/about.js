@@ -4,7 +4,6 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import Footer from '../components/footer'
 import Description from '../components/description'
 import Team from '../components/team'
 import Contact from '../components/contact'
@@ -20,7 +19,6 @@ const AboutPage = ({ data }) => {
         <Contact />
         <Events data={data.events} />
       </section>
-      <Footer />
     </Layout>
   )
 }

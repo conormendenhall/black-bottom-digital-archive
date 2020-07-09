@@ -4,7 +4,6 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import Footer from '../components/footer'
 
 const TagsPage = ({ data }) => {
   let tags = data.tags.edges.map((item, key) => (
@@ -22,7 +21,6 @@ const TagsPage = ({ data }) => {
         <h1>Tags</h1>
         {tags}
       </section>
-      <Footer />
     </Layout>
   )
 }

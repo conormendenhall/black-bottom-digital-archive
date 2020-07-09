@@ -14,6 +14,26 @@
 
 @import './pages/index';
 @import './pages/tag';
+@import './pages/themes';
+
+html,
+body,
+div#___gatsby,
+div#gatsby-focus-wrapper {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+div#layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+main {
+  flex-grow: 1;
+}
 
 a {
   text-decoration: none;
@@ -26,10 +46,6 @@ a {
       border-bottom: 2px solid black;
     }
   }
-}
-
-div#layout {
-  padding-top: 50px;
 }
 
 .tag {

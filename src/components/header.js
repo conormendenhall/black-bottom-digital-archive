@@ -7,7 +7,6 @@ const Header = ({ siteTitle }) => (
     <a href="/about">About</a>
     <a href="/historical-sites">Historical Sites</a>
     <a href="/interviews">Interviews</a>
-    <a href="/media">Media</a>
   </header>
 )
 

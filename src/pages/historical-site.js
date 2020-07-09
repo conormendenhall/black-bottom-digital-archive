@@ -4,7 +4,6 @@ import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import Footer from '../components/footer'
 import EntryTags from '../components/entry-tags'
 import Breadcrumb from '../components/breadcrumb'
 
@@ -31,7 +30,6 @@ const HistoricalSitePage = ({ pageContext }) => {
           <EntryTags data={pageContext.tags}></EntryTags>
         </section>
       )}
-      <Footer />
     </Layout>
   )
 }

@@ -2,7 +2,6 @@ import React from 'react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import Footer from '../components/footer'
 import EntryTags from '../components/entry-tags'
 import Breadcrumb from '../components/breadcrumb'
 
@@ -32,7 +31,6 @@ const InterviewPage = ({ pageContext }) => {
           <EntryTags data={pageContext.tags}></EntryTags>
         </section>
       )}
-      <Footer />
     </Layout>
   )
 }

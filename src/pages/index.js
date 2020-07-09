@@ -5,16 +5,13 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import LeafletMap from '../components/leafletMap'
-import Footer from '../components/footer'
 import HistoricalMap from '../components/historical-map'
 
 const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <section className="container">
-        <HistoricalMap></HistoricalMap>
-      </section>
+      <HistoricalMap></HistoricalMap>
       {typeof window !== 'undefined' && (
         <LeafletMap
           position={[42.3408, -83.037]} // Your Coordinates
@@ -22,7 +19,6 @@ const IndexPage = ({ data }) => {
           places={data.places.edges}
         />
       )}
-      <Footer />
     </Layout>
   )
 }
