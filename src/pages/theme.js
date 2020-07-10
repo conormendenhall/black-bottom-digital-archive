@@ -21,7 +21,8 @@ const ThemePage = ({ pageContext }) => {
       <section className="container">
         <Breadcrumb text="View more themes" href="/themes" />
         <h1>{pageContext.title}</h1>
-        {documentToReactComponents(pageContext.body.json, options)}
+        {pageContext.body?.json &&
+          documentToReactComponents(pageContext.body.json, options)}
       </section>
       {pageContext.tags && (
         <section className="container">
