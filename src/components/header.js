@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 const Header = ({ siteTitle }) => (
   <header>
     <a href="/" id="home">{siteTitle}</a>
+    <a href="/themes">Themes</a>
     <a href="/about">About</a>
     <a href="/historical-sites">Historical Sites</a>
     <a href="/interviews">Interviews</a>
