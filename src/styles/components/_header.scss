@@ -1,21 +1,23 @@
 header {
-  height: 50px;
-  width: 100%;
   background-color: $dark;
-  color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 10px;
+  font-family: 'Arvo', 'sans-serif';
 
   a {
-    margin: 0 5px;
-    border-top: 2px solid $dark;
-    border-bottom: 2px solid $dark;
+    padding: 16px;
     color: $light;
+
+    span {
+      border-bottom: 2px solid $dark;
+      padding-bottom: 5px;
+    }
+
     &:hover {
-      color: $gold;
-      border-bottom: 2px solid $gold;
+      span {
+        border-bottom: 2px solid $light;
+      }
     }
   }
 
