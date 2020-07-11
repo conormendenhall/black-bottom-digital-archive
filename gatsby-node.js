@@ -103,8 +103,24 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               id
               title
               slug
+              image {
+                fluid {
+                  base64
+                  aspectRatio
+                  src
+                  srcSet
+                  srcWebp
+                  srcSetWebp
+                  sizes
+                }
+              }
               body {
                 json
+              }
+              tags {
+                id
+                name
+                slug
               }
             }
           }

@@ -18,7 +18,7 @@ const HistoricalSitePage = ({ pageContext }) => {
         />
         <div className="historical-site">
           {pageContext.historicalSiteImage && (
-            <Img fluid={pageContext.historicalSiteImage.fluid} />
+            <Img fluid={pageContext.historicalSiteImage.fluid} className="article-image" />
           )}
           <h1>{pageContext.title}</h1>
           <p>{pageContext.abstract?.abstract}</p>

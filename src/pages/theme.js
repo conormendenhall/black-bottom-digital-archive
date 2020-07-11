@@ -1,12 +1,14 @@
 import React from 'react'
 
+import Img from 'gatsby-image'
+
+import { INLINES } from '@contentful/rich-text-types'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import EntryTags from '../components/entry-tags'
 import Breadcrumb from '../components/breadcrumb'
-
-import { INLINES } from '@contentful/rich-text-types'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 const options = {
   renderNode: {
@@ -20,9 +22,14 @@ const ThemePage = ({ pageContext }) => {
       <SEO title={pageContext.title} />
       <section className="container">
         <Breadcrumb text="View more themes" href="/themes" />
-        <h1>{pageContext.title}</h1>
-        {pageContext.body?.json &&
-          documentToReactComponents(pageContext.body.json, options)}
+        <div className="theme">
+          {pageContext.image?.fluid && (
+            <Img fluid={pageContext.image.fluid} className="article-image" />
+          )}
+          <h1>{pageContext.title}</h1>
+          {pageContext.body?.json &&
+            documentToReactComponents(pageContext.body.json, options)}
+        </div>
       </section>
       {pageContext.tags && (
         <section className="container">

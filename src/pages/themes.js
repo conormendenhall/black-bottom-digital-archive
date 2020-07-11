@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -9,7 +10,7 @@ const ThemesPage = ({ data }) => {
   let themes = data.themes.edges.map((item, key) => (
     <a key={item.node.id} href={`/themes/${item.node.slug}`}>
       <div className="theme-card">
-        {item.node.image && <img src={item.node.image.file.url}></img>}
+        {item.node.image && <Img fluid={item.node.image.fluid} />}
         <span>{item.node.title}</span>
       </div>
     </a>
@@ -35,8 +36,14 @@ export const pageQuery = graphql`
           title
           slug
           image {
-            file {
-              url
+            fluid {
+              base64
+              aspectRatio
+              src
+              srcSet
+              srcWebp
+              srcSetWebp
+              sizes
             }
           }
         }
