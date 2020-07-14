@@ -25,7 +25,9 @@ const TagPage = ({ pageContext }) => {
         {pageContext.interview?.map(interview => {
           return (
             <div className="entry-link">
-              <span key={interview.id}>{interview.title}</span>
+              <a href={`/interviews/${interview.slug}`} className="link">
+                <span key={interview.id}>{interview.title}</span>
+              </a>
             </div>
           )
         })}
@@ -33,7 +35,9 @@ const TagPage = ({ pageContext }) => {
         {pageContext.event?.map(event => {
           return (
             <div className="entry-link">
-              <span key={event.id}>{event.title}</span>
+              <a href={`/events/${event.slug}`} className="link">
+                <span key={event.id}>{event.title}</span>
+              </a>
             </div>
           )
         })}
