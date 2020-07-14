@@ -170,7 +170,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const path = `events/${node.slug}`
     createPage({
       path,
-      component: internalPath.resolve(`src/pages/event.js`),
+      component: internalPath.resolve(`src/components/event.js`),
       context: node,
     })
   })
@@ -180,7 +180,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const path = `historical-sites/${node.slug}`
     createPage({
       path,
-      component: internalPath.resolve(`src/pages/historical-site.js`),
+      component: internalPath.resolve(`src/components/historical-site.js`),
       context: node,
     })
   })
@@ -190,7 +190,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const path = `interviews/${node.slug}`
     createPage({
       path,
-      component: internalPath.resolve(`src/pages/interview.js`),
+      component: internalPath.resolve(`src/components/interview.js`),
       context: node,
     })
   })
@@ -200,7 +200,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const path = `tags/${node.slug}`
     createPage({
       path,
-      component: internalPath.resolve(`src/pages/tag.js`),
+      component: internalPath.resolve(`src/components/tag.js`),
       context: node,
     })
   })
@@ -210,7 +210,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const path = `themes/${node.slug}`
     createPage({
       path,
-      component: internalPath.resolve(`src/pages/theme.js`),
+      component: internalPath.resolve(`src/components/theme.js`),
       context: node,
     })
   })

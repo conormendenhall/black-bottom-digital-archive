@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import Breadcrumb from '../components/breadcrumb'
+import Layout from './layout'
+import SEO from './seo'
+import Breadcrumb from './breadcrumb'
 
 const TagPage = ({ pageContext }) => {
   return (

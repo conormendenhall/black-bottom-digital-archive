@@ -2,10 +2,10 @@ import React from 'react'
 
 import Img from 'gatsby-image'
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import EntryTags from '../components/entry-tags'
-import Breadcrumb from '../components/breadcrumb'
+import Layout from './layout'
+import SEO from './seo'
+import EntryTags from './entry-tags'
+import Breadcrumb from './breadcrumb'
 
 const EventPage = ({ pageContext }) => {
   return (
