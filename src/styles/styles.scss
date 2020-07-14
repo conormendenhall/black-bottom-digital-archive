@@ -43,16 +43,9 @@ a {
     border-bottom: 2px solid $light;
 
     &:hover {
-      border-bottom: 2px solid black;
+      border-bottom: 2px solid $gold;
     }
   }
-}
-
-.tag {
-  padding: 10px;
-  background-color: #ffee8b;
-  border-radius: 7px;
-  margin: 0 5px 5px 0;
 }
 
 .article-image {
