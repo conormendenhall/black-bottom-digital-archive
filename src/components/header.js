@@ -9,14 +9,14 @@ const Header = ({ siteTitle }) => (
     <a href="/themes">
       <span>Themes</span>
     </a>
-    <a href="/about">
-      <span>About</span>
-    </a>
     <a href="/historical-sites">
       <span>Historical Sites</span>
     </a>
     <a href="/interviews">
-      <span>Interviews</span>
+      <span>Oral Histories</span>
+    </a>
+    <a href="/about">
+      <span>About</span>
     </a>
   </header>
 )

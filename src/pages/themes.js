@@ -11,7 +11,9 @@ const ThemesPage = ({ data }) => {
     <a key={item.node.id} href={`/themes/${item.node.slug}`}>
       <div className="card">
         {item.node.image && <Img fluid={item.node.image.fluid} />}
-        <span>{item.node.title}</span>
+        <div className="card-title">
+          <span>{item.node.title}</span>
+        </div>
       </div>
     </a>
   ))

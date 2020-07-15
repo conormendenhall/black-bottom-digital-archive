@@ -15,7 +15,9 @@ const InterviewsPage = ({ data }) => {
         ) : (
           <Img fluid={data.default.childImageSharp.fluid} />
         )}
-        <span>{item.node.title}</span>
+        <div className="card-title">
+          <span>{item.node.title}</span>
+        </div>
       </div>
     </a>
   ))
@@ -24,7 +26,7 @@ const InterviewsPage = ({ data }) => {
     <Layout>
       <SEO title="Interviews" />
       <section className="container">
-        <h1>Interviews</h1>
+        <h1>Oral Histories</h1>
         <div id="interviews" className="card-gallery">
           {interviews}
         </div>
