@@ -1,17 +1,23 @@
 import React from 'react'
 
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
 const InterviewsPage = ({ data }) => {
   let interviews = data.interviews.edges.map((item, key) => (
-    <div key={item.node.id} className="entry-link">
-      <a href={`/interviews/${item.node.slug}`}>
+    <a key={item.node.id} href={`/interviews/${item.node.slug}`}>
+      <div className="card">
+        {item.node.image ? (
+          <Img fluid={item.node.image.fluid} />
+        ) : (
+          <Img fluid={data.default.childImageSharp.fluid} />
+        )}
         <span>{item.node.title}</span>
-      </a>
-    </div>
+      </div>
+    </a>
   ))
 
   return (
@@ -19,11 +25,23 @@ const InterviewsPage = ({ data }) => {
       <SEO title="Interviews" />
       <section className="container">
         <h1>Interviews</h1>
-        {interviews}
+        <div id="interviews" className="card-gallery">
+          {interviews}
+        </div>
       </section>
     </Layout>
   )
 }
+
+export const fluidImage = graphql`
+  fragment fluidImage on File {
+    childImageSharp {
+      fluid(maxWidth: 1600) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+`
 
 export const pageQuery = graphql`
   query {
@@ -33,8 +51,22 @@ export const pageQuery = graphql`
           id
           title
           slug
+          image {
+            fluid {
+              base64
+              aspectRatio
+              src
+              srcSet
+              srcWebp
+              srcSetWebp
+              sizes
+            }
+          }
         }
       }
+    }
+    default: file(relativePath: { eq: "interview-microphone.jpg" }) {
+      ...fluidImage
     }
   }
 `

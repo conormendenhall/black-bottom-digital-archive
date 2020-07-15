@@ -9,7 +9,7 @@ import SEO from '../components/seo'
 const ThemesPage = ({ data }) => {
   let themes = data.themes.edges.map((item, key) => (
     <a key={item.node.id} href={`/themes/${item.node.slug}`}>
-      <div className="theme-card">
+      <div className="card">
         {item.node.image && <Img fluid={item.node.image.fluid} />}
         <span>{item.node.title}</span>
       </div>
@@ -21,7 +21,9 @@ const ThemesPage = ({ data }) => {
       <SEO title="Themes" />
       <section className="container">
         <h1>Themes</h1>
-        <div id="themes">{themes}</div>
+        <div id="themes" className="card-gallery">
+          {themes}
+        </div>
       </section>
     </Layout>
   )
