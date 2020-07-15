@@ -14,13 +14,13 @@ const EventPage = ({ pageContext }) => {
       <section className="container">
         <Breadcrumb text="View more events" href="/about" />
         <div className="event">
+          <h1>{pageContext.title}</h1>
           {pageContext.eventImage && (
             <Img
               fluid={pageContext.eventImage.fluid}
               className="article-image"
             />
           )}
-          <h1>{pageContext.title}</h1>
           <p>{pageContext.description.description}</p>
         </div>
       </section>

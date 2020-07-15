@@ -7,7 +7,7 @@ footer {
   margin: 0;
   padding: 0;
   background-color: $dark;
-  color: #fff;
+  color: $light;
   section {
     display: flex;
     flex-direction: column;
@@ -19,7 +19,7 @@ footer {
     }
 
     h3 {
-      color: #fff;
+      color: $light;
     }
     div {
       padding: 30px 0 0;

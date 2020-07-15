@@ -47,8 +47,14 @@ a {
   }
 }
 
-.article-image {
-  max-width: 600px;
+.article {
+  .article-text {
+    max-width: 1000px;
+  }
+
+  .article-image {
+    max-width: 600px;
+  }
 }
 
 .card-gallery {

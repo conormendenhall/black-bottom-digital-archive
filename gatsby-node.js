@@ -50,11 +50,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               id
               title
               slug
-              abstract {
-                id
-                abstract
+              body {
+                json
               }
-              historicalSiteImage {
+              image {
                 fluid {
                   base64
                   aspectRatio
