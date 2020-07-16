@@ -2,11 +2,11 @@ import React from 'react'
 
 const Breadcrumb = ({ text, href }) => {
   return (
-    <div className="breadcrumb">
-      <a href={href}>
+    <a href={href} className="breadcrumb">
+      <div>
         <span>{text}</span>
-      </a>
-    </div>
+      </div>
+    </a>
   )
 }
 

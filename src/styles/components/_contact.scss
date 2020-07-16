@@ -4,10 +4,10 @@
   padding: 15px;
   display: inline-block;
   font-family: 'Arvo', 'sans-serif';
-  border-radius: 4px;
+  border-radius: $rounded;
 
   &:hover {
-    background-color: lighten($dark-green, 5%);
+    background-color: darken($dark-green, 3%);
   }
 
   span {
