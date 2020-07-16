@@ -11,6 +11,7 @@
 @import './components/events';
 @import './components/entryTags';
 @import './components/breadcrumb';
+@import './components/contact';
 
 @import './pages/index';
 @import './pages/tag';
@@ -60,6 +61,7 @@ a {
 .card-gallery {
   display: flex;
   flex-flow: wrap;
+  max-width: 1080px;
 
   a {
     margin: 10px;
