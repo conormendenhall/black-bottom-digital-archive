@@ -1,13 +1,36 @@
 .events {
+  display: flex;
+  flex-wrap: wrap;
+
   .event {
-    width: 800px;
+    width: 500px;
+    margin: 0 15px 15px 0;
+    border-radius: $rounded;
 
-    .headline {
-      display: flex;
+    .event-image {
+      border-radius: $rounded $rounded 0 0;
+      width: 500px;
+      height: 500px;
+      object-fit: cover;
+    }
 
-      .title {
-        margin-right: 1em;
+    .event-body {
+      padding: 15px;
+      background-color: $light;
+      border-radius: 0 0 $rounded $rounded;
+
+      .headline {
+        display: flex;
+        align-items: baseline;
+
+        .title {
+          margin-right: 15px;
+        }
       }
     }
   }
+}
+
+.event-calendar .fc-view-container {
+  background-color: $light;
 }

@@ -7,8 +7,11 @@ const TeamMember = ({ data }) => {
     <div className="team-member">
       <Img fluid={data.image} className="team-member-image" />
       <div className="team-member-body">
-        <h3>{data.name}</h3>
-        <div>{data.description}</div>
+        <div className="headline">
+          <h3 className="name">{data.name}</h3>
+          <div>{data.title}</div>
+        </div>
+        <div>{data.bio}</div>
       </div>
     </div>
   )

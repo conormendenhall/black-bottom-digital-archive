@@ -5,16 +5,25 @@
 
     .team-member {
       width: 400px;
-      margin: 10px;
+      margin: 0 15px 15px 0;
 
       .team-member-image {
         border-radius: $rounded $rounded 0 0;
       }
 
       .team-member-body {
-        padding: 1em;
+        padding: 15px;
         background-color: $light;
         border-radius: 0 0 $rounded $rounded;
+
+        .headline {
+          display: flex;
+          align-items: baseline;
+
+          .name {
+            margin-right: 15px;
+          }
+        }
       }
     }
   }

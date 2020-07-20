@@ -7,12 +7,16 @@ import Img from 'gatsby-image'
 const Events = ({ data }) => {
   let eventList = data.edges.map((item, key) => (
     <div key={item.node.id} className="event">
-      {item.node.eventImage && <Img fluid={item.node.eventImage.fluid} />}
-      <div className="headline">
-        <h3 className="title">{item.node.title}</h3>
-        <Moment format="MMMM Do, YYYY">{item.node.dateAndTime}</Moment>
+      {item.node.eventImage && (
+        <Img fluid={item.node.eventImage.fluid} className="event-image" />
+      )}
+      <div className="event-body">
+        <div className="headline">
+          <h3 className="title">{item.node.title}</h3>
+          <Moment format="MMMM Do, YYYY">{item.node.dateAndTime}</Moment>
+        </div>
+        <div>{item.node.description.description}</div>
       </div>
-      <p>{item.node.description.description}</p>
     </div>
   ))
 
@@ -31,10 +35,13 @@ const Events = ({ data }) => {
   })
 
   return (
-    <div className="events">
+    <div>
       <h1>News and Upcoming Events</h1>
-      {eventList}
-      <Calendar data={events} />
+      <div className="events">
+      {eventList}</div>
+      <div className="event-calendar">
+        <Calendar data={events} />
+      </div>
     </div>
   )
 }
