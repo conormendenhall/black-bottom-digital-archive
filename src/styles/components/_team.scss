@@ -1,12 +1,21 @@
 .team {
   .team-container {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
 
     .team-member {
       width: 400px;
       margin: 10px;
+
+      .team-member-image {
+        border-radius: $rounded $rounded 0 0;
+      }
+
+      .team-member-body {
+        padding: 1em;
+        background-color: $light;
+        border-radius: 0 0 $rounded $rounded;
+      }
     }
   }
 }
