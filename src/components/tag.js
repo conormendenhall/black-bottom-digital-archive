@@ -9,7 +9,6 @@ const TagPage = ({ pageContext }) => {
     <Layout>
       <SEO title="Tag" />
       <section className="container">
-        <Breadcrumb text="View more tags" href="/tags" />
         <h1>Tag: {pageContext.name}</h1>
         {pageContext.historical_site && <h3>Historical Sites</h3>}
         {pageContext.historical_site?.map(site => {
@@ -49,6 +48,7 @@ const TagPage = ({ pageContext }) => {
             </div>
           )
         })}
+        <Breadcrumb text="View more tags" href="/tags" />
       </section>
     </Layout>
   )
