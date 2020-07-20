@@ -1,20 +1,15 @@
 import React from 'react'
 
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import Card from '../components/card'
 
 const HistoricalSitesPage = ({ data }) => {
   let sites = data.sites.edges.map((item, key) => (
     <a key={item.node.id} href={`/historical-sites/${item.node.slug}`}>
-      <div className="card">
-        {item.node.image && <Img fluid={item.node.image.fluid} />}
-        <div className="card-title">
-          <span>{item.node.title}</span>
-        </div>
-      </div>
+      <Card data={item} />
     </a>
   ))
 

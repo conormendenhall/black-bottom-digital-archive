@@ -1,20 +1,35 @@
-.call-to-action {
+.contact {
+  background-color: $green;
   color: $light;
-  background-color: $dark-green;
-  padding: 15px;
-  display: inline-block;
-  font-family: 'Arvo', 'sans-serif';
-  border-radius: $rounded;
+  margin-bottom: 2em;
 
-  &:hover {
-    background-color: darken($dark-green, 3%);
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: $light;
   }
 
-  span {
-    border-bottom: none;
+  .call-to-action {
+    color: $light;
+    border: 2px solid $light;
+    border-radius: $rounded;
+    font-family: 'Arvo', 'sans-serif';
+    display: inline-block;
+    padding: 15px;
+    margin-bottom: 15px;
 
     &:hover {
+      background-color: $light;
+      color: $green;
+    }
+
+    span {
       border-bottom: none;
+
+      &:hover {
+        border-bottom: none;
+      }
     }
   }
 }

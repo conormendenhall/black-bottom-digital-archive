@@ -16,7 +16,9 @@ const AboutPage = ({ data }) => {
       <section className="container">
         <Description />
         <Team data={data} />
+      </section>
         <Contact />
+      <section className="container">
         <Events data={data.events} />
       </section>
     </Layout>

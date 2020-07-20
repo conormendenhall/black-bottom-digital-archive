@@ -1,15 +1,16 @@
 import React from 'react'
 
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import Card from '../components/card'
 
 const InterviewsPage = ({ data }) => {
   let interviews = data.interviews.edges.map((item, key) => (
     <a key={item.node.id} href={`/interviews/${item.node.slug}`}>
-      <div className="card">
+      <Card data={item} />
+      {/* <div className="card">
         {item.node.image ? (
           <Img fluid={item.node.image.fluid} />
         ) : (
@@ -18,7 +19,7 @@ const InterviewsPage = ({ data }) => {
         <div className="card-title">
           <span>{item.node.title}</span>
         </div>
-      </div>
+      </div> */}
     </a>
   ))
 
