@@ -22,10 +22,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               title
               slug
               dateAndTime
-              description {
-                description
+              body {
+                json
               }
-              eventImage {
+              image {
                 fluid {
                   base64
                   aspectRatio
@@ -213,4 +213,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: node,
     })
   })
+}
+
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  if (stage.startsWith("develop")) {
+    actions.setWebpackConfig({
+      resolve: {
+        alias: {
+          "react-dom": "@hot-loader/react-dom",
+        },
+      },
+    })
+  }
 }

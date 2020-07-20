@@ -7,7 +7,7 @@ import interactionPlugin from '@fullcalendar/interaction'
 const Calendar = ({ data }) => {
   function handleEventClick(e) {
     console.log(`title: ${e.event.title}
-description: ${e.event.extendedProps.description}`  )
+body: ${e.event.extendedProps.body}`)
   }
 
   return (

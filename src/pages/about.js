@@ -17,7 +17,7 @@ const AboutPage = ({ data }) => {
         <Description />
         <Team data={data} />
       </section>
-        <Contact />
+      <Contact />
       <section className="container">
         <Events data={data.events} />
       </section>
@@ -53,11 +53,12 @@ export const query = graphql`
         node {
           id
           title
+          slug
           dateAndTime
-          description {
-            description
+          body {
+            json
           }
-          eventImage {
+          image {
             fluid {
               base64
               tracedSVG

@@ -42,10 +42,10 @@ const Contact = () => {
         <p>
           Contact us directly if you have any other media or artifacts that you
           would like to share
-          <a href="mailto:hello@blackbottomarchives.com?subject=BBA Content Submission">
-            <p>hello@blackbottomarchives.com</p>
-          </a>
         </p>
+        <a href="mailto:hello@blackbottomarchives.com?subject=BBA Content Submission">
+          <p>hello@blackbottomarchives.com</p>
+        </a>
       </div>
     </div>
   )

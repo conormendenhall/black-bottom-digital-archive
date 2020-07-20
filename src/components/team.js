@@ -1,7 +1,5 @@
 import React from 'react'
 
-import Img from 'gatsby-image'
-
 import TeamMember from './team-member'
 
 const Team = ({ data }) => {
@@ -60,7 +58,7 @@ const Team = ({ data }) => {
       <h1>The Black Bottom Archives Team</h1>
       <div className="team-container">
         {teamMembers.map((item, key) => (
-          <TeamMember data={item} />
+          <TeamMember data={item} key={key} />
         ))}
       </div>
     </div>
