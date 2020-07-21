@@ -8,7 +8,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 const Events = ({ data }) => {
   let eventList = data.edges.map((item, key) => (
-    <a href={`events/${item.node.slug}`}>
+    <a href={`events/${item.node.slug}`} key={key}>
       <div key={item.node.id} className="event">
         {item.node.image && (
           <Img fluid={item.node.image.fluid} className="event-image" />
@@ -41,8 +41,8 @@ const Events = ({ data }) => {
   })
 
   return (
-    <div>
-      <h1>News and Upcoming Events</h1>
+    <div id="events">
+      <h1>Upcoming Events</h1>
       <div className="events">{eventList}</div>
       <div className="event-calendar">
         <Calendar data={events} />

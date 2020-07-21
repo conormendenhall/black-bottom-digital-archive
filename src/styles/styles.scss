@@ -46,11 +46,11 @@ a {
   color: $dark;
 
   span {
-    border-bottom: 2px solid $light;
+    border-bottom: 2px solid transparent;
   }
 
   &:hover span {
-    border-bottom: 2px solid $dark;
+    border-bottom: 2px solid $green;
   }
 }
 

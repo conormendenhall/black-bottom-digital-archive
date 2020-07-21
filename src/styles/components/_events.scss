@@ -24,9 +24,17 @@
         align-items: baseline;
 
         .title {
-          margin-right: 15px;
+          padding-bottom: 3px;
+          margin: 0 15px 2px 0;
+          border-bottom: 2px solid transparent;
         }
       }
+    }
+  }
+
+  a {
+    &:hover .title {
+      border-bottom: 2px solid $green !important;
     }
   }
 }
