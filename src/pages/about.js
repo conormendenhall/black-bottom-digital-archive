@@ -19,7 +19,7 @@ const AboutPage = ({ data }) => {
       </section>
       <Contact />
       <section className="container">
-        <Events data={data.events} />
+        <Events />
       </section>
     </Layout>
   )
@@ -47,31 +47,6 @@ export const query = graphql`
     }
     lawrielle: file(relativePath: { eq: "team/lawrielle-bio-pic.jpg" }) {
       ...fluidImage
-    }
-    events: allContentfulEvent {
-      edges {
-        node {
-          id
-          title
-          slug
-          dateAndTime
-          body {
-            json
-          }
-          image {
-            fluid {
-              base64
-              tracedSVG
-              aspectRatio
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-              sizes
-            }
-          }
-        }
-      }
     }
   }
 `

@@ -2,12 +2,43 @@ import React from 'react'
 import Loadable from 'react-loadable'
 import Moment from 'react-moment'
 
+import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
-const Events = ({ data }) => {
-  let eventList = data.edges.map((item, key) => (
+const Events = () => {
+  const { events } = useStaticQuery(graphql`
+    query EventsQuery {
+      events: allContentfulEvent {
+        edges {
+          node {
+            id
+            title
+            slug
+            dateAndTime
+            body {
+              json
+            }
+            image {
+              fluid {
+                base64
+                tracedSVG
+                aspectRatio
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  let eventList = events.edges.map((item, key) => (
     <a href={`events/${item.node.slug}`} key={key}>
       <div key={item.node.id} className="event">
         {item.node.image && (
@@ -27,7 +58,7 @@ const Events = ({ data }) => {
     </a>
   ))
 
-  let events = data.edges.map((item, key) => ({
+  let calendarEvents = events.edges.map((item, key) => ({
     id: key,
     title: item.node.title,
     date: item.node.dateAndTime,
@@ -45,7 +76,7 @@ const Events = ({ data }) => {
       <h1>Upcoming Events</h1>
       <div className="events">{eventList}</div>
       <div className="event-calendar">
-        <Calendar data={events} />
+        <Calendar data={calendarEvents} />
       </div>
     </div>
   )
