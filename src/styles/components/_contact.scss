@@ -10,26 +10,30 @@
     color: $light;
   }
 
+  a {
+    border-bottom: 2px solid $light;
+  }
+
   .call-to-action {
-    color: $light;
-    border: 2px solid $light;
-    border-radius: $rounded;
-    font-family: 'Arvo', 'sans-serif';
-    display: inline-block;
-    padding: 15px;
-    margin-bottom: 15px;
-
-    &:hover {
-      background-color: $light;
-      color: $green;
-    }
-
-    span {
-      border-bottom: none;
+    margin: 15px 0 35px 0;
+    border-bottom: none;
+    
+    a {
+      color: $light;
+      border: 2px solid $light;
+      border-radius: $rounded;
+      font-family: 'Arvo', 'sans-serif';
+      padding: 15px;
 
       &:hover {
+        background-color: $light;
         border-bottom: none;
+        color: $green;
       }
     }
+  }
+
+  #mailto {
+    margin-left: 10px;
   }
 }

@@ -11,22 +11,22 @@ const Contact = () => {
           for more information about how you can contribute to this growing
           digital archive.
         </p>
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSe4fk6G3nPZ6UkkK9IfHI9J3a5HQBeqg6oKmWrR8uNgfNyk1w/viewform"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="call-to-action">
-            <span>Share Your History</span>
-          </div>
-        </a>
+        <span className="call-to-action">
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSe4fk6G3nPZ6UkkK9IfHI9J3a5HQBeqg6oKmWrR8uNgfNyk1w/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Share Your History
+          </a>
+        </span>
         <p>
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSe4fk6G3nPZ6UkkK9IfHI9J3a5HQBeqg6oKmWrR8uNgfNyk1w/viewform"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Use this form to submit your oral histories or photos.
+            Use this form to submit your oral histories or photos
           </a>
         </p>
         <p>
@@ -36,16 +36,19 @@ const Contact = () => {
             rel="noopener noreferrer"
           >
             Use this link to schedule an oral history interview with our
-            Archival team!
+            Archival team
           </a>
         </p>
         <p>
           Contact us directly if you have any other media or artifacts that you
-          would like to share
+          would like to share:
+          <a
+            href="mailto:hello@blackbottomarchives.com?subject=BBA Content Submission"
+            id="mailto"
+          >
+            hello@blackbottomarchives.com
+          </a>
         </p>
-        <a href="mailto:hello@blackbottomarchives.com?subject=BBA Content Submission">
-          <p>hello@blackbottomarchives.com</p>
-        </a>
       </div>
     </div>
   )
