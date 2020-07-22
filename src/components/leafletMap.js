@@ -31,7 +31,7 @@ class LeafletMap extends React.Component {
               position={[node.coordinates.lat, node.coordinates.lon]}
             >
               <Popup className="popup">
-                {node.name}
+                {node.title}
                 <Img fixed={node.media[0].photo.fixed}></Img>
               </Popup>
             </Marker>

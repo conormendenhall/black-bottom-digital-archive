@@ -3,13 +3,13 @@
   flex-wrap: wrap;
 
   .event {
-    width: 500px;
+    width: 550px;
     margin: 0 15px 15px 0;
     border-radius: $rounded;
 
     .event-image {
       border-radius: $rounded $rounded 0 0;
-      width: 500px;
+      width: 550px;
       height: 500px;
       object-fit: cover;
     }
@@ -25,7 +25,7 @@
 
         .title {
           padding-bottom: 3px;
-          margin: 0 15px 2px 0;
+          margin: 0 15px 10px 0;
           border-bottom: 2px solid transparent;
         }
       }

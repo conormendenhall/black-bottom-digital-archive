@@ -5,10 +5,12 @@ import Img from 'gatsby-image'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 import EntryTags from './entry-tags'
+import SEO from './seo'
 
 const Article = ({ data }) => {
   return (
     <>
+      <SEO title={data.title} />
       <section className="container article">
         <div className="article-text">
           <h1>{data.title}</h1>

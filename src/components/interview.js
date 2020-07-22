@@ -8,7 +8,7 @@ import Breadcrumb from './breadcrumb'
 const InterviewPage = ({ pageContext }) => {
   return (
     <Layout>
-      <SEO title="Interview" />
+      <SEO title={pageContext.title} description="Interview" />
       <section className="container">
         <Breadcrumb text="View more interviews" href="/interviews" />
         <div className="historical-site">

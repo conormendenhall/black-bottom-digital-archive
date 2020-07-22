@@ -11,7 +11,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <HistoricalMap></HistoricalMap>
+      <HistoricalMap />
       {typeof window !== 'undefined' && (
         <LeafletMap
           position={[42.3408, -83.037]} // Your Coordinates
@@ -35,10 +35,11 @@ export const fluidImage = graphql`
 
 export const pageQuery = graphql`
   query {
-    places: allContentfulPlace(limit: 20) {
+    places: allContentfulPlace {
       edges {
         node {
           id
+          title
           coordinates {
             lon
             lat
@@ -53,7 +54,6 @@ export const pageQuery = graphql`
               }
             }
           }
-          name
         }
       }
     }

@@ -12,7 +12,7 @@ import Events from '../components/events'
 const AboutPage = ({ data }) => {
   return (
     <Layout>
-      <SEO title="About" />
+      <SEO title="Black Bottom Archives" />
       <section className="container">
         <Description />
         <Team data={data} />

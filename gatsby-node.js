@@ -38,7 +38,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               }
               tags {
                 id
-                name
+                title
                 slug
               }
             }
@@ -66,7 +66,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               }
               tags {
                 id
-                name
+                title
                 slug
               }
             }
@@ -90,7 +90,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               }
               tags {
                 id
-                name
+                title
                 slug
               }
             }
@@ -100,7 +100,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           edges {
             node {
               id
-              name
+              title
               slug
               historical_site {
                 id
@@ -109,7 +109,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               }
               place {
                 id
-                name
+                title
               }
               interview {
                 id
@@ -146,7 +146,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               }
               tags {
                 id
-                name
+                title
                 slug
               }
             }

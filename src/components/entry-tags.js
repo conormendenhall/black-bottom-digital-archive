@@ -5,7 +5,7 @@ const EntryTags = ({ data }) => {
     return (
       <a key={tag.id} className="tag" href={`/tags/${tag.slug}`}>
         <div>
-          <span>{tag.name}</span>
+          <span>{tag.title}</span>
         </div>
       </a>
     )

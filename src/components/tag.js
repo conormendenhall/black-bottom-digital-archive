@@ -7,9 +7,9 @@ import Breadcrumb from './breadcrumb'
 const TagPage = ({ pageContext }) => {
   return (
     <Layout>
-      <SEO title="Tag" />
+      <SEO title={pageContext.title} />
       <section className="container">
-        <h1>Tag: {pageContext.name}</h1>
+        <h1>Tag: {pageContext.title}</h1>
         {pageContext.historical_site && <h3>Historical Sites</h3>}
         {pageContext.historical_site?.map(site => {
           return (
@@ -44,7 +44,7 @@ const TagPage = ({ pageContext }) => {
         {pageContext.place?.map(place => {
           return (
             <div className="entry-link">
-              <span key={place.id}>{place.name}</span>
+              <span key={place.id}>{place.title}</span>
             </div>
           )
         })}
