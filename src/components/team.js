@@ -1,8 +1,27 @@
 import React from 'react'
 
+import { useStaticQuery, graphql } from 'gatsby'
+
 import TeamMember from './team-member'
 
-const Team = ({ data }) => {
+const Team = () => {
+  const { kamau, tulani, pg, lawrielle } = useStaticQuery(graphql`
+    query TeamMemberImageQuery {
+      kamau: file(relativePath: { eq: "team/kamau-bio-pic.jpg" }) {
+        ...fluidImage
+      }
+      tulani: file(relativePath: { eq: "team/tulani-bio-pic.jpg" }) {
+        ...fluidImage
+      }
+      pg: file(relativePath: { eq: "team/pg-bio-pic.jpg" }) {
+        ...fluidImage
+      }
+      lawrielle: file(relativePath: { eq: "team/lawrielle-bio-pic.jpg" }) {
+        ...fluidImage
+      }
+    }
+  `)
+
   const teamMembers = [
     {
       name: 'Kamau Baaqi',
@@ -11,7 +30,7 @@ const Team = ({ data }) => {
       and communications specialist. Having contributed to 
       creative industries for over a decade, Kamau continues to 
       establish and cultivate narratives through the arts.`,
-      image: data.kamau.childImageSharp.fluid,
+      image: kamau.childImageSharp.fluid,
     },
     {
       name: 'Tulani Pryor',
@@ -21,7 +40,7 @@ const Team = ({ data }) => {
       collecting and utilizing archival materials to represent the
       creativity and beauty of people of color. In her spare time, she
       loves to make moodboards of the worlds she writes about.`,
-      image: data.tulani.childImageSharp.fluid,
+      image: tulani.childImageSharp.fluid,
     },
     {
       name: 'PG Watkins',
@@ -36,7 +55,7 @@ const Team = ({ data }) => {
       spaces has given them the tools to lead BBA through a collaborative
       strategic planning process and create goals and priorities that will
       sustain BBA’s work and the legacy of Black Detroiters across time.`,
-      image: data.pg.childImageSharp.fluid,
+      image: pg.childImageSharp.fluid,
     },
     {
       name: 'Lawrielle West',
@@ -49,7 +68,7 @@ const Team = ({ data }) => {
       leadership development. As an Aries she brings her power, directness
       and passion to the BBA team and is excited to do outreach and
       community programming this upcoming year!`,
-      image: data.lawrielle.childImageSharp.fluid,
+      image: lawrielle.childImageSharp.fluid,
     },
   ]
 
@@ -64,5 +83,15 @@ const Team = ({ data }) => {
     </div>
   )
 }
+
+export const fluidImage = graphql`
+  fragment fluidImage on File {
+    childImageSharp {
+      fluid(maxWidth: 1600) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+`
 
 export default Team
