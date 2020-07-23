@@ -7,7 +7,7 @@ import Team from '../components/team'
 import Contact from '../components/contact'
 import Events from '../components/events'
 
-const AboutPage = ({ data }) => {
+const AboutPage = () => {
   return (
     <Layout>
       <SEO title="Black Bottom Archives" />
