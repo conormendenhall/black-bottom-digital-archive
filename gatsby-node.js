@@ -41,6 +41,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 title
                 slug
               }
+              place {
+                id
+                title
+                location {
+                  lat
+                  lon
+                }
+              }
+              internal {
+                type
+              }
             }
           }
         }
@@ -68,6 +79,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 id
                 title
                 slug
+              }
+              place {
+                id
+                title
+                location {
+                  lat
+                  lon
+                }
+              }
+              internal {
+                type
               }
             }
           }
@@ -106,10 +128,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 id
                 title
                 slug
-              }
-              place {
-                id
-                title
               }
               interview {
                 id
@@ -216,11 +234,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 }
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
-  if (stage.startsWith("develop")) {
+  if (stage.startsWith('develop')) {
     actions.setWebpackConfig({
       resolve: {
         alias: {
-          "react-dom": "@hot-loader/react-dom",
+          'react-dom': '@hot-loader/react-dom',
         },
       },
     })

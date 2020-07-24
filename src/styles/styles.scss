@@ -13,6 +13,7 @@
 @import './components/breadcrumb';
 @import './components/contact';
 @import './components/card';
+@import './components/article';
 
 @import './pages/index';
 @import './pages/tag';
@@ -51,15 +52,5 @@ a {
 
   &:hover span {
     border-bottom: 2px solid $green;
-  }
-}
-
-.article {
-  .article-text {
-    max-width: 1000px;
-  }
-
-  .article-image {
-    max-width: 600px;
   }
 }

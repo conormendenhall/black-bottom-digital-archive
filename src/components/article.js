@@ -6,6 +6,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 import EntryTags from './entry-tags'
 import SEO from './seo'
+import LeafletMap from './leaflet-map'
 
 const Article = ({ data }) => {
   return (
@@ -20,6 +21,18 @@ const Article = ({ data }) => {
           <Img fluid={data.image.fluid} className="article-image" />
         )}
       </section>
+      {data.place && (
+        <section className="container">
+          {typeof window !== 'undefined' && (
+            <LeafletMap
+              position={[data.place.location.lat, data.place.location.lon]}
+              zoom={15}
+              sites={[data]}
+              className="article-map"
+            />
+          )}
+        </section>
+      )}
       {data.tags && (
         <section className="container">
           <h3>Tags</h3>

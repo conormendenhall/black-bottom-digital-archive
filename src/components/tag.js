@@ -40,14 +40,6 @@ const TagPage = ({ pageContext }) => {
             </div>
           )
         })}
-        {pageContext.place && <h3>Places</h3>}
-        {pageContext.place?.map(place => {
-          return (
-            <div className="entry-link">
-              <span key={place.id}>{place.title}</span>
-            </div>
-          )
-        })}
         <Breadcrumb text="View more tags" href="/tags" />
       </section>
     </Layout>

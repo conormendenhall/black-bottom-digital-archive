@@ -1,9 +1,13 @@
 .leaflet-container {
-  height: 800px;
+  height: 300px;
   width: 100%;
   z-index: 0;
-  @media screen and (min-width: 1024px) {
-    height: 700px;
+  @media screen and (min-width: 425px) {
+    height: 500px;
+  }
+
+  * {
+    transition: none;
   }
 }
 

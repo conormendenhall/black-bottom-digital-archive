@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import LeafletMap from '../components/leafletMap'
+import LeafletMap from '../components/leaflet-map'
 import HistoricalMap from '../components/historical-map'
 
 const IndexPage = ({ data }) => {
@@ -14,9 +14,12 @@ const IndexPage = ({ data }) => {
       <HistoricalMap />
       {typeof window !== 'undefined' && (
         <LeafletMap
-          position={[42.3408, -83.037]} // Your Coordinates
-          zoom={15} // Zoom Level
-          places={data.places.edges}
+          position={[42.3408, -83.037]}
+          zoom={15}
+          sites={data.sites.edges.map(({ node }) => {
+            return node
+          })}
+          className="leaflet-container"
         />
       )}
     </Layout>
@@ -35,24 +38,32 @@ export const fluidImage = graphql`
 
 export const pageQuery = graphql`
   query {
-    places: allContentfulPlace {
+    sites: allContentfulHistoricalSite {
       edges {
         node {
           id
           title
-          coordinates {
-            lon
-            lat
-          }
-          media {
-            id
+          slug
+          place {
             title
-            photo {
-              description
-              fixed(width: 400) {
-                ...GatsbyContentfulFixed
-              }
+            location {
+              lat
+              lon
             }
+          }
+          image {
+            fluid {
+              base64
+              aspectRatio
+              src
+              srcSet
+              srcWebp
+              srcSetWebp
+              sizes
+            }
+          }
+          internal {
+            type
           }
         }
       }
