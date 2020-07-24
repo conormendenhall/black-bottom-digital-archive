@@ -46,7 +46,7 @@ const Events = () => {
   let upcomingEvents = events.edges
     .filter(event => Date.parse(event.node.dateAndTime) >= today)
     .map((item, key) => (
-      <a href={`events/${item.node.slug}`} key={key}>
+      <a href={`../events/${item.node.slug}`} key={key}>
         <div key={item.node.id} className="event">
           {item.node.image && (
             <Img fluid={item.node.image.fluid} className="event-image" />
