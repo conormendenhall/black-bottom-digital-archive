@@ -1,6 +1,12 @@
 .article {
   .article-text {
-    max-width: 1000px;
+    a {
+      color: $green;
+
+      &:hover {
+        border-bottom: 2px solid $green;
+      }
+    }
   }
 
   .article-image {
