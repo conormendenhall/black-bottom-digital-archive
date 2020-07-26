@@ -1,10 +1,10 @@
 .breadcrumb {
   background-color: $dark;
   margin-right: auto;
-  height: 50px;
+  height: 40px;
   position: relative;
   display: flex;
-  padding: 10px;
+  padding: 5px;
 
   &:hover span {
     border-bottom-color: $green;
@@ -25,13 +25,12 @@
       width: 0;
       height: 0;
       border-left: 15px solid $dark;
-      border-top: 25px solid transparent;
-      border-bottom: 25px solid transparent;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
     }
 
     span {
       border-bottom-color: $dark;
-      padding-bottom: 3px;
     }
   }
 }

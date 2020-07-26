@@ -9,9 +9,8 @@ import HistoricalMap from '../components/historical-map'
 
 const IndexPage = ({ data }) => {
   return (
-    <Layout>
+    <Layout home={true}>
       <SEO title="Home" />
-      <HistoricalMap />
       {typeof window !== 'undefined' && (
         <LeafletMap
           position={[42.3408, -83.037]}
@@ -22,6 +21,7 @@ const IndexPage = ({ data }) => {
           className="leaflet-container"
         />
       )}
+      <HistoricalMap />
     </Layout>
   )
 }

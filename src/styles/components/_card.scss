@@ -14,14 +14,12 @@
       height: 400px;
       background-color: $light;
       position: relative;
-      border-radius: $rounded;
 
       .card-image {
         .gatsby-image-wrapper {
           width: 385px;
           min-height: 355px;
           object-fit: cover;
-          border-radius: $rounded $rounded 0 0;
         }
       }
 
@@ -32,7 +30,6 @@
         width: 100%;
         background-color: $green;
         color: $light;
-        border-radius: 0 0 $rounded $rounded;
       }
     }
   }

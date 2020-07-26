@@ -5,6 +5,10 @@ header {
   justify-content: space-between;
   font-family: 'Arvo', 'sans-serif';
 
+  #home {
+    margin-right: auto;
+  }
+
   a {
     padding: 16px;
     color: $light;
@@ -20,8 +24,50 @@ header {
       }
     }
   }
+}
 
-  #home {
-    margin-right: auto;
+header.home-header {
+  height: 600px;
+  color: $light;
+  background-image: linear-gradient(45deg, $green, $blue);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .header-content {
+    background-color: $dark;
+    display: flex;
+    width: 1300px;
+
+    #home {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 50%;
+      font-size: 70px;
+      line-height: 1.5;
+      padding: 50px;
+    }
+
+    #description {
+      padding: 70px;
+      line-height: 2.5;
+    }
+
+    #menu {
+      position: absolute;
+      display: inline;
+      bottom: -10px;
+      z-index: 1;
+      margin: auto;
+
+      a {
+        background-color: $dark;
+        min-width: 200px;
+        padding: 50px;
+        margin-right: 50px;
+      }
+    }
   }
 }
