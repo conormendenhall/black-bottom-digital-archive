@@ -69,12 +69,13 @@ const Events = () => {
     id: key,
     title: item.node.title,
     date: item.node.dateAndTime,
+    slug: item.node.slug,
   }))
 
   const Calendar = Loadable({
     loader: () => import('./calendar'),
     loading() {
-      return <div>Loading...</div>
+      return <div>Loading event calendar...</div>
     },
   })
 

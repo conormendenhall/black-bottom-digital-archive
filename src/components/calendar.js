@@ -5,9 +5,8 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 
 const Calendar = ({ data }) => {
-  function handleEventClick(e) {
-    console.log(`title: ${e.event.title}
-body: ${e.event.extendedProps.body}`)
+  const handleEventClick = e => {
+    window.location.assign(`/events/${e.event.extendedProps.slug}`)
   }
 
   return (

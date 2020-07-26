@@ -41,4 +41,14 @@
 
 .event-calendar .fc-view-container {
   background-color: $light;
+
+  a.fc-event {
+    cursor: pointer;
+    background-color: $green;
+    border-color: $green;
+
+    &:hover span.fc-title {
+      border-bottom-color: $light;
+    }
+  }
 }
