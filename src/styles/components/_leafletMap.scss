@@ -11,6 +11,13 @@
   }
 }
 
-.popup {
-  width: 440px;
+.leaflet-popup {
+  .gatsby-image-wrapper {
+    width: 240px;
+    height: 240px;
+
+    picture {
+      object-fit: cover;
+    }
+  }
 }
