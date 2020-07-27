@@ -3,9 +3,10 @@
 
   .tag {
     padding: 5px 10px;
-    border: 2px solid $dark;
+    border: 1px solid $dark;
     margin: 0 5px 5px 0;
     background-color: $off-light;
+    border-radius: $rounded;
 
     &:hover {
       background-color: $light;

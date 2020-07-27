@@ -17,6 +17,7 @@
 
       .card-image {
         .gatsby-image-wrapper {
+          border-radius: $rounded $rounded 0 0;
           width: 385px;
           min-height: 355px;
           object-fit: cover;
@@ -30,6 +31,7 @@
         width: 100%;
         background-color: $green;
         color: $light;
+        border-radius: 0 0 $rounded $rounded;
       }
     }
   }
