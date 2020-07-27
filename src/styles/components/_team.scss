@@ -7,14 +7,9 @@
       width: 550px;
       margin: 0 15px 15px 0;
 
-      .team-member-image {
-        border-radius: $rounded $rounded 0 0;
-      }
-
       .team-member-body {
         padding: 15px;
         background-color: $light;
-        border-radius: 0 0 $rounded $rounded;
 
         .headline {
           display: flex;

@@ -5,7 +5,6 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import LeafletMap from '../components/leaflet-map'
-import HistoricalMap from '../components/historical-map'
 
 const IndexPage = ({ data }) => {
   return (
@@ -21,7 +20,6 @@ const IndexPage = ({ data }) => {
           className="leaflet-container"
         />
       )}
-      <HistoricalMap />
     </Layout>
   )
 }

@@ -25,7 +25,7 @@ const LeafletMap = ({ position, zoom, className, sites }) => {
                       : 'events'
                   }/${site.slug}`}
                 >
-                  <h3>{site.title}</h3>
+                  <h4>{site.title}</h4>
                   {site.image && <Img fluid={site.image.fluid}></Img>}
                 </a>
               </Popup>

@@ -5,10 +5,8 @@
   .event {
     width: 550px;
     margin: 0 15px 15px 0;
-    border-radius: $rounded;
 
     .event-image {
-      border-radius: $rounded $rounded 0 0;
       width: 550px;
       height: 500px;
       object-fit: cover;
@@ -17,7 +15,6 @@
     .event-body {
       padding: 15px;
       background-color: $light;
-      border-radius: 0 0 $rounded $rounded;
 
       .headline {
         display: flex;
