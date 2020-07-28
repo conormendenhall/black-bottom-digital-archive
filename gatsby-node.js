@@ -100,20 +100,39 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               id
               title
               slug
-              text {
-                text
+              body {
+                json
               }
-              interviewAudio {
+              audio {
+                id
                 title
                 file {
                   url
                   contentType
                 }
               }
+              place {
+                id
+                title
+                location {
+                  lat
+                  lon
+                }
+              }
+              transcript {
+                id
+                title
+                file {
+                  url
+                }
+              }
               tags {
                 id
                 title
                 slug
+              }
+              internal {
+                type
               }
             }
           }

@@ -4,6 +4,8 @@ import Img from 'gatsby-image'
 
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
+import { BsFileText } from 'react-icons/bs'
+
 import EntryTags from './entry-tags'
 import SEO from './seo'
 import LeafletMap from './leaflet-map'
@@ -13,8 +15,38 @@ const Article = ({ data }) => {
     <>
       <SEO title={data.title} />
       <section className="container article">
-        <div className="article-text">
+        <div className="article-body">
           <h1>{data.title}</h1>
+          {data.audio &&
+            data.audio.map((item, key) => (
+              <div key={key}>
+                <h4>{item.title}</h4>
+                <audio controls>
+                  <source
+                    src={item.file.url}
+                    type={item.file.contentType}
+                  ></source>
+                </audio>
+              </div>
+            ))}
+          {data.transcript &&
+            data.transcript.map((item, key) => (
+              <a
+                key={key}
+                href={item.file.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="transcript">
+                  <div className="icon">
+                    <BsFileText />
+                  </div>
+                  <div>
+                    <span>{item.title}</span>
+                  </div>
+                </div>
+              </a>
+            ))}
           {data.body?.json && documentToReactComponents(data.body.json)}
         </div>
         {data.image?.fluid && (
