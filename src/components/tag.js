@@ -3,6 +3,7 @@ import React from 'react'
 import Layout from './layout'
 import SEO from './seo'
 import Breadcrumb from './breadcrumb'
+import MiniCard from './mini-card'
 
 const TagPage = ({ pageContext }) => {
   return (
@@ -11,35 +12,23 @@ const TagPage = ({ pageContext }) => {
       <section className="container">
         <h1>Tag: {pageContext.title}</h1>
         {pageContext.historical_site && <h3>Historical Sites</h3>}
-        {pageContext.historical_site?.map(site => {
-          return (
-            <div className="entry-link">
-              <a href={`/historical-sites/${site.slug}`} className="link">
-                <span key={site.id}>{site.title}</span>
-              </a>
-            </div>
-          )
-        })}
+        <div className="mini-card-section">
+          {pageContext.historical_site?.map(site => {
+            return <MiniCard url={`/historical-sites/`} data={site} />
+          })}
+        </div>
         {pageContext.interview && <h3>Interviews</h3>}
-        {pageContext.interview?.map(interview => {
-          return (
-            <div className="entry-link">
-              <a href={`/interviews/${interview.slug}`} className="link">
-                <span key={interview.id}>{interview.title}</span>
-              </a>
-            </div>
-          )
-        })}
+        <div className="mini-card-section">
+          {pageContext.interview?.map(interview => {
+            return <MiniCard url={`/interviews/`} data={interview} />
+          })}
+        </div>
         {pageContext.event && <h3>Events</h3>}
-        {pageContext.event?.map(event => {
-          return (
-            <div className="entry-link">
-              <a href={`/events/${event.slug}`} className="link">
-                <span key={event.id}>{event.title}</span>
-              </a>
-            </div>
-          )
-        })}
+        <div className="mini-card-section">
+          {pageContext.event?.map(event => {
+            return <MiniCard url={`/events/`} data={event} />
+          })}
+        </div>
         <Breadcrumb text="View more tags" href="/tags" />
       </section>
     </Layout>

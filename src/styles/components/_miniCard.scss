@@ -1,0 +1,25 @@
+.mini-card {
+  background-color: $light;
+  margin: 0 10px 10px 0;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: $rounded;
+
+  .title {
+    padding: 20px;
+  }
+
+  .gatsby-image-wrapper {
+    object-fit: cover;
+    height: 100px;
+    min-width: 100px;
+    border-radius: 0 $rounded $rounded 0;
+  }
+}
+
+.mini-card-section {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
