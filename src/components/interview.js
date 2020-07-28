@@ -15,7 +15,7 @@ const InterviewPage = ({ pageContext }) => {
           <h1>{pageContext.title}</h1>
           {pageContext.interviewAudio &&
             pageContext.interviewAudio.map((item, key) => (
-              <audio controls>
+              <audio controls key={key}>
                 <source
                   src={item.file.url}
                   type={item.file.contentType}

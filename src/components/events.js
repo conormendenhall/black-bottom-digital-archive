@@ -65,11 +65,10 @@ const Events = () => {
       </a>
     ))
 
-  let calendarEvents = events.edges.map((item, key) => ({
-    id: key,
-    title: item.node.title,
-    date: item.node.dateAndTime,
-    slug: item.node.slug,
+  let calendarEvents = events.edges.map(event => ({
+    title: event.node.title,
+    date: event.node.dateAndTime,
+    slug: event.node.slug,
   }))
 
   const Calendar = Loadable({
