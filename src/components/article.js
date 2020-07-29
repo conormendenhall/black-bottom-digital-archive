@@ -15,12 +15,12 @@ const Article = ({ data }) => {
     <>
       <SEO title={data.title} />
       <section className="container article">
-        <div className="article-body">
-          <h1>{data.title}</h1>
+        <h1>{data.title}</h1>
+        <div className="interview-media">
           {data.audio &&
             data.audio.map((item, key) => (
-              <div key={key}>
-                <h4>{item.title}</h4>
+              <div key={key} className="interview-audio">
+                <div>{item.title}</div>
                 <audio controls>
                   <source
                     src={item.file.url}
@@ -47,8 +47,8 @@ const Article = ({ data }) => {
                 </div>
               </a>
             ))}
-          {data.body?.json && documentToReactComponents(data.body.json)}
         </div>
+        {data.body?.json && documentToReactComponents(data.body.json)}
         {data.image?.fluid && (
           <Img fluid={data.image.fluid} className="article-image" />
         )}

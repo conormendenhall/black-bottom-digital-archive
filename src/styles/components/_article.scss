@@ -1,21 +1,28 @@
 .article {
-  .article-body {
-    a {
-      color: $green;
+  .interview-media {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 15px;
 
-      &:hover {
-        border-bottom: 2px solid $green;
-      }
+    .interview-audio {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
     }
 
-    .transcript {
-      margin-bottom: 15px;
-      display: flex;
-      max-width: 300px;
+    a {
+      display: block;
+      width: 300px;
 
-      .icon {
-        font-size: 55px;
-        line-height: 0;
+      .transcript {
+        display: flex;
+        color: $dark;
+
+        .icon {
+          font-size: 55px;
+          line-height: 0;
+        }
       }
     }
   }
