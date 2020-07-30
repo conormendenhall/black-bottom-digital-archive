@@ -191,6 +191,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                   }
                 }
               }
+              theme {
+                id
+                title
+                slug
+                image {
+                  fluid {
+                    base64
+                    aspectRatio
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                    sizes
+                  }
+                }
+              }
             }
           }
         }

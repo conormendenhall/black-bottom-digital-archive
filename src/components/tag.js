@@ -11,6 +11,12 @@ const TagPage = ({ pageContext }) => {
       <SEO title={pageContext.title} />
       <section className="container">
         <h1>Tag: {pageContext.title}</h1>
+        {pageContext.theme && <h3>Themes</h3>}
+        <div className="mini-card-section">
+          {pageContext.theme?.map(theme => {
+            return <MiniCard url={`/themes/`} data={theme} />
+          })}
+        </div>
         {pageContext.historical_site && <h3>Historical Sites</h3>}
         <div className="mini-card-section">
           {pageContext.historical_site?.map(site => {
