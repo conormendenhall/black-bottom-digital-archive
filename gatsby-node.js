@@ -94,6 +94,45 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
           }
         }
+        figures: allContentfulHistoricalFigure {
+          edges {
+            node {
+              id
+              title
+              slug
+              body {
+                json
+              }
+              image {
+                fluid {
+                  base64
+                  aspectRatio
+                  src
+                  srcSet
+                  srcWebp
+                  srcSetWebp
+                  sizes
+                }
+              }
+              tags {
+                id
+                title
+                slug
+              }
+              place {
+                id
+                title
+                location {
+                  lat
+                  lon
+                }
+              }
+              internal {
+                type
+              }
+            }
+          }
+        }
         interviews: allContentfulInterview {
           edges {
             node {
@@ -266,6 +305,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     createPage({
       path,
       component: internalPath.resolve(`src/components/historical-site.js`),
+      context: node,
+    })
+  })
+
+  // Create page for each Historical Figure
+  result.data.figures.edges.forEach(({ node }) => {
+    const path = `historical-figures/${node.slug}`
+    createPage({
+      path,
+      component: internalPath.resolve(`src/components/historical-figure.js`),
       context: node,
     })
   })

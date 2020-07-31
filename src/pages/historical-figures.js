@@ -6,20 +6,20 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Card from '../components/card'
 
-const HistoricalSitesPage = ({ data }) => {
-  let sites = data.sites.edges.map((item, key) => (
-    <a key={key} href={`/historical-sites/${item.node.slug}`}>
+const HistoricalFiguresPage = ({ data }) => {
+  let figures = data.figures.edges.map((item, key) => (
+    <a key={key} href={`/historical-figures/${item.node.slug}`}>
       <Card data={item} />
     </a>
   ))
 
   return (
     <Layout>
-      <SEO title="Historical Sites" />
+      <SEO title="Historical Figures" />
       <section className="container">
-        <h1>Historical Sites</h1>
-        <div id="historicalSites" className="card-gallery">
-          {sites}
+        <h1>Historical figures</h1>
+        <div id="historicalFigures" className="card-gallery">
+          {figures}
         </div>
       </section>
     </Layout>
@@ -28,7 +28,7 @@ const HistoricalSitesPage = ({ data }) => {
 
 export const pageQuery = graphql`
   query {
-    sites: allContentfulHistoricalSite {
+    figures: allContentfulHistoricalFigure {
       edges {
         node {
           id
@@ -51,4 +51,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default HistoricalSitesPage
+export default HistoricalFiguresPage

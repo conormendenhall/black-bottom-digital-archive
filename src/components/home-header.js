@@ -19,6 +19,9 @@ const HomeHeader = () => {
           <a href="/themes">
             <span>Themes</span>
           </a>
+          <a href="/historical-figures">
+            <span>Historical Figures</span>
+          </a>
           <a href="/historical-sites">
             <span>Historical Sites</span>
           </a>
