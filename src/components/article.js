@@ -2,53 +2,32 @@ import React from 'react'
 
 import Img from 'gatsby-image'
 
+import { INLINES } from '@contentful/rich-text-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-
-import { BsFileText } from 'react-icons/bs'
 
 import EntryTags from './entry-tags'
 import SEO from './seo'
 import LeafletMap from './leaflet-map'
+import InterviewMedia from './interview-media'
 
 const Article = ({ data }) => {
+  const options = {
+    renderLink: {
+      [INLINES.HYPERLINK]: (node, children) => {
+        return <a href={node.url}>{children}</a>
+      },
+    },
+  }
+
   return (
     <>
       <SEO title={data.title} />
       <section className="container article">
         <h1>{data.title}</h1>
-        <div className="interview-media">
-          {data.audio &&
-            data.audio.map((item, key) => (
-              <div key={key} className="interview-audio">
-                <div>{item.title}</div>
-                <audio controls>
-                  <source
-                    src={item.file.url}
-                    type={item.file.contentType}
-                  ></source>
-                </audio>
-              </div>
-            ))}
-          {data.transcript &&
-            data.transcript.map((item, key) => (
-              <a
-                key={key}
-                href={item.file.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="transcript">
-                  <div className="icon">
-                    <BsFileText />
-                  </div>
-                  <div>
-                    <span>{item.title}</span>
-                  </div>
-                </div>
-              </a>
-            ))}
-        </div>
-        {data.body?.json && documentToReactComponents(data.body.json)}
+        {(data.audio || data.transcript) && (
+          <InterviewMedia audio={data.audio} transcript={data.transcript} />
+        )}
+        {data.body?.json && documentToReactComponents(data.body.json, options)}
         {data.image?.fluid && (
           <Img fluid={data.image.fluid} className="article-image" />
         )}

@@ -30,6 +30,10 @@
   .article-image {
     max-width: 600px;
   }
+
+  a {
+    text-decoration: underline solid $green;
+  }
 }
 
 .article-map {
