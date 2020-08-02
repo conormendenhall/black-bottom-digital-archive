@@ -39,6 +39,7 @@ header.home-header {
     background-color: $dark;
     display: flex;
     width: 1300px;
+    border-radius: $rounded;
 
     #home {
       display: flex;
@@ -65,6 +66,7 @@ header.home-header {
         background-color: $dark;
         padding: 25px;
         margin-right: 30px;
+        border-radius: $rounded;
       }
     }
   }
