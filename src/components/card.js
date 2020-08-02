@@ -6,10 +6,10 @@ const Card = ({ data }) => {
   return (
     <div className="card">
       <div className="card-image">
-        {data.node.image && <Img fluid={data.node.image.fluid} />}
+        {data.image && <Img fluid={data.image.fluid} />}
       </div>
       <div className="card-title">
-        <span>{data.node.title}</span>
+        <span>{data.title}</span>
       </div>
     </div>
   )

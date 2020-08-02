@@ -10,7 +10,7 @@ import SEO from './seo'
 import LeafletMap from './leaflet-map'
 import InterviewMedia from './interview-media'
 
-const Article = ({ data }) => {
+const Article = ({ data, children }) => {
   const options = {
     renderLink: {
       [INLINES.HYPERLINK]: (node, children) => {
@@ -27,10 +27,10 @@ const Article = ({ data }) => {
         {(data.audio || data.transcript) && (
           <InterviewMedia audio={data.audio} transcript={data.transcript} />
         )}
-        {data.body?.json && documentToReactComponents(data.body.json, options)}
         {data.image?.fluid && (
           <Img fluid={data.image.fluid} className="article-image" />
         )}
+        {data.body?.json && documentToReactComponents(data.body.json, options)}
       </section>
       {data.place && (
         <section className="container">
@@ -44,6 +44,7 @@ const Article = ({ data }) => {
           )}
         </section>
       )}
+      <section className="container">{children}</section>
       {data.tags && (
         <section className="container">
           <h3>Tags</h3>

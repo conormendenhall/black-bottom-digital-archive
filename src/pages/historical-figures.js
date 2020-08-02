@@ -9,7 +9,7 @@ import Card from '../components/card'
 const HistoricalFiguresPage = ({ data }) => {
   let figures = data.figures.edges.map((item, key) => (
     <a key={key} href={`/historical-figures/${item.node.slug}`}>
-      <Card data={item} />
+      <Card data={item.node} />
     </a>
   ))
 

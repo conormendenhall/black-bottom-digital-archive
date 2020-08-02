@@ -290,6 +290,54 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 title
                 slug
               }
+              historicalSites {
+                id
+                title
+                slug
+                image {
+                  fluid {
+                    base64
+                    aspectRatio
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                    sizes
+                  }
+                }
+              }
+              historicalFigures {
+                id
+                title
+                slug
+                image {
+                  fluid {
+                    base64
+                    aspectRatio
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                    sizes
+                  }
+                }
+              }
+              interviews {
+                id
+                title
+                slug
+                image {
+                  fluid {
+                    base64
+                    aspectRatio
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                    sizes
+                  }
+                }
+              }
             }
           }
         }

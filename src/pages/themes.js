@@ -9,7 +9,7 @@ import Card from '../components/card'
 const ThemesPage = ({ data }) => {
   let themes = data.themes.edges.map((item, key) => (
     <a key={key} href={`/themes/${item.node.slug}`}>
-      <Card data={item} />
+      <Card data={item.node} />
     </a>
   ))
 
