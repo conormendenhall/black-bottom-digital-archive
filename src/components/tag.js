@@ -17,13 +17,19 @@ const TagPage = ({ pageContext }) => {
             return <MiniCard url={`/themes/`} data={theme} />
           })}
         </div>
+        {pageContext.historical_figure && <h3>Historical Figures</h3>}
+        <div className="mini-card-section">
+          {pageContext.historical_figure?.map(site => {
+            return <MiniCard url={`/historical-figures/`} data={site} />
+          })}
+        </div>
         {pageContext.historical_site && <h3>Historical Sites</h3>}
         <div className="mini-card-section">
           {pageContext.historical_site?.map(site => {
             return <MiniCard url={`/historical-sites/`} data={site} />
           })}
         </div>
-        {pageContext.interview && <h3>Interviews</h3>}
+        {pageContext.interview && <h3>Oral Histories</h3>}
         <div className="mini-card-section">
           {pageContext.interview?.map(interview => {
             return <MiniCard url={`/interviews/`} data={interview} />
