@@ -3,12 +3,16 @@
   width: 100%;
   z-index: 0;
 
-  @media screen and (min-width: 425px) {
-    height: 500px;
-  }
-
   * {
     transition: none;
+  }
+
+  @media screen and (min-width: 425px) {
+    height: 550px;
+  }
+
+  @media screen and (min-width: 2000px) {
+    height: 800px;
   }
 }
 
