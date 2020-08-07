@@ -6,17 +6,17 @@ import Article from './article'
 import Card from './card'
 
 const ThemePage = ({ pageContext }) => {
-  let historicalSites = pageContext.historicalSites.map((item, key) => (
+  let historicalSites = pageContext.historicalSites?.map((item, key) => (
     <a key={key} href={`/historical-sites/${item.slug}`}>
       <Card data={item} />
     </a>
   ))
-  let historicalFigures = pageContext.historicalFigures.map((item, key) => (
+  let historicalFigures = pageContext.historicalFigures?.map((item, key) => (
     <a key={key} href={`/historical-figures/${item.slug}`}>
       <Card data={item} />
     </a>
   ))
-  let interviews = pageContext.interviews.map((item, key) => (
+  let interviews = pageContext.interviews?.map((item, key) => (
     <a key={key} href={`/interviews/${item.slug}`}>
       <Card data={item} />
     </a>
