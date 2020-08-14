@@ -2,7 +2,12 @@ import React from 'react'
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
 import Img from 'gatsby-image'
 
-const LeafletMap = ({ position, zoom, className, sites }) => {
+const LeafletMap = ({
+  position,
+  zoom,
+  className,
+  sites
+}) => {
   return (
     <Map center={position} zoom={zoom} className={className}>
       <TileLayer
@@ -10,23 +15,32 @@ const LeafletMap = ({ position, zoom, className, sites }) => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank" rel="noopener noreferrer">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank" rel="noopener noreferrer">OpenStreetMap France</a>'
       />
       {sites
-        ?.filter(site => site.place?.location)
-        .map((site, key) => {
+        ?.filter(item => item.place?.location)
+        .map((item, key) => {
+          let url = ''
+
+          if (item.internal.type === 'ContentfulHistoricalSite') {
+            url = 'historical-sites'
+          } else if (item.internal.type === 'ContentfulHistoricalFigure') {
+            url = 'historical-figures'
+          } else if (item.internal.type === 'ContentfulEvent') {
+            url = 'events'
+          } else if (item.internal.type === 'ContentfulInterview') {
+            url = 'interviews'
+          }
+
           return (
             <Marker
               key={key}
-              position={[site.place.location.lat, site.place.location.lon]}
+              position={[
+                item.place.location.lat,
+                item.place.location.lon,
+              ]}
             >
               <Popup>
-                <a
-                  href={`/${
-                    site.internal.type === 'ContentfulHistoricalSite'
-                      ? 'historical-sites'
-                      : 'events'
-                  }/${site.slug}`}
-                >
-                  <h4>{site.title}</h4>
-                  {site.image && <Img fluid={site.image.fluid} />}
+                <a href={`/${url}/${item.slug}`}>
+                  <h4>{item.title}</h4>
+                  {item.image && <Img fluid={item.image.fluid} />}
                 </a>
               </Popup>
             </Marker>

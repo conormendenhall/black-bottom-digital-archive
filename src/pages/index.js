@@ -7,16 +7,20 @@ import SEO from '../components/seo'
 import LeafletMap from '../components/leaflet-map'
 
 const IndexPage = ({ data }) => {
+  let sites = [
+    ...data.sites.edges,
+    ...data.figures.edges,
+    ...data.events.edges,
+    ...data.interviews.edges,
+  ]
   return (
     <Layout home={true}>
       <SEO title="Home" />
       {typeof window !== 'undefined' && (
         <LeafletMap
-          position={[42.3408, -83.037]}
-          zoom={15}
-          sites={data.sites.edges.map(({ node }) => {
-            return node
-          })}
+          position={[42.345, -83.044]}
+          zoom={14}
+          sites={sites.map(({ node }) => node)}
           className="leaflet-container"
         />
       )}
@@ -58,6 +62,98 @@ export const pageQuery = graphql`
               srcWebp
               srcSetWebp
               sizes
+            }
+          }
+          internal {
+            type
+          }
+        }
+      }
+    }
+    figures: allContentfulHistoricalFigure {
+      edges {
+        node {
+          id
+          title
+          slug
+          place {
+            title
+            location {
+              lat
+              lon
+            }
+          }
+          image {
+            fluid {
+              base64
+              aspectRatio
+              src
+              srcSet
+              srcWebp
+              srcSetWebp
+              sizes
+            }
+          }
+          internal {
+            type
+          }
+        }
+      }
+    }
+    events: allContentfulEvent {
+      edges {
+        node {
+          id
+          title
+          slug
+          image {
+            fluid {
+              base64
+              aspectRatio
+              src
+              srcSet
+              srcWebp
+              srcSetWebp
+              sizes
+            }
+          }
+          place {
+            id
+            title
+            location {
+              lat
+              lon
+            }
+          }
+          internal {
+            type
+          }
+        }
+      }
+    }
+    interviews: allContentfulInterview {
+      edges {
+        node {
+          id
+          title
+          slug
+          image {
+            fluid {
+              base64
+              aspectRatio
+              src
+              srcSet
+              srcWebp
+              srcSetWebp
+              sizes
+            }
+          }
+          place {
+            id
+            title
+            location {
+              lat
+              lon
             }
           }
           internal {
