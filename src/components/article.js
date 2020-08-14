@@ -35,8 +35,8 @@ const Article = ({ data, children }) => {
           <LeafletMap
             position={[data.place.location.lat, data.place.location.lon]}
             zoom={15}
-            sites={[data]}
-            className="article-map"
+            places={[data]}
+            className="article-map leaflet-container"
           />
         )}
       </section>

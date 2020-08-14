@@ -17,6 +17,14 @@
 }
 
 .leaflet-popup {
+  a {
+    span {
+      color: $dark;
+      font-family: 'Cabin', 'sans-serif';
+      font-size: large;
+    }
+  }
+
   .gatsby-image-wrapper {
     width: 200px;
     height: 200px;

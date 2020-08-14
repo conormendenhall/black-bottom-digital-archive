@@ -7,7 +7,7 @@ import SEO from '../components/seo'
 import LeafletMap from '../components/leaflet-map'
 
 const IndexPage = ({ data }) => {
-  let sites = [
+  let places = [
     ...data.sites.edges,
     ...data.figures.edges,
     ...data.events.edges,
@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => {
         <LeafletMap
           position={[42.345, -83.044]}
           zoom={14}
-          sites={sites.map(({ node }) => node)}
+          places={places.map(({ node }) => node)}
           className="leaflet-container"
         />
       )}
