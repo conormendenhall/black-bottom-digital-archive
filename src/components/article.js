@@ -24,26 +24,22 @@ const Article = ({ data, children }) => {
       <SEO title={data.title} />
       <section className="container article">
         <h1>{data.title}</h1>
-        {(data.audio || data.transcript) && (
-          <InterviewMedia audio={data.audio} transcript={data.transcript} />
-        )}
         {data.image?.fluid && (
           <Img fluid={data.image.fluid} className="article-image" />
         )}
+        {(data.audio || data.transcript) && (
+          <InterviewMedia audio={data.audio} transcript={data.transcript} />
+        )}
         {data.body?.json && documentToReactComponents(data.body.json, options)}
+        {data.place && typeof window !== 'undefined' && (
+          <LeafletMap
+            position={[data.place.location.lat, data.place.location.lon]}
+            zoom={15}
+            sites={[data]}
+            className="article-map"
+          />
+        )}
       </section>
-      {data.place && (
-        <section className="container">
-          {typeof window !== 'undefined' && (
-            <LeafletMap
-              position={[data.place.location.lat, data.place.location.lon]}
-              zoom={15}
-              sites={[data]}
-              className="article-map"
-            />
-          )}
-        </section>
-      )}
       <section className="container">{children}</section>
       {data.tags && (
         <section className="container">

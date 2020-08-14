@@ -1,39 +1,11 @@
 .article {
-  .interview-media {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-bottom: 15px;
-
-    .interview-audio {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    a {
-      display: block;
-      width: 300px;
-
-      .transcript {
-        display: flex;
-        color: $dark;
-
-        .icon {
-          font-size: 55px;
-          line-height: 0;
-        }
-      }
-    }
+  a {
+    text-decoration: underline solid $green;
   }
 
   .article-image {
     max-width: 600px;
     margin-bottom: 20px;
-  }
-
-  a {
-    text-decoration: underline solid $green;
   }
 }
 

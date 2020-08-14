@@ -14,6 +14,7 @@
 @import './components/card';
 @import './components/miniCard';
 @import './components/article';
+@import './components/interviewMedia';
 
 @import './pages/index';
 
@@ -60,5 +61,5 @@ pre {
   white-space: -o-pre-wrap; /* Opera */
   white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
   word-wrap: break-word; /* IE 5.5+ */
-  font-family: 'Cabin','sans-serif';
+  font-family: 'Cabin', 'sans-serif';
 }

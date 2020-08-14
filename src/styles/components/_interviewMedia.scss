@@ -1,0 +1,32 @@
+.interview-media {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 15px;
+
+  .interview-audio {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    audio {
+      margin: 0 10px;
+    }
+  }
+
+  a {
+    display: block;
+    width: 300px;
+    text-decoration: none;
+
+    .transcript {
+      display: flex;
+      color: $dark;
+
+      .icon {
+        font-size: 55px;
+        line-height: 0;
+      }
+    }
+  }
+}

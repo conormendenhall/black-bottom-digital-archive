@@ -8,7 +8,7 @@ const InterviewMedia = ({ audio, transcript }) => {
       {audio &&
         audio.map((item, key) => (
           <div key={key} className="interview-audio">
-            <div>{item.title}</div>
+            <div className="audio-title">{item.title}</div>
             <audio controls>
               <source src={item.file.url} type={item.file.contentType}></source>
             </audio>
