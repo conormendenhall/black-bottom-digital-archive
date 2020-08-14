@@ -18,7 +18,7 @@ const HistoricalFiguresPage = ({ data }) => {
       <SEO title="Historical Figures" />
       <section className="container">
         <h1>Historical Figures</h1>
-        <div id="historicalFigures" className="card-gallery">
+        <div id="historicalFigures" className="mini-card-gallery">
           {figures}
         </div>
       </section>

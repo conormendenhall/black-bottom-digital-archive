@@ -28,7 +28,7 @@ const InterviewsPage = ({ data }) => {
           occaecat cupidatat non proident, sunt in culpa qui officia deserunt
           mollit anim id est laborum.
         </p>
-        <div id="interviews" className="card-gallery">
+        <div id="interviews" className="mini-card-gallery">
           {interviews}
         </div>
       </section>

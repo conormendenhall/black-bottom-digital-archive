@@ -2,16 +2,18 @@ import React from 'react'
 
 import Img from 'gatsby-image'
 
-const Card = ({ data }) => {
+const Card = ({ url, data }) => {
   return (
-    <div className="card">
-      <div className="card-image">
-        {data.image && <Img fluid={data.image.fluid} />}
+    <a href={`${url}${data.slug}`}>
+      <div className="card">
+        <div className="card-title">
+          <span>{data.title}</span>
+        </div>
+        <div className="card-image">
+          {data.image && <Img fluid={data.image.fluid} />}
+        </div>
       </div>
-      <div className="card-title">
-        <span>{data.title}</span>
-      </div>
-    </div>
+    </a>
   )
 }
 

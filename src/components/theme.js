@@ -7,24 +7,18 @@ import Card from './card'
 
 const ThemePage = ({ pageContext }) => {
   let historicalSites = pageContext.historicalSites?.map((item, key) => (
-    <a key={key} href={`/historical-sites/${item.slug}`}>
-      <Card data={item} />
-    </a>
+    <Card url="/historical-sites/" data={item} />
   ))
   let historicalFigures = pageContext.historicalFigures?.map((item, key) => (
-    <a key={key} href={`/historical-figures/${item.slug}`}>
-      <Card data={item} />
-    </a>
+    <Card url="/historical-figures/" data={item} />
   ))
   let interviews = pageContext.interviews?.map((item, key) => (
-    <a key={key} href={`/interviews/${item.slug}`}>
-      <Card data={item} />
-    </a>
+    <Card url="/interviews/" data={item} />
   ))
   return (
     <Layout>
       <Article data={pageContext}>
-        <div className="card-gallery">
+        <div className="mini-card-gallery">
           {historicalFigures}
           {historicalSites}
           {interviews}

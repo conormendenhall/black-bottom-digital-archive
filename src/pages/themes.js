@@ -8,9 +8,7 @@ import Card from '../components/card'
 
 const ThemesPage = ({ data }) => {
   let themes = data.themes.edges.map((item, key) => (
-    <a key={key} href={`/themes/${item.node.slug}`}>
-      <Card data={item.node} />
-    </a>
+    <Card url="/themes/" data={item.node} />
   ))
 
   return (
@@ -18,7 +16,7 @@ const ThemesPage = ({ data }) => {
       <SEO title="Themes" />
       <section className="container">
         <h1>Themes</h1>
-        <div id="themes" className="card-gallery">
+        <div id="themes" className="mini-card-gallery">
           {themes}
         </div>
       </section>

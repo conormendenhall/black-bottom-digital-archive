@@ -37,3 +37,31 @@
     }
   }
 }
+
+.mini-card-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+
+  .card {
+    background-color: $light;
+    margin: 0 10px 10px 0;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: $rounded;
+
+    .card-title {
+      padding: 20px;
+    }
+
+    .card-image {
+      .gatsby-image-wrapper {
+        object-fit: cover;
+        height: 100px;
+        min-width: 100px;
+        border-radius: 0 $rounded $rounded 0;
+      }
+    }
+  }
+}
