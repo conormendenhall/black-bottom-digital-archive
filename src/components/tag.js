@@ -41,7 +41,6 @@ const TagPage = ({ pageContext }) => {
             return <MiniCard url={`/events/`} data={event} />
           })}
         </div>
-        <Breadcrumb text="View more tags" href="/tags" />
       </section>
     </Layout>
   )
