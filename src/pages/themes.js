@@ -8,7 +8,7 @@ import Card from '../components/card'
 
 const ThemesPage = ({ data }) => {
   let themes = data.themes.edges.map((item, key) => (
-    <Card url="/themes/" data={item.node} />
+    <Card url="/themes/" data={item.node} key={key} />
   ))
 
   return (

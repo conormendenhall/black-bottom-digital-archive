@@ -8,9 +8,7 @@ import Card from '../components/card'
 
 const HistoricalSitesPage = ({ data }) => {
   let sites = data.sites.edges.map((item, key) => (
-    <a key={key} href={`/historical-sites/${item.node.slug}`}>
-      <Card data={item.node} />
-    </a>
+    <Card url="/historical-sites/" data={item.node} key={key} />
   ))
 
   return (

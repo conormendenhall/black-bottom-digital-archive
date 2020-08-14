@@ -8,9 +8,7 @@ import Card from '../components/card'
 
 const InterviewsPage = ({ data }) => {
   let interviews = data.interviews.edges.map((item, key) => (
-    <a key={key} href={`/interviews/${item.node.slug}`}>
-      <Card data={item.node} />
-    </a>
+    <Card url="/interviews/" data={item.node} key={key} />
   ))
 
   return (
