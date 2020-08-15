@@ -47,12 +47,13 @@
     background-color: $light;
     margin: 0 10px 10px 0;
     width: 300px;
+    height: 100px;
     display: flex;
     justify-content: space-between;
     border-radius: $rounded;
 
     .card-title {
-      padding: 20px;
+      margin: 20px;
     }
 
     .card-image {
