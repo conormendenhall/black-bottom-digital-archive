@@ -2,7 +2,7 @@ import React from 'react'
 
 import Img from 'gatsby-image'
 
-import { INLINES } from '@contentful/rich-text-types'
+import { INLINES, BLOCKS } from '@contentful/rich-text-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 import EntryTags from './entry-tags'
@@ -15,6 +15,16 @@ const Article = ({ data, children }) => {
     renderLink: {
       [INLINES.HYPERLINK]: (node, children) => {
         return <a href={node.url}>{children}</a>
+      },
+    },
+    renderNode: {
+      [BLOCKS.EMBEDDED_ASSET]: node => {
+        return (
+          <img
+            src={node.data.target.fields.file['en-US'].url}
+            className="article-embedded-image"
+          />
+        )
       },
     },
   }
