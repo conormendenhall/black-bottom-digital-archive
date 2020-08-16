@@ -10,7 +10,7 @@
     }
 
     .card {
-      width: 385px;
+      width: 380px;
       height: 400px;
       background-color: $light;
       position: relative;
@@ -19,7 +19,7 @@
       .card-image {
         .gatsby-image-wrapper {
           border-radius: $rounded $rounded 0 0;
-          width: 385px;
+          width: 380px;
           height: 355px;
           object-fit: cover;
         }
@@ -46,7 +46,7 @@
   .card {
     background-color: $light;
     margin: 0 10px 10px 0;
-    width: 385px;
+    width: 380px;
     height: 100px;
     display: flex;
     justify-content: space-between;
