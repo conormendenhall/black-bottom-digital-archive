@@ -18,9 +18,9 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
       {typeof window !== 'undefined' && (
         <LeafletMap
-          position={[42.345, -83.044]}
+          center={[42.345, -83.044]}
           zoom={14}
-          places={places.map(({ node }) => node)}
+          data={places.map(({ node }) => node)}
           className="leaflet-container"
         />
       )}
@@ -46,7 +46,7 @@ export const pageQuery = graphql`
           id
           title
           slug
-          place {
+          places {
             title
             location {
               lat
@@ -76,7 +76,7 @@ export const pageQuery = graphql`
           id
           title
           slug
-          place {
+          places {
             title
             location {
               lat
@@ -117,7 +117,7 @@ export const pageQuery = graphql`
               sizes
             }
           }
-          place {
+          places {
             id
             title
             location {
@@ -148,7 +148,7 @@ export const pageQuery = graphql`
               sizes
             }
           }
-          place {
+          places {
             id
             title
             location {

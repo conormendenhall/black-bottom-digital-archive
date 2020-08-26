@@ -41,11 +41,11 @@ const Article = ({ data, children }) => {
           <InterviewMedia audio={data.audio} transcript={data.transcript} />
         )}
         {data.body?.json && documentToReactComponents(data.body.json, options)}
-        {data.place && typeof window !== 'undefined' && (
+        {data.places && typeof window !== 'undefined' && (
           <LeafletMap
-            position={[data.place.location.lat, data.place.location.lon]}
-            zoom={15}
-            places={[data]}
+            center={[42.345, -83.044]}
+            zoom={14}
+            data={[data]}
             className="article-map leaflet-container"
           />
         )}
