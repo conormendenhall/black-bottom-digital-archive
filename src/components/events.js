@@ -5,7 +5,7 @@ import Moment from 'react-moment'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import RichText from '../components/rich-text'
 
 const Events = () => {
   const { events } = useStaticQuery(graphql`
@@ -57,8 +57,7 @@ const Events = () => {
               <Moment format="MMMM Do, YYYY">{item.node.dateAndTime}</Moment>
             </div>
             <div>
-              {item.node.body?.json &&
-                documentToReactComponents(item.node.body.json)}
+              {item.node.body?.json && <RichText data={item.node.body} />}
             </div>
           </div>
         </div>
