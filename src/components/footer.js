@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer>
       <section>
-        <h3>Connect</h3>
+        <h4>Connect</h4>
         <div className="social">
           <a
             href="http://twitter.com/_blackbottom"
@@ -34,6 +34,9 @@ const Footer = () => {
             <AiOutlineInstagram title="Instagram" />
           </a>
         </div>
+        <a href="/bibliography">
+          <h4 id="bibliographyLink">Sources</h4>
+        </a>
       </section>
     </footer>
   )
