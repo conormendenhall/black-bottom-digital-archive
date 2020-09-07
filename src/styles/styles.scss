@@ -6,7 +6,6 @@
 @import './components/footer';
 @import './components/header';
 @import './components/leafletMap';
-@import './components/team';
 @import './components/events';
 @import './components/entryTags';
 @import './components/breadcrumb';
@@ -14,8 +13,7 @@
 @import './components/card';
 @import './components/article';
 @import './components/interviewMedia';
-
-@import './pages/index';
+@import './components/richText';
 
 html,
 body,
@@ -39,6 +37,22 @@ div#layout {
 main {
   flex-grow: 1;
   background-color: #eee;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-bottom: 2em;
+  @media screen and (min-width: 1024px) {
+    width: 80%;
+  }
+
+  &:first-of-type {
+    padding-top: 2em;
+  }
 }
 
 a {

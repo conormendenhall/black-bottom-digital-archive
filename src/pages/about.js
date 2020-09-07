@@ -13,6 +13,8 @@ const AboutPage = () => {
       <SEO title="Black Bottom Archives" />
       <section className="container">
         <Description />
+      </section>
+      <section className="container">
         <Team />
       </section>
       <Contact />
