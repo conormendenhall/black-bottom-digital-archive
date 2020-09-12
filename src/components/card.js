@@ -9,9 +9,11 @@ const Card = ({ url, data }) => {
         <div className="card-title">
           <span>{data.title}</span>
         </div>
-        <div className="card-image">
-          {data.image && <Img fluid={data.image.fluid} />}
-        </div>
+        {data.image && (
+          <div className="card-image">
+            <Img fluid={data.image.fluid} />
+          </div>
+        )}
       </div>
     </a>
   )

@@ -9,11 +9,11 @@ const HomeHeader = () => {
           <div>Digital Archive</div>
         </div>
         <div id="description">
-          Black Bottom Archives (BBA) is a community-driven media platform
-          dedicated to centering and amplifying the voices, experiences, and
-          perspectives of Black Detroiters through digital storytelling,
-          journalism, art, and community organizing with a focus on preserving
-          local Black history & archiving our present.
+          Welcome to the Black Bottom Digital Archive, where the memories and
+          experiences of those from the long-gone Black Bottom neighborhood are
+          preserved for future generations. Here you will find oral history
+          interviews, historical documents and media from the neighborhood, and
+          entries about historical sites and figures and events.
         </div>
         <div id="menu">
           <a href="/themes">

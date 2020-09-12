@@ -17,14 +17,11 @@ const InterviewsPage = ({ data }) => {
       <section className="container">
         <h1>Oral Histories</h1>
         <p>
-          Oral Histories description here. Describe the project. Lorem ipsum
-          dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-          occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-          mollit anim id est laborum.
+          These oral histories are interviews with some of those who lived in or
+          around Black Bottom in the ‘40s and ‘50s (or had family in the
+          neighborhood). Each entry include transcripts, summaries of interview
+          content, and mp3 streaming audio. If you are interested in doing an
+          oral history interview, please contact us for info.
         </p>
         <div id="interviews" className="mini-card-gallery">
           {interviews}
