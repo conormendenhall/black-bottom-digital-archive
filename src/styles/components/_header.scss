@@ -1,3 +1,7 @@
+$laptop-L: 1440px;
+$laptop: 1024px;
+$tablet: 768px;
+
 header {
   background-color: $dark;
   display: flex;
@@ -27,7 +31,6 @@ header {
 }
 
 header.home-header {
-  height: 545px;
   color: $light;
   background-image: linear-gradient(45deg, $green, $blue);
   position: relative;
@@ -35,25 +38,58 @@ header.home-header {
   justify-content: center;
   align-items: center;
 
+  @media (min-width: $laptop) {
+    height: 485px;
+  }
+
+  @media (min-width: $laptop-L) {
+    height: 545px;
+  }
+
   .header-content {
     background-color: $dark;
     display: flex;
-    width: 1300px;
     border-radius: $rounded;
+
+    @media (min-width: $laptop) {
+      width: 950px;
+      height: 350px;
+    }
+
+    @media (min-width: $laptop-L) {
+      width: 1300px;
+      height: 410px;
+    }
 
     #home {
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
       min-width: 50%;
-      font-size: 70px;
-      padding: 50px 0 50px 70px;
-      line-height: 1.5;
+
+      @media (min-width: $laptop) {
+        font-size: 50px;
+        padding: 40px 0 40px 50px;
+      }
+
+      @media (min-width: $laptop-L) {
+        font-size: 70px;
+        padding: 50px 0 50px 70px;
+      }
     }
 
     #description {
-      padding: 70px 70px 70px 0;
-      line-height: 2.5;
+      @media (min-width: $laptop) {
+        padding: 50px 50px 50px 0;
+        line-height: 2.25;
+        font-size: 12pt;
+      }
+
+      @media (min-width: $laptop-L) {
+        padding: 70px 70px 70px 0;
+        line-height: 2.5;
+        font-size: 14pt;
+      }
     }
 
     #menu {
