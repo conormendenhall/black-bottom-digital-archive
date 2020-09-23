@@ -142,31 +142,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               body {
                 json
               }
-              image {
-                fluid {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
-                  sizes
-                }
-              }
               audio {
                 id
                 title
                 file {
                   url
                   contentType
-                }
-              }
-              places {
-                id
-                title
-                location {
-                  lat
-                  lon
                 }
               }
               transcript {
@@ -229,17 +210,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 id
                 title
                 slug
-                image {
-                  fluid {
-                    base64
-                    aspectRatio
-                    src
-                    srcSet
-                    srcWebp
-                    srcSetWebp
-                    sizes
-                  }
-                }
               }
               event {
                 id
@@ -261,17 +231,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 id
                 title
                 slug
-                image {
-                  fluid {
-                    base64
-                    aspectRatio
-                    src
-                    srcSet
-                    srcWebp
-                    srcSetWebp
-                    sizes
-                  }
-                }
               }
             }
           }
@@ -282,17 +241,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               id
               title
               slug
-              image {
-                fluid {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
-                  sizes
-                }
-              }
               body {
                 json
               }
@@ -301,39 +249,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 title
                 slug
               }
-              historicalSites {
-                id
-                title
-                slug
-                image {
-                  fluid {
-                    base64
-                    aspectRatio
-                    src
-                    srcSet
-                    srcWebp
-                    srcSetWebp
-                    sizes
-                  }
-                }
-              }
               historicalFigures {
-                id
-                title
-                slug
-                image {
-                  fluid {
-                    base64
-                    aspectRatio
-                    src
-                    srcSet
-                    srcWebp
-                    srcSetWebp
-                    sizes
-                  }
-                }
-              }
-              interviews {
                 id
                 title
                 slug

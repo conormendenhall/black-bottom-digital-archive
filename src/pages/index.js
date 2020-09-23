@@ -11,7 +11,6 @@ const IndexPage = ({ data }) => {
     ...data.sites.edges,
     ...data.figures.edges,
     ...data.events.edges,
-    ...data.interviews.edges,
   ]
   return (
     <Layout home={true}>
@@ -101,37 +100,6 @@ export const pageQuery = graphql`
       }
     }
     events: allContentfulEvent {
-      edges {
-        node {
-          id
-          title
-          slug
-          image {
-            fluid {
-              base64
-              aspectRatio
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-              sizes
-            }
-          }
-          places {
-            id
-            title
-            location {
-              lat
-              lon
-            }
-          }
-          internal {
-            type
-          }
-        }
-      }
-    }
-    interviews: allContentfulInterview {
       edges {
         node {
           id
