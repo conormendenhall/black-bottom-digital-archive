@@ -7,10 +7,10 @@ const HistoricalMap = () => {
   const data = useStaticQuery(graphql`
     query {
       historicalMap: file(
-        relativePath: { eq: "200518_Sanborn Stitch_web_12000px.jpg" }
+        relativePath: { eq: "200518_Sanborn Stitch_web_2000px.jpg" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 12000) {
+          fluid(maxWidth: 2000) {
             ...GatsbyImageSharpFluid
           }
         }

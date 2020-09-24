@@ -6,6 +6,9 @@ const Header = ({ siteTitle }) => (
     <a href="/" id="home">
       <span>{siteTitle}</span>
     </a>
+    <a href="/historical-map">
+      <span>Historical Map</span>
+    </a>
     <a href="/historical-figures">
       <span>Historical Figures</span>
     </a>

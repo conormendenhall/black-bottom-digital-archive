@@ -138,6 +138,12 @@ header.home-header {
         width: 100%;
       }
 
+      #historicalMapBtn {
+        padding: 20px;
+        border: 5px solid $blue;
+        border-radius: $rounded;
+      }
+
       a {
         background-color: $dark;
         padding: 25px;
