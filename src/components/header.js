@@ -6,9 +6,6 @@ const Header = ({ siteTitle }) => (
     <a href="/" id="home">
       <span>{siteTitle}</span>
     </a>
-    <a href="/themes">
-      <span>Themes</span>
-    </a>
     <a href="/historical-figures">
       <span>Historical Figures</span>
     </a>
@@ -21,6 +18,7 @@ const Header = ({ siteTitle }) => (
     <a href="/about">
       <span>About</span>
     </a>
+    <a id="menuButton" className="closed" onClick={toggleMenu}></a>
   </header>
 )
 
@@ -30,6 +28,11 @@ Header.propTypes = {
 
 Header.defaultProps = {
   siteTitle: ``,
+}
+
+function toggleMenu() {
+  let button = document.getElementById('menuButton')
+  button.className = button.className === 'closed' ? 'open' : 'closed'
 }
 
 export default Header
