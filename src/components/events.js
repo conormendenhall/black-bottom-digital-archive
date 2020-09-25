@@ -43,26 +43,28 @@ const Events = () => {
 
   const today = new Date(new Date().toDateString())
 
-  let upcomingEvents = events.edges
-    .filter(event => Date.parse(event.node.dateAndTime) >= today)
-    .map((item, key) => (
-      <a href={`../events/${item.node.slug}`} key={key}>
-        <div key={item.node.id} className="event">
-          {item.node.image && (
-            <Img fluid={item.node.image.fluid} className="event-image" />
-          )}
-          <div className="event-body">
-            <div className="headline">
-              <h3 className="title">{item.node.title}</h3>
-              <Moment format="MMMM Do, YYYY">{item.node.dateAndTime}</Moment>
-            </div>
-            <div>
-              {item.node.body?.json && <RichText data={item.node.body} />}
-            </div>
+  let upcomingEvents = events.edges.filter(
+    event => Date.parse(event.node.dateAndTime) >= today
+  )
+
+  let eventCards = upcomingEvents.map((item, key) => (
+    <a href={`../events/${item.node.slug}`} key={key}>
+      <div key={item.node.id} className="event">
+        {item.node.image && (
+          <Img fluid={item.node.image.fluid} className="event-image" />
+        )}
+        <div className="event-body">
+          <div className="headline">
+            <h3 className="title">{item.node.title}</h3>
+            <Moment format="MMMM Do, YYYY">{item.node.dateAndTime}</Moment>
+          </div>
+          <div>
+            {item.node.body?.json && <RichText data={item.node.body} />}
           </div>
         </div>
-      </a>
-    ))
+      </div>
+    </a>
+  ))
 
   let calendarEvents = events.edges.map(event => ({
     title: event.node.title,
@@ -78,13 +80,17 @@ const Events = () => {
   })
 
   return (
-    <div id="events">
-      <h1>Upcoming Events</h1>
-      <div className="upcoming-events">{upcomingEvents}</div>
-      <div className="event-calendar">
-        <Calendar data={calendarEvents} />
-      </div>
-    </div>
+    <>
+      {upcomingEvents.length > 0 && (
+        <div id="events">
+          <h1>Upcoming Events</h1>
+          <div className="upcoming-events">{eventCards}</div>
+          <div className="event-calendar">
+            <Calendar data={calendarEvents} />
+          </div>
+        </div>
+      )}
+    </>
   )
 }
 
