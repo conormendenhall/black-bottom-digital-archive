@@ -4,8 +4,8 @@ import Img from 'gatsby-image'
 
 const Card = ({ url, data }) => {
   return (
-    <a href={`${url}${data.slug}`}>
-      <div className="card">
+    <a href={`${url}${data.slug}`} className="card">
+      <div className="card-body">
         <div className="card-title">
           <span>{data.title}</span>
         </div>

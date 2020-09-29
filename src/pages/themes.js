@@ -22,7 +22,7 @@ const ThemesPage = ({ data }) => {
           supremacy and anti-Black police violence. This section includes some
           groupings of entries as related to themes.
         </p>
-        <div id="themes" className="mini-card-gallery">
+        <div id="themes" className="card-gallery">
           {themes}
         </div>
       </section>

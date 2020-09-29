@@ -21,7 +21,7 @@ const ThemePage = ({ pageContext }) => {
   return (
     <Layout>
       <Article data={pageContext}>
-        <div className="mini-card-gallery">
+        <div className="card-gallery">
           {historicalFigures}
           {historicalSites}
           {interviews}

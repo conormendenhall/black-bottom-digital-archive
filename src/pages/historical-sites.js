@@ -22,7 +22,7 @@ const HistoricalSitesPage = ({ data }) => {
           existed — some are still around in one form or another, but others
           were demolished.
         </p>
-        <div id="historicalSites" className="mini-card-gallery">
+        <div id="historicalSites" className="card-gallery">
           {sites}
         </div>
       </section>

@@ -23,7 +23,7 @@ const InterviewsPage = ({ data }) => {
           content, and mp3 streaming audio. If you are interested in doing an
           oral history interview, please contact us for info.
         </p>
-        <div id="interviews" className="mini-card-gallery">
+        <div id="interviews" className="card-gallery">
           {interviews}
         </div>
       </section>

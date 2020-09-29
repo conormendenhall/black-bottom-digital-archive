@@ -21,7 +21,7 @@ const HistoricalFiguresPage = ({ data }) => {
           Valley history — successful entrepreneurs, civil rights activists, and
           community leaders.
         </p>
-        <div id="historicalFigures" className="mini-card-gallery">
+        <div id="historicalFigures" className="card-gallery">
           {figures}
         </div>
       </section>
