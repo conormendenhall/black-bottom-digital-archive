@@ -18,10 +18,10 @@ const LeafletMap = ({ center, zoom, className, data }) => {
             url = 'historical-sites'
           } else if (entry.internal.type === 'ContentfulHistoricalFigure') {
             url = 'historical-figures'
-          } else if (entry.internal.type === 'ContentfulEvent') {
-            url = 'events'
           } else if (entry.internal.type === 'ContentfulInterview') {
             url = 'interviews'
+          } else if (entry.internal.type === 'ContentfulEvent') {
+            url = 'events'
           }
 
           return entry.places.map((place, key) => {
