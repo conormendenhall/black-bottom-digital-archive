@@ -211,22 +211,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 title
                 slug
               }
-              event {
-                id
-                title
-                slug
-                image {
-                  fluid {
-                    base64
-                    aspectRatio
-                    src
-                    srcSet
-                    srcWebp
-                    srcSetWebp
-                    sizes
-                  }
-                }
-              }
               theme {
                 id
                 title

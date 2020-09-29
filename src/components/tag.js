@@ -34,12 +34,6 @@ const TagPage = ({ pageContext }) => {
             return <Card url={`/interviews/`} data={interview} key={key} />
           })}
         </div>
-        {pageContext.event && <h3>Events</h3>}
-        <div className="card-gallery">
-          {pageContext.event?.map((event, key) => {
-            return <Card url={`/events/`} data={event} key={key} />
-          })}
-        </div>
       </section>
     </Layout>
   )
