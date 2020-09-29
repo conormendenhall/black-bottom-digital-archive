@@ -15,6 +15,7 @@
       background-color: $light;
       position: relative;
       border-radius: $rounded;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.16);
 
       .card-image {
         .gatsby-image-wrapper {
@@ -51,6 +52,7 @@
     display: flex;
     justify-content: space-between;
     border-radius: $rounded;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.16);
 
     .card-title {
       margin: 20px;
