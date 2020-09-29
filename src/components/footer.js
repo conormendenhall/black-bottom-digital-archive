@@ -10,7 +10,6 @@ const Footer = () => {
   return (
     <footer>
       <section>
-        <h4>Connect</h4>
         <div className="social">
           <a
             href="http://twitter.com/_blackbottom"

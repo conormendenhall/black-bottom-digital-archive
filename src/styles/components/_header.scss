@@ -1,6 +1,5 @@
 $laptop-L: 1440px;
 $laptop: 1024px;
-$tablet: 768px;
 
 header.basic {
   background-color: $dark;
@@ -31,6 +30,14 @@ header.basic {
     padding: 14px;
     color: $light;
 
+    &.menu-link {
+      border-top: 2px solid $off-light;
+    }
+
+    &.show {
+      display: block;
+    }
+
     span {
       border-bottom: 2px solid $dark;
       padding-bottom: 5px;
@@ -42,18 +49,12 @@ header.basic {
       }
     }
 
-    @media (max-width: $laptop - 1) {
-      &.menu-link {
-        border-top: 2px solid $off-light;
-      }
-
-      &.show {
-        display: block;
-      }
-    }
-
     @media (min-width: $laptop) {
       display: inline;
+
+      &.menu-link {
+        border-top: none;
+      }
     }
   }
 
