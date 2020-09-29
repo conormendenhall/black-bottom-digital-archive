@@ -7,11 +7,7 @@ import SEO from '../components/seo'
 import LeafletMap from '../components/leaflet-map'
 
 const IndexPage = ({ data }) => {
-  let places = [
-    ...data.sites.edges,
-    ...data.figures.edges,
-    ...data.events.edges,
-  ]
+  let places = [...data.sites.edges, ...data.figures.edges]
   return (
     <Layout home={true}>
       <SEO title="Home" />
@@ -105,6 +101,14 @@ export const pageQuery = graphql`
           id
           title
           slug
+          places {
+            id
+            title
+            location {
+              lat
+              lon
+            }
+          }
           image {
             fluid {
               base64
@@ -114,14 +118,6 @@ export const pageQuery = graphql`
               srcWebp
               srcSetWebp
               sizes
-            }
-          }
-          places {
-            id
-            title
-            location {
-              lat
-              lon
             }
           }
           internal {
