@@ -16,7 +16,7 @@ const HomeHeader = () => {
           entries about historical sites and figures and events.
         </div>
         <div id="menu">
-          <a href="/historical-map" Id="historicalMapBtn">
+          <a href="/historical-map" id="historicalMapBtn">
             <span>Historical Map</span>
           </a>
           <a href="/historical-figures">

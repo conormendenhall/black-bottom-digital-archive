@@ -6,22 +6,24 @@ const Header = ({ siteTitle }) => (
     <a href="/" id="home">
       <span>{siteTitle}</span>
     </a>
-    <a href="/historical-map">
+    <a href="/historical-map" className="menu-link hide">
       <span>Historical Map</span>
     </a>
-    <a href="/historical-figures">
+    <a href="/historical-figures" className="menu-link hide">
       <span>Historical Figures</span>
     </a>
-    <a href="/historical-sites">
+    <a href="/historical-sites" className="menu-link hide">
       <span>Historical Sites</span>
     </a>
-    <a href="/interviews">
+    <a href="/interviews" className="menu-link hide">
       <span>Oral Histories</span>
     </a>
-    <a href="/about">
+    <a href="/about" className="menu-link hide">
       <span>About</span>
     </a>
-    <a id="menuButton" className="closed" onClick={toggleMenu}></a>
+    <a id="menuBtn" onClick={toggleMenu}>
+      Menu
+    </a>
   </header>
 )
 
@@ -34,8 +36,15 @@ Header.defaultProps = {
 }
 
 function toggleMenu() {
-  let button = document.getElementById('menuButton')
-  button.className = button.className === 'closed' ? 'open' : 'closed'
+  let links = document.getElementsByClassName('menu-link')
+
+  for (let i = 0; i < links.length; i++) {
+    if (links[i].className.includes('hide')) {
+      links[i].className = 'menu-link show'
+    } else {
+      links[i].className = 'menu-link hide'
+    }
+  }
 }
 
 export default Header

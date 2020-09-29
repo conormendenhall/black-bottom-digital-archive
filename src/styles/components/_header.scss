@@ -5,17 +5,27 @@ $tablet: 768px;
 header {
   background-color: $dark;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
   font-family: 'Arvo', 'sans-serif';
 
   #home {
+    display: inline;
     margin-right: auto;
   }
 
+  @media (min-width: $laptop) {
+    flex-direction: row;
+  }
+
   a {
-    padding: 16px;
+    display: none;
+    padding: 14px;
     color: $light;
+
+    &.show {
+      display: block;
+    }
 
     span {
       border-bottom: 2px solid $dark;
@@ -28,31 +38,24 @@ header {
       }
     }
 
-    @media (max-width: $laptop) {
-      &:not(:first-child) {
-        display: block;
-      }
+    @media (min-width: $laptop) {
+      display: inline;
     }
   }
 
-  #menuButton {
-    display: none;
+  #menuBtn {
+    display: inline;
+    position: absolute;
+    top: 0;
+    right: 0;
     cursor: pointer;
 
     &:hover {
       color: $green;
     }
 
-    &.open::after {
-      content: 'Close';
-    }
-
-    &.closed::after {
-      content: 'Menu';
-    }
-
-    @media (max-width: $laptop) {
-      display: inline;
+    @media (min-width: $laptop) {
+      display: none;
     }
   }
 }
