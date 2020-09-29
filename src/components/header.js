@@ -1,10 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
-const Header = ({ siteTitle }) => (
-  <header>
+const Header = () => (
+  <header className="basic">
     <a href="/" id="home">
-      <span>{siteTitle}</span>
+      <span>Black Bottom Digital Archive</span>
     </a>
     <a href="/historical-map" className="menu-link hide">
       <span>Historical Map</span>
@@ -26,14 +25,6 @@ const Header = ({ siteTitle }) => (
     </a>
   </header>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 function toggleMenu() {
   let links = document.getElementsByClassName('menu-link')
