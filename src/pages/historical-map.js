@@ -10,6 +10,7 @@ const HistoricalMapPage = () => {
       <SEO title="Historical Map of Black Bottom Detroit" />
       <section className="container">
         <h1>Historical Map of Black Bottom, Detroit</h1>
+        <h4>(Click for high resolution image)</h4>
         <a href="/200518_Sanborn Stitch_web_8000px.jpg" target="_blank">
           <HistoricalMap />
         </a>

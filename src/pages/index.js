@@ -14,7 +14,7 @@ const IndexPage = ({ data }) => {
       {typeof window !== 'undefined' && (
         <LeafletMap
           center={[42.345, -83.044]}
-          zoom={14}
+          zoom={13}
           data={places.map(({ node }) => node)}
           className="leaflet-container"
         />
