@@ -32,7 +32,7 @@ const ThemesPage = ({ data }) => {
 
 export const pageQuery = graphql`
   query {
-    themes: allContentfulTheme {
+    themes: allContentfulTheme(sort: {order: ASC, fields: title}) {
       edges {
         node {
           id

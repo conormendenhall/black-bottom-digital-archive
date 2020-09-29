@@ -95,37 +95,6 @@ export const pageQuery = graphql`
         }
       }
     }
-    events: allContentfulEvent {
-      edges {
-        node {
-          id
-          title
-          slug
-          places {
-            id
-            title
-            location {
-              lat
-              lon
-            }
-          }
-          image {
-            fluid {
-              base64
-              aspectRatio
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-              sizes
-            }
-          }
-          internal {
-            type
-          }
-        }
-      }
-    }
   }
 `
 

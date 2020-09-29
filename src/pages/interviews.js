@@ -43,7 +43,7 @@ export const fluidImage = graphql`
 
 export const pageQuery = graphql`
   query {
-    interviews: allContentfulInterview {
+    interviews: allContentfulInterview(sort: {order: ASC, fields: title}) {
       edges {
         node {
           id
