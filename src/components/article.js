@@ -21,6 +21,16 @@ const Article = ({ data, children }) => {
           <InterviewMedia audio={data.audio} transcript={data.transcript} />
         )}
         {data.body?.json && <RichText data={data.body} />}
+        {data.bibliography?.childMarkdownRemark && (
+          <div className="article-bibliography">
+            <h4>Sources</h4>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.bibliography.childMarkdownRemark.html,
+              }}
+            />
+          </div>
+        )}
         {data.places && typeof window !== 'undefined' && (
           <LeafletMap
             center={[42.345, -83.044]}
@@ -30,7 +40,7 @@ const Article = ({ data, children }) => {
           />
         )}
       </section>
-      <section className="container">{children}</section>
+      {children && <section className="container">{children}</section>}
       {data.tags && (
         <section className="container">
           <h3>Tags</h3>
