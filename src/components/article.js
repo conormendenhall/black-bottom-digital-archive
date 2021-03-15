@@ -7,12 +7,13 @@ import SEO from './seo'
 import LeafletMap from './leaflet-map'
 import InterviewMedia from './interview-media'
 import RichText from './rich-text'
+import Breadcrumb from './breadcrumb'
 
-const Article = ({ data, children }) => {
+const Article = ({ data, breadcrumb, children }) => {
   return (
-    <>
+    <div className="article">
       <SEO title={data.title} />
-      <section className="container article">
+      <section className="container">
         <h1>{data.title}</h1>
         {data.image?.fluid && (
           <Img fluid={data.image.fluid} className="article-image" />
@@ -21,16 +22,6 @@ const Article = ({ data, children }) => {
           <InterviewMedia audio={data.audio} transcript={data.transcript} />
         )}
         {data.body?.json && <RichText data={data.body} />}
-        {data.bibliography?.childMarkdownRemark && (
-          <div className="article-bibliography">
-            <h4>Sources</h4>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: data.bibliography.childMarkdownRemark.html,
-              }}
-            />
-          </div>
-        )}
         {data.places && typeof window !== 'undefined' && (
           <LeafletMap
             center={[42.345, -83.044]}
@@ -39,15 +30,36 @@ const Article = ({ data, children }) => {
             className="article-map leaflet-container"
           />
         )}
+        {children && <section className="container">{children}</section>}
       </section>
-      {children && <section className="container">{children}</section>}
-      {data.tags && (
-        <section className="container">
-          <h3>Tags</h3>
-          <EntryTags data={data.tags}></EntryTags>
-        </section>
-      )}
-    </>
+      <section className="container">
+        {data.tags && (
+          <>
+            <h3>Tags</h3>
+            <EntryTags data={data.tags}></EntryTags>
+          </>
+        )}
+      </section>
+      <section className="container">
+        {data.bibliography?.childMarkdownRemark && (
+          <>
+            <h3>Sources</h3>
+            <div className="article-sources">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.bibliography.childMarkdownRemark.html,
+                }}
+              />
+            </div>
+          </>
+        )}
+        {breadcrumb && (
+          <>
+            <Breadcrumb text={breadcrumb.text} href={breadcrumb.href} />
+          </>
+        )}
+      </section>
+    </div>
   )
 }
 

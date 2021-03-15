@@ -1,11 +1,7 @@
 .article {
-  a {
-    text-decoration: underline solid $green;
-  }
-
   .article-image {
     max-width: 600px;
-    margin-bottom: 20px;
+    margin-bottom: 1em;
   }
 
   .article-embedded-image {
@@ -14,19 +10,32 @@
     height: auto;
   }
 
-  .article-bibliography {
+  .article-map {
+    max-width: 600px;
+    max-height: 500px;
+  
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .article-sources {
     background-color: #fff;
     padding: 15px;
     border-radius: 3px;
     font-size: 15px;
-  }
-}
-
-.article-map {
-  max-width: 600px;
-  max-height: 500px;
-
-  a {
-    text-decoration: none;
+    margin-bottom: 1em;
+    
+    p {
+      margin-bottom: 0.4rem;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  
+    a {
+      text-decoration: underline solid $green;
+    }
   }
 }
