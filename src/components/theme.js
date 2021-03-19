@@ -1,7 +1,6 @@
 import React from 'react'
 
 import Layout from './layout'
-import Breadcrumb from './breadcrumb'
 import Article from './article'
 import Card from './card'
 
@@ -18,18 +17,20 @@ const ThemePage = ({ pageContext }) => {
     <Card url="/interviews/" data={item} key={key} />
   ))
 
+  const breadcrumb = {
+    text: "View more themes",
+    href:"/themes"
+  }
+
   return (
     <Layout>
-      <Article data={pageContext}>
+      <Article data={pageContext} breadcrumb={breadcrumb}>
         <div className="card-gallery">
           {historicalFigures}
           {historicalSites}
           {interviews}
         </div>
       </Article>
-      <section className="container">
-        <Breadcrumb text="View more themes" href="/themes" />
-      </section>
     </Layout>
   )
 }

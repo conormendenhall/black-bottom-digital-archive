@@ -64,6 +64,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               body {
                 json
               }
+              bibliography {
+                childMarkdownRemark {
+                  html
+                }
+              }
               image {
                 fluid {
                   base64
@@ -102,6 +107,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               slug
               body {
                 json
+              }
+              bibliography {
+                childMarkdownRemark {
+                  html
+                }
               }
               image {
                 fluid {

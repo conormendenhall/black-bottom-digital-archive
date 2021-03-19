@@ -25,7 +25,7 @@ const BibliographyPage = ({ data }) => {
 export const pageQuery = graphql`
   query {
     bibliography: contentfulBibliography(
-      id: { eq: "a7fa815e-b81b-5839-8132-cd693159b52c" }
+      name: { eq: "The Black Bottom Bibliography" }
     ) {
       name
       resources {

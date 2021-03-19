@@ -1,11 +1,7 @@
 .article {
-  a {
-    text-decoration: underline solid $green;
-  }
-
   .article-image {
     max-width: 600px;
-    margin-bottom: 20px;
+    margin-bottom: 1em;
   }
 
   .article-embedded-image {
@@ -13,13 +9,34 @@
     max-width: 600px;
     height: auto;
   }
-}
 
-.article-map {
-  max-width: 600px;
-  max-height: 500px;
+  .article-map {
+    max-width: 600px;
+    max-height: 500px;
+    margin-top: 1em;
+  
+    a {
+      text-decoration: none;
+    }
+  }
 
-  a {
-    text-decoration: none;
+  .article-sources {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 3px;
+    font-size: 15px;
+    margin-bottom: 1em;
+    
+    p {
+      margin-bottom: 0.4rem;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  
+    a {
+      text-decoration: underline solid $green;
+    }
   }
 }
