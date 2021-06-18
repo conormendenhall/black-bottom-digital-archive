@@ -69,17 +69,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                   html
                 }
               }
-              image {
-                fluid {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
-                  sizes
-                }
-              }
               tags {
                 id
                 title
@@ -111,17 +100,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               bibliography {
                 childMarkdownRemark {
                   html
-                }
-              }
-              image {
-                fluid {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
-                  sizes
                 }
               }
               tags {
@@ -188,33 +166,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 id
                 title
                 slug
-                image {
-                  fluid {
-                    base64
-                    aspectRatio
-                    src
-                    srcSet
-                    srcWebp
-                    srcSetWebp
-                    sizes
-                  }
-                }
               }
               historical_site {
                 id
                 title
                 slug
-                image {
-                  fluid {
-                    base64
-                    aspectRatio
-                    src
-                    srcSet
-                    srcWebp
-                    srcSetWebp
-                    sizes
-                  }
-                }
               }
               interview {
                 id
@@ -247,17 +203,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 id
                 title
                 slug
-                image {
-                  fluid {
-                    base64
-                    aspectRatio
-                    src
-                    srcSet
-                    srcWebp
-                    srcSetWebp
-                    sizes
-                  }
-                }
               }
             }
           }

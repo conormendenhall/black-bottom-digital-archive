@@ -37,17 +37,6 @@ export const pageQuery = graphql`
           id
           title
           slug
-          image {
-            fluid {
-              base64
-              aspectRatio
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-              sizes
-            }
-          }
         }
       }
     }

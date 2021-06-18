@@ -48,17 +48,6 @@ export const pageQuery = graphql`
               lon
             }
           }
-          image {
-            fluid {
-              base64
-              aspectRatio
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-              sizes
-            }
-          }
           internal {
             type
           }
@@ -76,17 +65,6 @@ export const pageQuery = graphql`
             location {
               lat
               lon
-            }
-          }
-          image {
-            fluid {
-              base64
-              aspectRatio
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-              sizes
             }
           }
           internal {
