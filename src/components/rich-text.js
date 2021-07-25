@@ -16,10 +16,33 @@ const RichText = ({ data }) => {
       [BLOCKS.QUOTE]: (node, children) => <blockquote>{children}</blockquote>,
       [BLOCKS.EMBEDDED_ASSET]: node => {
         return (
-          <img
-            src={node.data.target.fields.file['en-US'].url}
-            className="article-embedded-image"
-          />
+          node.data.target.fields.file['en-US']?.url && (
+            <img
+              src={node.data.target.fields.file['en-US'].url}
+              className="article-embedded-image"
+            />
+          )
+        )
+      },
+      [BLOCKS.EMBEDDED_ENTRY]: node => {
+        return (
+          node.data.target.fields.photo['en-US'] &&
+          node.data.target.fields.altText['en-US'] &&
+          node.data.target.fields.imageCaption['en-US'] && (
+            <>
+              <img
+                src={
+                  node.data.target.fields.photo['en-US'].fields.file['en-US']
+                    .url
+                }
+                className="article-embedded-image"
+                alt={node.data.target.fields.altText['en-US']}
+              />
+              <p className="image-caption">
+                {node.data.target.fields.imageCaption['en-US']}
+              </p>
+            </>
+          )
         )
       },
     },
