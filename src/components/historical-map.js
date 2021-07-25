@@ -18,7 +18,7 @@ const HistoricalMap = () => {
     }
   `)
 
-  return <Img fluid={data.historicalMap.childImageSharp.fluid} />
+  return <Img fluid={data.historicalMap.childImageSharp.fluid} alt="Historical Map of Black Bottom, Detroit" />
 }
 
 export default HistoricalMap
