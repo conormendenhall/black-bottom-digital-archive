@@ -33,7 +33,7 @@
 
   a {
     &:hover .title {
-      border-bottom: 2px solid $green !important;
+      border-bottom: 2px solid $gold !important;
     }
   }
 }
@@ -43,8 +43,8 @@
 
   a.fc-event {
     cursor: pointer;
-    background-color: $green;
-    border-color: $green;
+    background-color: $gold;
+    border-color: $gold;
 
     &:hover span.fc-title {
       border-bottom-color: $light;

@@ -7,7 +7,10 @@ footer {
   section {
     margin: 20px 0;
 
-    h1, h2, h3, h4 {
+    h1,
+    h2,
+    h3,
+    h4 {
       color: $light;
     }
 
@@ -16,7 +19,7 @@ footer {
       text-decoration: none;
 
       &:hover {
-        color: $green;
+        color: $gold;
       }
     }
 
@@ -36,6 +39,6 @@ footer {
   }
 
   #bibliographyLink:hover {
-    color: $green;
+    color: $gold;
   }
 }

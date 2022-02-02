@@ -1,5 +1,5 @@
 .contact {
-  background-color: $green;
+  background-color: $gold;
   color: $light;
   margin-bottom: 2em;
 
@@ -17,18 +17,18 @@
   .call-to-action {
     margin: 15px 0 35px 0;
     border-bottom: none;
-    
+
     a {
       color: $light;
       border: 2px solid $light;
       border-radius: $rounded;
-      font-family: 'Arvo', 'sans-serif';
+      font-family: 'Oswald', 'sans-serif';
       padding: 15px;
 
       &:hover {
         background-color: $light;
         border-bottom: none;
-        color: $green;
+        color: $gold;
       }
     }
   }
