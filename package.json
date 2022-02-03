@@ -27,7 +27,6 @@
     "gatsby-transformer-sharp": "^2.12.1",
     "leaflet": "^1.7.1",
     "moment": "^2.29.1",
-    "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
@@ -37,6 +36,7 @@
     "react-loadable": "^5.5.0",
     "react-moment": "^0.9.7",
     "react-typography": "^0.16.20",
+    "sass": "^1.49.7",
     "typescript": "^4.3.4",
     "typography": "^0.16.21"
   },
