@@ -28,20 +28,20 @@
     "leaflet": "^1.7.1",
     "moment": "^2.29.1",
     "prop-types": "^15.8.1",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "react-helmet": "^5.2.1",
-    "react-icons": "^3.11.0",
-    "react-leaflet": "^2.8.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.3.1",
+    "react-leaflet": "^3.2.5",
     "react-loadable": "^5.5.0",
-    "react-moment": "^0.9.7",
+    "react-moment": "^1.1.1",
     "react-typography": "^0.16.20",
     "sass": "^1.49.9",
     "typescript": "^4.6.2",
     "typography": "^0.16.21"
   },
   "devDependencies": {
-    "@hot-loader/react-dom": "^16.14.0",
+    "@hot-loader/react-dom": "^17.0.2",
     "prettier": "^1.19.1"
   },
   "keywords": [
