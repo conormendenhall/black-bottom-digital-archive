@@ -1482,7 +1482,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.14.6, @babel/runtime@npm:^7.14.8, @babel/runtime@npm:^7.15.4":
+"@babel/runtime@npm:^7.14.6, @babel/runtime@npm:^7.14.8, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.16.5":
   version: 7.17.2
   resolution: "@babel/runtime@npm:7.17.2"
   dependencies:
@@ -4351,7 +4351,7 @@ __metadata:
     "@fullcalendar/react": ^4.4.2
     "@hot-loader/react-dom": ^16.14.0
     gatsby: ^3.0.0
-    gatsby-background-image: ^0.10.2
+    gatsby-background-image: ^1.6.0
     gatsby-image: ^3.11.0
     gatsby-plugin-manifest: ^2.12.1
     gatsby-plugin-offline: ^3.10.2
@@ -7682,7 +7682,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"filter-invalid-dom-props@npm:^2.0.0":
+"filter-invalid-dom-props@npm:^2.1.0":
   version: 2.1.0
   resolution: "filter-invalid-dom-props@npm:2.1.0"
   dependencies:
@@ -7987,19 +7987,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-background-image@npm:^0.10.2":
-  version: 0.10.2
-  resolution: "gatsby-background-image@npm:0.10.2"
+"gatsby-background-image@npm:^1.6.0":
+  version: 1.6.0
+  resolution: "gatsby-background-image@npm:1.6.0"
   dependencies:
-    "@babel/runtime": ^7.8.4
-    filter-invalid-dom-props: ^2.0.0
+    "@babel/runtime": ^7.16.5
+    filter-invalid-dom-props: ^2.1.0
     global: ^4.4.0
-    short-uuid: ^3.1.1
+    short-uuid: ^4.2.0
     sort-media-queries: ^0.2.2
   peerDependencies:
-    react: 16.x
-    react-dom: 16.x
-  checksum: 58f387a0e299b4d90ee32ccb0ae8810ad486cfc0b94b680eaead619ff6f26c384910d1f5f0d0be721364ea37a79d23ef35010be456946005452c41514496e5f1
+    gatsby: ^2.0.0 || ^3.0.0 || ^4.0.0
+    react: ">=16.x"
+    react-dom: ">=16.x"
+  checksum: 7ccfa4e810b06b8a5ea6139aff526eed8178ac95746225fd915dd51d9a10b53a99478e2c25429a3edfeb19287e32f06cbf8f42b4101bf086a977c26f33d36ed5
   languageName: node
   linkType: hard
 
@@ -15780,13 +15781,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"short-uuid@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "short-uuid@npm:3.1.1"
+"short-uuid@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "short-uuid@npm:4.2.0"
   dependencies:
     any-base: ^1.1.0
-    uuid: ^3.3.2
-  checksum: bdda2dd0ae40606953029afbb9593ab382d70c392b1e90ce1884518fc2440ed1307474ecb6ebe701cc7cf8b3f5cbe9ced824618cef5ebca398f2c51019ce9978
+    uuid: ^8.3.2
+  checksum: 09013559393bc26d1462ae27c84b4eb7e6e4052e9fea1704f21370e226864f9dfcd1b9465eefa980da84b2537b70cabd98718193934dcc2a0fc06e7b0d1f4b9e
   languageName: node
   linkType: hard
 
@@ -17808,12 +17809,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:3.4.0, uuid@npm:^3.0.0, uuid@npm:^3.0.1, uuid@npm:^3.3.2":
+"uuid@npm:3.4.0, uuid@npm:^3.0.0, uuid@npm:^3.0.1":
   version: 3.4.0
   resolution: "uuid@npm:3.4.0"
   bin:
     uuid: ./bin/uuid
   checksum: 58de2feed61c59060b40f8203c0e4ed7fd6f99d42534a499f1741218a1dd0c129f4aa1de797bcf822c8ea5da7e4137aa3673431a96dae729047f7aca7b27866f
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^8.3.2":
+  version: 8.3.2
+  resolution: "uuid@npm:8.3.2"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 5575a8a75c13120e2f10e6ddc801b2c7ed7d8f3c8ac22c7ed0c7b2ba6383ec0abda88c905085d630e251719e0777045ae3236f04c812184b7c765f63a70e58df
   languageName: node
   linkType: hard
 
