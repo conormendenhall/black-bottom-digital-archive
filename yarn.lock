@@ -4367,7 +4367,7 @@ __metadata:
     leaflet: ^1.7.1
     moment: ^2.29.1
     prettier: ^1.19.1
-    prop-types: ^15.7.2
+    prop-types: ^15.8.1
     react: ^16.14.0
     react-dom: ^16.14.0
     react-helmet: ^5.2.1
