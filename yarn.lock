@@ -4278,7 +4278,7 @@ __metadata:
     gatsby-transformer-sharp: ^3.14.0
     leaflet: ^1.7.1
     moment: ^2.29.1
-    prettier: ^1.19.1
+    prettier: ^2.5.1
     prop-types: ^15.8.1
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -13560,16 +13560,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^1.19.1":
-  version: 1.19.1
-  resolution: "prettier@npm:1.19.1"
-  bin:
-    prettier: ./bin-prettier.js
-  checksum: bc78219e0f8173a808f4c6c8e0a137dd8ebd4fbe013e63fe1a37a82b48612f17b8ae8e18a992adf802ee2cf7428f14f084e7c2846ca5759cf4013c6e54810e1f
-  languageName: node
-  linkType: hard
-
-"prettier@npm:^2.3.2":
+"prettier@npm:^2.3.2, prettier@npm:^2.5.1":
   version: 2.5.1
   resolution: "prettier@npm:2.5.1"
   bin:
