@@ -1,5 +1,4 @@
 import React from 'react'
-import Loadable from 'react-loadable'
 import Moment from 'react-moment'
 
 import { useStaticQuery, graphql } from 'gatsby'
@@ -66,28 +65,12 @@ const Events = () => {
     </a>
   ))
 
-  let calendarEvents = events.edges.map(event => ({
-    title: event.node.title,
-    date: event.node.dateAndTime,
-    slug: event.node.slug,
-  }))
-
-  const Calendar = Loadable({
-    loader: () => import('./calendar'),
-    loading() {
-      return <div>Loading event calendar...</div>
-    },
-  })
-
   return (
     <>
       {upcomingEvents.length > 0 && (
         <div id="events">
           <h1>Upcoming Events</h1>
           <div className="upcoming-events">{eventCards}</div>
-          <div className="event-calendar">
-            <Calendar data={calendarEvents} />
-          </div>
         </div>
       )}
     </>

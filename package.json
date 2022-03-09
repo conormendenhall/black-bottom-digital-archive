@@ -7,10 +7,6 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^14.1.3",
     "@contentful/rich-text-types": "^14.1.2",
-    "@fullcalendar/core": "^4.4.2",
-    "@fullcalendar/daygrid": "^4.4.2",
-    "@fullcalendar/interaction": "^4.4.2",
-    "@fullcalendar/react": "^4.4.2",
     "gatsby": "^3.14.6",
     "gatsby-background-image": "^1.6.0",
     "gatsby-image": "^3.11.0",
