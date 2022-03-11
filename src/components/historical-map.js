@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const HistoricalMap = () => {
   const data = useStaticQuery(graphql`
@@ -10,15 +10,15 @@ const HistoricalMap = () => {
         relativePath: { eq: "200518_Sanborn Stitch_web_2000px.jpg" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 2000) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 2000)
         }
       }
     }
   `)
 
-  return <Img fluid={data.historicalMap.childImageSharp.fluid} alt="Historical Map of Black Bottom, Detroit" />
+  const image = getImage(data.historicalMap.childImageSharp.gatsbyImageData)
+
+  return <GatsbyImage image={image} alt="Historical Map of Black Bottom, Detroit" />
 }
 
 export default HistoricalMap

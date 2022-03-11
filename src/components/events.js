@@ -2,7 +2,7 @@ import React from 'react'
 import Moment from 'react-moment'
 
 import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import RichText from '../components/rich-text'
 
@@ -50,7 +50,7 @@ const Events = () => {
     <a href={`../events/${item.node.slug}`} key={key}>
       <div key={item.node.id} className="event">
         {item.node.image && (
-          <Img fluid={item.node.image.fluid} className="event-image" />
+          <GatsbyImage image={getImage(item.node.image)} className="event-image" />
         )}
         <div className="event-body">
           <div className="headline">

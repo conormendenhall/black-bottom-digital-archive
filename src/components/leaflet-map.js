@@ -1,6 +1,6 @@
 import React from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const LeafletMap = ({ center, zoom, className, data }) => {
   return (
@@ -24,6 +24,8 @@ const LeafletMap = ({ center, zoom, className, data }) => {
             url = 'events'
           }
 
+          const image = getImage(entry.image)
+
           return entry.places.map((place, key) => {
             return (
               <Marker
@@ -33,7 +35,7 @@ const LeafletMap = ({ center, zoom, className, data }) => {
                 <Popup>
                   <a href={`/${url}/${entry.slug}`}>
                     <span>{entry.title}</span>
-                    {entry.image && <Img fluid={entry.image.fluid} />}
+                    {image && <GatsbyImage image={image} />}
                   </a>
                 </Popup>
               </Marker>
