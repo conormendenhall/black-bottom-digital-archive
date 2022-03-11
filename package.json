@@ -5,8 +5,8 @@
   "version": "0.1.0",
   "author": "https://github.com/conormendenhall",
   "dependencies": {
-    "@contentful/rich-text-react-renderer": "^14.1.3",
-    "@contentful/rich-text-types": "^14.1.2",
+    "@contentful/rich-text-react-renderer": "^15.11.1",
+    "@contentful/rich-text-types": "^15.11.1",
     "gatsby": "^3.14.6",
     "gatsby-background-image": "^1.6.0",
     "gatsby-plugin-image": "^2.9.1",
