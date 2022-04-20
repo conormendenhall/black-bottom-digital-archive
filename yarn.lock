@@ -4039,16 +4039,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-plugin-remove-graphql-queries@npm:^4.9.1":
-  version: 4.9.1
-  resolution: "babel-plugin-remove-graphql-queries@npm:4.9.1"
+"babel-plugin-remove-graphql-queries@npm:^4.12.1":
+  version: 4.12.1
+  resolution: "babel-plugin-remove-graphql-queries@npm:4.12.1"
   dependencies:
     "@babel/runtime": ^7.15.4
-    gatsby-core-utils: ^3.9.1
+    gatsby-core-utils: ^3.12.1
   peerDependencies:
     "@babel/core": ^7.0.0
     gatsby: ^4.0.0-next
-  checksum: c6fb7dce65f86a9e50007252546931661cca3dd8848bb02a8c2bacd978f37577c9fac237873606ecc5b92a5b5d8832e7f1057cd8ce60d40ca22f30dc5a9c814f
+  checksum: 9734361640cc0216ebf2162e1b6068d159eb1f2111d38ac0c890761897334fe895eadb0467a87d695f344d81ae0d30c31e93ec990a765395f849359ed3d4169d
   languageName: node
   linkType: hard
 
@@ -4249,7 +4249,7 @@ __metadata:
     "@hot-loader/react-dom": ^17.0.2
     gatsby: ^3.14.6
     gatsby-background-image: ^1.6.0
-    gatsby-plugin-image: ^2.9.1
+    gatsby-plugin-image: ^2.12.1
     gatsby-plugin-manifest: ^3.14.0
     gatsby-plugin-offline: ^3.10.2
     gatsby-plugin-react-helmet: ^3.10.0
@@ -7657,9 +7657,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-core-utils@npm:^3.9.1":
-  version: 3.9.1
-  resolution: "gatsby-core-utils@npm:3.9.1"
+"gatsby-core-utils@npm:^3.12.1":
+  version: 3.12.1
+  resolution: "gatsby-core-utils@npm:3.12.1"
   dependencies:
     "@babel/runtime": ^7.15.4
     ci-info: 2.0.0
@@ -7669,14 +7669,14 @@ __metadata:
     fs-extra: ^10.0.0
     got: ^11.8.3
     import-from: ^4.0.0
-    lmdb: ^2.1.7
+    lmdb: ^2.2.6
     lock: ^1.1.0
     node-object-hash: ^2.3.10
     proper-lockfile: ^4.1.2
     resolve-from: ^5.0.0
     tmp: ^0.2.1
     xdg-basedir: ^4.0.0
-  checksum: 751799daf3d2d2b5740db900216a664f8f22e38c845b0522b2c70cdb98661723170c4af9121f30a023ca12f2b345524d817a253479212652e5fb882ae5b455a8
+  checksum: 32165b00d27ff348ec2e6fb86d3603bd7fa7f0811c1a5137c5703bcad6cb06342d2118a3766ae04d5ec109d4ea8a8d1b240aa114445c6f5bf5ba0f4cafb1cc1d
   languageName: node
   linkType: hard
 
@@ -7730,31 +7730,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-image@npm:^2.9.1":
-  version: 2.9.1
-  resolution: "gatsby-plugin-image@npm:2.9.1"
+"gatsby-plugin-image@npm:^2.12.1":
+  version: 2.12.1
+  resolution: "gatsby-plugin-image@npm:2.12.1"
   dependencies:
     "@babel/code-frame": ^7.14.0
     "@babel/parser": ^7.15.5
     "@babel/runtime": ^7.15.4
     "@babel/traverse": ^7.15.4
     babel-jsx-utils: ^1.1.0
-    babel-plugin-remove-graphql-queries: ^4.9.1
+    babel-plugin-remove-graphql-queries: ^4.12.1
     camelcase: ^5.3.1
     chokidar: ^3.5.2
     common-tags: ^1.8.2
     fs-extra: ^10.0.0
-    gatsby-core-utils: ^3.9.1
+    gatsby-core-utils: ^3.12.1
     objectFitPolyfill: ^2.3.5
-    prop-types: ^15.7.2
+    prop-types: ^15.8.1
   peerDependencies:
     "@babel/core": ^7.12.3
     gatsby: ^4.0.0-next
     gatsby-plugin-sharp: ^4.0.0-next
     gatsby-source-filesystem: ^4.0.0-next
-    react: ^16.9.0 || ^17.0.0
-    react-dom: ^16.9.0 || ^17.0.0
-  checksum: 0dddbaf2fb42d94b92427d892bfe3faa54ec2566a57cf5d1f823815309e4a036b3c0700969997bba4753558e02a97894bed39b10d70c393e5d7fd75f161235c6
+    react: ^16.9.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.9.0 || ^17.0.0 || ^18.0.0
+  checksum: f12008e18c2fb5e5f02c1c6171ecac2dc44ff0be3052b8269df6b63a3f072631d50500683b02de9b97563904faaa759ba2d7737db2cc791c80e76206c0e8041d
   languageName: node
   linkType: hard
 
@@ -10554,17 +10554,79 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lmdb@npm:^2.1.7":
-  version: 2.2.4
-  resolution: "lmdb@npm:2.2.4"
+"lmdb-darwin-arm64@npm:2.3.2":
+  version: 2.3.2
+  resolution: "lmdb-darwin-arm64@npm:2.3.2"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"lmdb-darwin-x64@npm:2.3.2":
+  version: 2.3.2
+  resolution: "lmdb-darwin-x64@npm:2.3.2"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"lmdb-linux-arm64@npm:2.3.2":
+  version: 2.3.2
+  resolution: "lmdb-linux-arm64@npm:2.3.2"
+  conditions: os=linux & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"lmdb-linux-arm@npm:2.3.2":
+  version: 2.3.2
+  resolution: "lmdb-linux-arm@npm:2.3.2"
+  conditions: os=linux & cpu=arm
+  languageName: node
+  linkType: hard
+
+"lmdb-linux-x64@npm:2.3.2":
+  version: 2.3.2
+  resolution: "lmdb-linux-x64@npm:2.3.2"
+  conditions: os=linux & cpu=x64
+  languageName: node
+  linkType: hard
+
+"lmdb-win32-x64@npm:2.3.2":
+  version: 2.3.2
+  resolution: "lmdb-win32-x64@npm:2.3.2"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
+"lmdb@npm:^2.2.6":
+  version: 2.3.3
+  resolution: "lmdb@npm:2.3.3"
   dependencies:
+    lmdb-darwin-arm64: 2.3.2
+    lmdb-darwin-x64: 2.3.2
+    lmdb-linux-arm: 2.3.2
+    lmdb-linux-arm64: 2.3.2
+    lmdb-linux-x64: 2.3.2
+    lmdb-win32-x64: 2.3.2
     msgpackr: ^1.5.4
     nan: ^2.14.2
+    node-addon-api: ^4.3.0
     node-gyp: latest
-    node-gyp-build: ^4.2.3
+    node-gyp-build-optional-packages: ^4.3.2
     ordered-binary: ^1.2.4
     weak-lru-cache: ^1.2.2
-  checksum: df75e8ae266fb0676320366ba8847fe1e6c3c43af1c28c08eba35a35cb68c8f0be06ae305a9fecd6e2db2504dc92462da442272778facc6a8a0d953fbf0267ff
+  dependenciesMeta:
+    lmdb-darwin-arm64:
+      optional: true
+    lmdb-darwin-x64:
+      optional: true
+    lmdb-linux-arm:
+      optional: true
+    lmdb-linux-arm64:
+      optional: true
+    lmdb-linux-x64:
+      optional: true
+    lmdb-win32-x64:
+      optional: true
+  checksum: 85060004aef5ff0e65a8fd8e1046803fda761e22a9fd2afce147a7d23b3255d6ab3a31cf4ba22f993de85d3ae207bbca30097a9d6bc9700a2a54cc95648adf3a
   languageName: node
   linkType: hard
 
@@ -12144,7 +12206,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-addon-api@npm:^4.2.0":
+"node-addon-api@npm:^4.2.0, node-addon-api@npm:^4.3.0":
   version: 4.3.0
   resolution: "node-addon-api@npm:4.3.0"
   dependencies:
@@ -12178,6 +12240,17 @@ __metadata:
     encoding:
       optional: true
   checksum: 8d816ffd1ee22cab8301c7756ef04f3437f18dace86a1dae22cf81db8ef29c0bf6655f3215cb0cdb22b420b6fe141e64b26905e7f33f9377a7fa59135ea3e10b
+  languageName: node
+  linkType: hard
+
+"node-gyp-build-optional-packages@npm:^4.3.2":
+  version: 4.3.2
+  resolution: "node-gyp-build-optional-packages@npm:4.3.2"
+  bin:
+    node-gyp-build-optional: optional.js
+    node-gyp-build-optional-packages: bin.js
+    node-gyp-build-test: build-test.js
+  checksum: 4e4eef22b48edd2fafae1aa8ef64e0272e7996ed030a91f524f5a3caac92f73fadd3a92fe5f349a2bcf682a2f8450415a76fbc928cba7feebf8453e0d729019d
   languageName: node
   linkType: hard
 
