@@ -1555,15 +1555,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@contentful/rich-text-react-renderer@npm:^15.11.1":
-  version: 15.11.1
-  resolution: "@contentful/rich-text-react-renderer@npm:15.11.1"
+"@contentful/rich-text-react-renderer@npm:^15.12.0":
+  version: 15.12.0
+  resolution: "@contentful/rich-text-react-renderer@npm:15.12.0"
   dependencies:
-    "@contentful/rich-text-types": ^15.11.1
+    "@contentful/rich-text-types": ^15.12.0
   peerDependencies:
     react: ^16.8.6 || ^17.0.0
     react-dom: ^16.8.6 || ^17.0.0
-  checksum: 9605293a07d03cf220b1bc538b0794308f59bae486e46aeea01c99d377c373664b5b1596aea5d6897a8ccff8e682f9d1f0683c2c27c91013e540a4392e6c1918
+  checksum: 8c18e5ab15981427d53eb749324e909010f812f06d39218cff8a43993ea1f3fae3d4166d35f55dc585688bee616530c244636a251a593b448363834cfed8ed16
   languageName: node
   linkType: hard
 
@@ -1574,10 +1574,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@contentful/rich-text-types@npm:^15.11.1":
-  version: 15.11.1
-  resolution: "@contentful/rich-text-types@npm:15.11.1"
-  checksum: 5cd4e21d76e038f8a4d61eef6b00bf7c98efde32d21be5edd25d16361f3ba1f48bca25d98bec32fa2429cf2339f72682d3b38ab99acd0259dc1fe3dbb9ff7361
+"@contentful/rich-text-types@npm:^15.12.0":
+  version: 15.12.0
+  resolution: "@contentful/rich-text-types@npm:15.12.0"
+  checksum: 3383e59931fe29112fb6dea99b050b234fe459a53cd44991cce56412bc62d14e6bd937bb4457f5fb7e897349252dc3db9dfe3c7f233964ca97826eba9dc9a2ec
   languageName: node
   linkType: hard
 
@@ -4244,8 +4244,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "black-bottom-digital-archive@workspace:."
   dependencies:
-    "@contentful/rich-text-react-renderer": ^15.11.1
-    "@contentful/rich-text-types": ^15.11.1
+    "@contentful/rich-text-react-renderer": ^15.12.0
+    "@contentful/rich-text-types": ^15.12.0
     "@hot-loader/react-dom": ^17.0.2
     gatsby: ^3.14.6
     gatsby-background-image: ^1.6.0
