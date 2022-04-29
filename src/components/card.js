@@ -1,8 +1,10 @@
 import React from 'react'
 
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const Card = ({ url, data }) => {
+  const image = getImage(data.image)
+
   return (
     <a href={`${url}${data.slug}`} className="card">
       <div className="card-body">
@@ -11,7 +13,7 @@ const Card = ({ url, data }) => {
         </div>
         {data.image && (
           <div className="card-image">
-            <Img fluid={data.image.fluid} />
+            <GatsbyImage image={image} />
           </div>
         )}
       </div>

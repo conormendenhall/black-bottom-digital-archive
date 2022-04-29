@@ -1,8 +1,6 @@
-const dotenv = require('dotenv')
-
-if (process.env.NODE_ENV !== 'production') {
-  dotenv.config()
-}
+require('dotenv').config({
+  path: `.env`,
+})
 
 module.exports = {
   siteMetadata: {
@@ -19,8 +17,9 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

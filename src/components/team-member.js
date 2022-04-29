@@ -1,11 +1,13 @@
 import React from 'react'
 
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const TeamMember = ({ data }) => {
+  const image = getImage(data.image)
+  
   return (
     <div className="team-member">
-      <Img fluid={data.image} className="team-member-image" />
+      <GatsbyImage image={image} className="team-member-image" />
       <div className="team-member-body">
         <div className="headline">
           <h3 className="name">{data.name}</h3>

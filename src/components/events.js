@@ -1,9 +1,8 @@
 import React from 'react'
-import Loadable from 'react-loadable'
 import Moment from 'react-moment'
 
 import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import RichText from '../components/rich-text'
 
@@ -51,7 +50,7 @@ const Events = () => {
     <a href={`../events/${item.node.slug}`} key={key}>
       <div key={item.node.id} className="event">
         {item.node.image && (
-          <Img fluid={item.node.image.fluid} className="event-image" />
+          <GatsbyImage image={getImage(item.node.image)} className="event-image" />
         )}
         <div className="event-body">
           <div className="headline">
@@ -66,28 +65,12 @@ const Events = () => {
     </a>
   ))
 
-  let calendarEvents = events.edges.map(event => ({
-    title: event.node.title,
-    date: event.node.dateAndTime,
-    slug: event.node.slug,
-  }))
-
-  const Calendar = Loadable({
-    loader: () => import('./calendar'),
-    loading() {
-      return <div>Loading event calendar...</div>
-    },
-  })
-
   return (
     <>
       {upcomingEvents.length > 0 && (
         <div id="events">
           <h1>Upcoming Events</h1>
           <div className="upcoming-events">{eventCards}</div>
-          <div className="event-calendar">
-            <Calendar data={calendarEvents} />
-          </div>
         </div>
       )}
     </>

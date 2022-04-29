@@ -1,10 +1,10 @@
 import React from 'react'
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
-import Img from 'gatsby-image'
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const LeafletMap = ({ center, zoom, className, data }) => {
   return (
-    <Map center={center} zoom={zoom} className={className}>
+    <MapContainer center={center} zoom={zoom} className={className}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png'"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank" rel="noopener noreferrer">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank" rel="noopener noreferrer">OpenStreetMap France</a>'
@@ -24,6 +24,8 @@ const LeafletMap = ({ center, zoom, className, data }) => {
             url = 'events'
           }
 
+          const image = getImage(entry.image)
+
           return entry.places.map((place, key) => {
             return (
               <Marker
@@ -33,14 +35,14 @@ const LeafletMap = ({ center, zoom, className, data }) => {
                 <Popup>
                   <a href={`/${url}/${entry.slug}`}>
                     <span>{entry.title}</span>
-                    {entry.image && <Img fluid={entry.image.fluid} />}
+                    {image && <GatsbyImage image={image} />}
                   </a>
                 </Popup>
               </Marker>
             )
           })
         })}
-    </Map>
+    </MapContainer>
   )
 }
 

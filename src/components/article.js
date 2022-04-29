@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import EntryTags from './entry-tags'
 import SEO from './seo'
@@ -10,13 +10,15 @@ import RichText from './rich-text'
 import Breadcrumb from './breadcrumb'
 
 const Article = ({ data, breadcrumb, children }) => {
+  const image = getImage(data.image)
+  
   return (
     <div className="article">
       <SEO title={data.title} />
       <section className="container">
         <h1>{data.title}</h1>
-        {data.image?.fluid && (
-          <Img fluid={data.image.fluid} className="article-image" />
+        {image && (
+          <GatsbyImage image={image} className="article-image" />
         )}
         {(data.audio || data.transcript) && (
           <InterviewMedia audio={data.audio} transcript={data.transcript} />
