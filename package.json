@@ -58,6 +58,5 @@
   },
   "bugs": {
     "url": "https://github.com/conormendenhall/black-bottom-digital-archive/issues"
-  },
-  "packageManager": "yarn@3.2.0"
+  }
 }
