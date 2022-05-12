@@ -10,13 +10,11 @@
       width: 550px;
       height: 500px;
       object-fit: cover;
-      border-radius: $rounded $rounded 0 0;
     }
 
     .event-body {
       padding: 15px;
       background-color: $light;
-      border-radius: $rounded;
 
       .headline {
         display: flex;
