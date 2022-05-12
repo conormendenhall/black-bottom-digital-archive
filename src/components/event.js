@@ -5,7 +5,7 @@ import Article from './article'
 
 const EventPage = ({ pageContext }) => {
   const breadcrumb = {
-    text: 'View more events',
+    text: 'Events',
     href: '/about',
   }
 

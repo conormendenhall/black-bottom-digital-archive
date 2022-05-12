@@ -9,7 +9,7 @@ import LeafletMap from '../components/leaflet-map'
 const IndexPage = ({ data }) => {
   let places = [...data.sites.edges, ...data.figures.edges]
   return (
-    <Layout home={true}>
+    <Layout>
       <SEO title="Home" />
       {typeof window !== 'undefined' && (
         <LeafletMap

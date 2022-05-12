@@ -1,4 +1,15 @@
 .article {
+  .article-header {
+    background-color: $light;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .social {
+      
+    }
+  }
+
   .article-image {
     max-width: 600px;
     margin-bottom: 1em;
@@ -21,10 +32,9 @@
   }
 
   .article-sources {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 3px;
-    font-size: 15px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
     margin-bottom: 1em;
 
     p {

@@ -4,7 +4,7 @@ const Breadcrumb = ({ text, href }) => {
   return (
     <a href={href} className="breadcrumb">
       <div>
-        <span>{text}</span>
+        <span>&gt;&gt; Back to {text}</span>
       </div>
     </a>
   )

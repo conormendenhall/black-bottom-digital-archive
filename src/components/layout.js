@@ -9,14 +9,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Header from './header'
-import HomeHeader from './home-header'
 import Footer from './footer'
 import '../styles/styles.scss'
 
-const Layout = ({ children, home }) => {
+const Layout = ({ children }) => {
   return (
     <div id="layout">
-      {home ? <HomeHeader /> : <Header />}
+      <Header />
       <main>{children}</main>
       <Footer />
     </div>

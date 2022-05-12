@@ -1,37 +1,7 @@
 .breadcrumb {
-  background-color: $dark;
   margin-right: auto;
-  height: 40px;
-  position: relative;
-  display: flex;
-  padding: 5px;
-  border-radius: $rounded 0 0 $rounded;
 
   &:hover span {
     border-bottom-color: $gold;
-  }
-
-  div {
-    color: $light;
-    border-top: 2px solid $dark;
-    border-bottom: 2px solid $dark;
-    margin: 0 5px;
-    align-self: center;
-
-    &:before {
-      content: '';
-      position: absolute;
-      right: -15px;
-      bottom: 0;
-      width: 0;
-      height: 0;
-      border-left: 15px solid $dark;
-      border-top: 20px solid transparent;
-      border-bottom: 20px solid transparent;
-    }
-
-    span {
-      border-bottom-color: $dark;
-    }
   }
 }

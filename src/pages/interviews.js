@@ -31,16 +31,6 @@ const InterviewsPage = ({ data }) => {
   )
 }
 
-export const fluidImage = graphql`
-  fragment fluidImage on File {
-    childImageSharp {
-      fluid(maxWidth: 1600) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
-`
-
 export const pageQuery = graphql`
   query {
     interviews: allContentfulInterview(sort: {order: ASC, fields: title}) {
@@ -51,9 +41,6 @@ export const pageQuery = graphql`
           slug
         }
       }
-    }
-    default: file(relativePath: { eq: "interview-microphone.jpg" }) {
-      ...fluidImage
     }
   }
 `

@@ -41,14 +41,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 title
                 slug
               }
-              places {
-                id
-                title
-                location {
-                  lat
-                  lon
-                }
-              }
               internal {
                 type
               }
@@ -74,14 +66,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 title
                 slug
               }
-              places {
-                id
-                title
-                location {
-                  lat
-                  lon
-                }
-              }
               internal {
                 type
               }
@@ -106,14 +90,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 id
                 title
                 slug
-              }
-              places {
-                id
-                title
-                location {
-                  lat
-                  lon
-                }
               }
               internal {
                 type

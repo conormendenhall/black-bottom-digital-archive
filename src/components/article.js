@@ -1,51 +1,73 @@
 import React from 'react'
 
+import {
+  AiOutlineTwitter,
+  AiOutlineFacebook,
+  AiOutlineInstagram,
+} from 'react-icons/ai'
+
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import EntryTags from './entry-tags'
 import SEO from './seo'
-import LeafletMap from './leaflet-map'
 import InterviewMedia from './interview-media'
 import RichText from './rich-text'
 import Breadcrumb from './breadcrumb'
 
 const Article = ({ data, breadcrumb, children }) => {
   const image = getImage(data.image)
-  
+
   return (
     <div className="article">
       <SEO title={data.title} />
+      <section className="container article-header">
+        <div>
+          {breadcrumb && (
+            <>
+              <Breadcrumb text={breadcrumb.text} href={breadcrumb.href} />
+            </>
+          )}
+          <h1>{data.title}</h1>
+        </div>
+        <div className="social">
+          Share this page!
+          <div>
+            <a
+              href="http://twitter.com/_blackbottom"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <AiOutlineTwitter title="Twitter" />
+            </a>
+            <a
+              href="https://www.facebook.com/BlackBottomArchives/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <AiOutlineFacebook title="Facebook" />
+            </a>
+            <a
+              href="http://www.instagram.com/blackbottomarchives"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <AiOutlineInstagram title="Instagram" />
+            </a>
+          </div>
+        </div>
+      </section>
       <section className="container">
-        <h1>{data.title}</h1>
-        {image && (
-          <GatsbyImage image={image} className="article-image" />
-        )}
         {(data.audio || data.transcript) && (
           <InterviewMedia audio={data.audio} transcript={data.transcript} />
         )}
+        {image && <GatsbyImage image={image} className="article-image" />}
         {data.body?.json && <RichText data={data.body} />}
-        {data.places && typeof window !== 'undefined' && (
-          <LeafletMap
-            center={[42.345, -83.044]}
-            zoom={14}
-            data={[data]}
-            className="article-map leaflet-container"
-          />
-        )}
         {children && <section className="container">{children}</section>}
-      </section>
-      <section className="container">
-        {data.tags && (
-          <>
-            <h3>Tags</h3>
-            <EntryTags data={data.tags}></EntryTags>
-          </>
-        )}
       </section>
       <section className="container">
         {data.bibliography?.childMarkdownRemark && (
           <>
-            <h3>Sources</h3>
+            <h2>Sources</h2>
             <div className="article-sources">
               <div
                 dangerouslySetInnerHTML={{
@@ -55,9 +77,12 @@ const Article = ({ data, breadcrumb, children }) => {
             </div>
           </>
         )}
-        {breadcrumb && (
+      </section>
+      <section className="container">
+        {data.tags && (
           <>
-            <Breadcrumb text={breadcrumb.text} href={breadcrumb.href} />
+            <h2>Tags</h2>
+            <EntryTags data={data.tags}></EntryTags>
           </>
         )}
       </section>

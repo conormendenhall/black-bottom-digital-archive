@@ -22,6 +22,8 @@ const HistoricalSitesPage = ({ data }) => {
           existed — some are still around in one form or another, but others
           were demolished.
         </p>
+      </section>
+      <section className="container card-gallery-container">
         <div id="historicalSites" className="card-gallery">
           {sites}
         </div>

@@ -1,20 +1,17 @@
 .entry-tags {
   display: flex;
   flex-wrap: wrap;
+  font-size: 18px;
 
   .tag {
     padding: 5px 10px;
-    border: 2px solid $dark;
+    border: 2px solid $gold;
     margin: 0 5px 5px 0;
     background-color: $off-light;
     border-radius: $rounded;
 
     &:hover {
-      background-color: $light;
-    }
-
-    &:hover span {
-      border-bottom: 2px solid $gold;
+      background-color: $gold;
     }
 
     span {

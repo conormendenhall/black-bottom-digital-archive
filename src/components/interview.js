@@ -5,7 +5,7 @@ import Article from './article'
 
 const InterviewPage = ({ pageContext }) => {
   const breadcrumb = {
-    text: 'View more interviews',
+    text: 'Interviews',
     href: '/interviews',
   }
 

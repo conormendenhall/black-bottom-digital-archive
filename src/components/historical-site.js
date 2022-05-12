@@ -5,7 +5,7 @@ import Article from './article'
 
 const HistoricalSitePage = ({ pageContext }) => {
   const breadcrumb = {
-    text: 'View more historical sites',
+    text: 'Historical Sites',
     href: '/historical-sites',
   }
 

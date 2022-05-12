@@ -1,3 +1,8 @@
+.card-gallery-container {
+  background-color: $gold;
+  padding-top: 1em;
+}
+
 .card-gallery {
   display: flex;
   flex-wrap: wrap;
@@ -5,31 +10,20 @@
 
   .card {
     margin: 0 10px 10px 0;
-    min-width: 300px;
     flex-grow: 1;
     flex-shrink: 0;
-    flex-basis: 48%;
 
     .card-body {
-      height: 100px;
-      background-color: $light;
+      background-color: $dark;
+      color: $light;
+      width: 400px;
+      height: 400px;
+      padding: 20px;
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
       border-radius: $rounded;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16);
-
-      .card-title {
-        margin: 20px;
-      }
-
-      .card-image {
-        .gatsby-image-wrapper {
-          object-fit: cover;
-          height: 100px;
-          width: 150px;
-          border-radius: 0 $rounded $rounded 0;
-        }
-      }
     }
   }
 }

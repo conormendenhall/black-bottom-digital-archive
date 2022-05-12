@@ -18,7 +18,7 @@ const ThemePage = ({ pageContext }) => {
   ))
 
   const breadcrumb = {
-    text: "View more themes",
+    text: "Themes",
     href:"/themes"
   }
 

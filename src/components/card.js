@@ -1,21 +1,15 @@
 import React from 'react'
 
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-
 const Card = ({ url, data }) => {
-  const image = getImage(data.image)
-
   return (
     <a href={`${url}${data.slug}`} className="card">
       <div className="card-body">
-        <div className="card-title">
-          <span>{data.title}</span>
+        <div className="card-header">{data.title}</div>
+        <div>
+          {/* <div>{data.body}</div> */}
+          Card body text here lorum ipsum dolor
         </div>
-        {data.image && (
-          <div className="card-image">
-            <GatsbyImage image={image} />
-          </div>
-        )}
+        <div className="card-footer">&gt;&gt; Read More</div>
       </div>
     </a>
   )

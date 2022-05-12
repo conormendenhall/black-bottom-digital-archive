@@ -5,7 +5,7 @@ import Article from './article'
 
 const HistoricalFiguresPage = ({ pageContext }) => {
   const breadcrumb = {
-    text: 'View more historical figures',
+    text: 'Historical Figures',
     href: '/historical-figures',
   }
 

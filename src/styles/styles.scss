@@ -1,17 +1,5 @@
 @import './variables/variables';
 
-@import './components/footer';
-@import './components/header';
-@import './components/leafletMap';
-@import './components/events';
-@import './components/entryTags';
-@import './components/breadcrumb';
-@import './components/contact';
-@import './components/card';
-@import './components/article';
-@import './components/interviewMedia';
-@import './components/richText';
-
 html,
 body,
 div#___gatsby,
@@ -19,9 +7,7 @@ div#gatsby-focus-wrapper {
   height: 100%;
   margin: 0;
   padding: 0;
-}
-
-* {
+  font-size: 24px;
   transition: all 0.1s ease;
 }
 
@@ -37,18 +23,13 @@ main {
 }
 
 .container {
-  width: 90%;
-  max-width: 1200px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  padding-bottom: 2em;
-  @media screen and (min-width: 1024px) {
-    width: 80%;
-  }
+  padding: 0 2em 1em 2em;
 
   &:first-of-type {
-    padding-top: 2em;
+    padding-top: 1em;
   }
 }
 
@@ -65,11 +46,31 @@ a {
   }
 }
 
+h1 {
+  font-size: 64px;
+  font-family: 'Rockwell', sans-serif;
+}
+
+h2 {
+  font-size: 48px;
+}
+
 pre {
   white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
   white-space: -pre-wrap; /* Opera */
   white-space: -o-pre-wrap; /* Opera */
   white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
   word-wrap: break-word; /* IE 5.5+ */
-  font-family: 'Proxima Nova', 'sans-serif';
 }
+
+@import './components/article';
+@import './components/breadcrumb';
+@import './components/card';
+@import './components/contact';
+@import './components/entryTags';
+@import './components/events';
+@import './components/footer';
+@import './components/header';
+@import './components/interviewMedia';
+@import './components/leafletMap';
+@import './components/richText';

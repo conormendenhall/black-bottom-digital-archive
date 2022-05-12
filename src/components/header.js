@@ -1,12 +1,9 @@
 import React from 'react'
 
 const Header = () => (
-  <header className="basic">
+  <header>
     <a href="/" id="home">
-      <span>Black Bottom Digital Archive</span>
-    </a>
-    <a href="/historical-map" className="menu-link hide">
-      <span>Historical Map</span>
+      <span>Main</span>
     </a>
     <a href="/historical-figures" className="menu-link hide">
       <span>Historical Figures</span>
@@ -19,6 +16,12 @@ const Header = () => (
     </a>
     <a href="/about" className="menu-link hide">
       <span>About</span>
+    </a>
+    <a href="/" className="menu-link hide">
+      <span>Submissions</span>
+    </a>
+    <a href="/" className="menu-link hide">
+      <span>Contact</span>
     </a>
     <a id="menuBtn" onClick={toggleMenu}>
       Menu
