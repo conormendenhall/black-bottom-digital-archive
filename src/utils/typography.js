@@ -8,7 +8,7 @@ const typography = new Typography({
   googleFonts: [
     {
       name: 'Roboto',
-      styles: ['700'],
+      styles: ['400', '700'],
     },
     {
       name: 'Rockwell',
