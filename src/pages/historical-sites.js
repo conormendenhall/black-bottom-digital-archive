@@ -14,27 +14,31 @@ const HistoricalSitesPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Historical Sites" />
-      <section className="container">
-        <h1>Historical Sites</h1>
-        <p>
-          Though Black Bottom and Paradise Valley are long gone, memories and
-          some key sites still remain. These are some of the key locations that
-          existed — some are still around in one form or another, but others
-          were demolished.
-        </p>
-      </section>
-      <section className="container card-gallery-container">
-        <div id="historicalSites" className="card-gallery">
-          {sites}
-        </div>
-      </section>
+      <div className="index-header">
+        <section className="container">
+          <h1>Historical Sites</h1>
+          <p>
+            Though Black Bottom and Paradise Valley are long gone, memories and
+            some key sites still remain. These are some of the key locations
+            that existed — some are still around in one form or another, but
+            others were demolished.
+          </p>
+        </section>
+      </div>
+      <div className="card-gallery-container">
+        <section className="container">
+          <div id="historicalSites" className="card-gallery">
+            {sites}
+          </div>
+        </section>
+      </div>
     </Layout>
   )
 }
 
 export const pageQuery = graphql`
   query {
-    sites: allContentfulHistoricalSite(sort: {order: ASC, fields: title}) {
+    sites: allContentfulHistoricalSite(sort: { order: ASC, fields: title }) {
       edges {
         node {
           id

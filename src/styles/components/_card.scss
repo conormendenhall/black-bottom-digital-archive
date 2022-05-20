@@ -6,23 +6,31 @@
 .card-gallery {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   margin-bottom: 10px;
 
   .card {
     margin: 0 10px 10px 0;
-    flex-grow: 1;
-    flex-shrink: 0;
+    border: 3px solid $light;
 
-    .card-body {
+    .card-content {
+      position: relative;
       background-color: $dark;
       color: $light;
+      font-size: 16px;
       width: 400px;
       height: 400px;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16);
+      padding: 2em;
+
+      .card-header {
+        font-size: 24px;
+        margin-bottom: 1em;
+      }
+
+      .card-footer {
+        position: absolute;
+        bottom: 2em;
+      }
     }
   }
 }

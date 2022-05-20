@@ -14,24 +14,32 @@ const HistoricalFiguresPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Historical Figures" />
-      <section className="container">
-        <h1>Historical Figures</h1>
-        <p>
-          These are some key historical figures from Black Bottom and Paradise
-          Valley history — successful entrepreneurs, civil rights activists, and
-          community leaders.
-        </p>
-        <div id="historicalFigures" className="card-gallery">
-          {figures}
-        </div>
-      </section>
+      <div className="index-header">
+        <section className="container">
+          <h1>Historical Figures</h1>
+          <p>
+            These are some key historical figures from Black Bottom and Paradise
+            Valley history — successful entrepreneurs, civil rights activists,
+            and community leaders.
+          </p>
+        </section>
+      </div>
+      <div className="card-gallery-container">
+        <section className="container">
+          <div id="historicalFigures" className="card-gallery">
+            {figures}
+          </div>
+        </section>
+      </div>
     </Layout>
   )
 }
 
 export const pageQuery = graphql`
   query {
-    figures: allContentfulHistoricalFigure(sort: {order: ASC, fields: title}) {
+    figures: allContentfulHistoricalFigure(
+      sort: { order: ASC, fields: title }
+    ) {
       edges {
         node {
           id
