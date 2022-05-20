@@ -1,9 +1,9 @@
 import React from 'react'
 
 import {
-  AiOutlineTwitter,
-  AiOutlineFacebook,
-  AiOutlineInstagram,
+  AiFillTwitterSquare,
+  AiFillFacebook,
+  AiFillInstagram,
 } from 'react-icons/ai'
 
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
@@ -20,42 +20,51 @@ const Article = ({ data, breadcrumb, children }) => {
   return (
     <div className="article">
       <SEO title={data.title} />
-      <section className="container article-header">
-        <div>
-          {breadcrumb && (
-            <>
-              <Breadcrumb text={breadcrumb.text} href={breadcrumb.href} />
-            </>
-          )}
-          <h1>{data.title}</h1>
-        </div>
-        <div className="social">
-          Share this page!
+      <div className="article-header">
+        <section className="container article-header-content">
           <div>
-            <a
-              href="http://twitter.com/_blackbottom"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <AiOutlineTwitter title="Twitter" />
-            </a>
-            <a
-              href="https://www.facebook.com/BlackBottomArchives/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <AiOutlineFacebook title="Facebook" />
-            </a>
-            <a
-              href="http://www.instagram.com/blackbottomarchives"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <AiOutlineInstagram title="Instagram" />
-            </a>
+            {breadcrumb && (
+              <>
+                <Breadcrumb text={breadcrumb.text} href={breadcrumb.href} />
+              </>
+            )}
+            <h1 className="article-title">{data.title}</h1>
           </div>
-        </div>
-      </section>
+          <div>
+            <div className="social-text">Share this page!</div>
+            <div className="social-icons">
+              <a
+                href="https://twitter.com/share"
+                className="twitter-share-button"
+                data-show-count="false"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <AiFillTwitterSquare title="Twitter" />
+              </a>
+              <script
+                async
+                src="https://platform.twitter.com/widgets.js"
+                charSet="utf-8"
+              ></script>
+              <a
+                href="https://www.facebook.com/BlackBottomArchives/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <AiFillFacebook title="Facebook" />
+              </a>
+              <a
+                href="http://www.instagram.com/blackbottomarchives"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <AiFillInstagram title="Instagram" />
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
       <section className="container">
         {(data.audio || data.transcript) && (
           <InterviewMedia audio={data.audio} transcript={data.transcript} />

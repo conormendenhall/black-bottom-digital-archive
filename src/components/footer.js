@@ -2,14 +2,37 @@ import React from 'react'
 
 import {
   AiOutlineTwitter,
-  AiOutlineFacebook,
+  AiFillFacebook,
   AiOutlineInstagram,
 } from 'react-icons/ai'
+
+import AmpLogo from '../images/amp-logo.png'
 
 const Footer = () => {
   return (
     <footer>
-      <section>
+      <section className="container">
+        <div className="footer-content">
+          <a href="/historical-figures">
+            <h4 id="bibliographyLink">Historical Figures</h4>
+          </a>
+          <a href="/interviews">
+            <h4 id="bibliographyLink">Oral Histories</h4>
+          </a>
+          <a href="/historical-sites">
+            <h4 id="bibliographyLink">Historical Sites</h4>
+          </a>
+          <a href="/about">
+            <h4 id="bibliographyLink">About</h4>
+          </a>
+          <a href="/bibliography">
+            <h4 id="bibliographyLink">Sources</h4>
+          </a>
+          <h4 id="copyright">
+            Copyright © {new Date().getFullYear()} Black Bottom Archives
+          </h4>
+        </div>
+        <img src={AmpLogo} id="ampLogo" alt="Badge for AMP Sponsored Project" />
         <div className="social">
           <a
             href="http://twitter.com/_blackbottom"
@@ -23,7 +46,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <AiOutlineFacebook title="Facebook" />
+            <AiFillFacebook title="Facebook" />
           </a>
           <a
             href="http://www.instagram.com/blackbottomarchives"
@@ -33,9 +56,6 @@ const Footer = () => {
             <AiOutlineInstagram title="Instagram" />
           </a>
         </div>
-        <a href="/bibliography">
-          <h4 id="bibliographyLink">Sources</h4>
-        </a>
       </section>
     </footer>
   )

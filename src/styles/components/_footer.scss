@@ -1,17 +1,48 @@
 footer {
-  text-align: center;
-  justify-content: center;
   background-color: $dark;
   color: $light;
+  padding: 2.5em 0;
 
-  section {
-    margin: 20px 0;
+  h4 {
+    color: $light;
+  }
 
-    h1,
-    h2,
-    h3,
-    h4 {
-      color: $light;
+  section.container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    .footer-content {
+      display: flex;
+      flex-flow: row wrap;
+      flex-basis: 33%;
+      min-width: 445px;
+
+      a {
+        margin-right: 1.5em;
+      }
+
+      #copyright {
+        flex-basis: 100%;
+        margin-top: 2em;
+      }
+    }
+
+    #ampLogo {
+      width: 120px;
+      align-self: flex-end;
+    }
+
+    .social {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      flex-basis: 33%;
+
+      a {
+        font-size: 60px;
+        margin-left: 20px;
+      }
     }
 
     a {
@@ -20,20 +51,6 @@ footer {
 
       &:hover {
         color: $gold;
-      }
-    }
-
-    .social {
-      width: 200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      border-bottom: 2px solid $light;
-      margin-bottom: 20px;
-
-      a {
-        margin: 0 20px;
-        font-size: 30px;
       }
     }
   }

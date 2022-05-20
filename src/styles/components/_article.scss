@@ -1,12 +1,25 @@
 .article {
   .article-header {
     background-color: $light;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    padding-top: 2em;
 
-    .social {
-      
+    .article-header-content {
+      background-color: $light;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .articl-header-title {
+        margin-bottom: 0;
+      }
+  
+      .social-text {
+        margin-left: 5px;
+      }
+
+      .social-icons {
+        font-size: 54px;
+      }
     }
   }
 
@@ -33,12 +46,10 @@
 
   .article-sources {
     font-size: 16px;
-    font-weight: 400;
-    line-height: 16px;
     margin-bottom: 1em;
 
     p {
-      margin-bottom: 0.4rem;
+      margin-bottom: 1em;
 
       &:last-child {
         margin-bottom: 0;
