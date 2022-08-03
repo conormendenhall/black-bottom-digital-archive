@@ -3,7 +3,7 @@ import React from 'react'
 import Layout from './layout'
 import Article from './article'
 
-const HistoricalFiguresPage = ({ pageContext }) => {
+const HistoricalFiguresPage = ({ location, pageContext }) => {
   const breadcrumb = {
     text: 'Historical Figures',
     href: '/historical-figures',
@@ -11,7 +11,7 @@ const HistoricalFiguresPage = ({ pageContext }) => {
 
   return (
     <Layout>
-      <Article data={pageContext} breadcrumb={breadcrumb} />
+      <Article data={pageContext} breadcrumb={breadcrumb} location={location} />
     </Layout>
   )
 }

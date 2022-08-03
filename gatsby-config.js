@@ -7,6 +7,7 @@ module.exports = {
     title: `Black Bottom Digital Archive`,
     description: `  `,
     author: `https://github.com/conormendenhall`,
+    baseUrl: `https://digital.blackbottomarchives.com`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

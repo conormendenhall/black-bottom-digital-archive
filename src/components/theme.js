@@ -4,7 +4,7 @@ import Layout from './layout'
 import Article from './article'
 import Card from './card'
 
-const ThemePage = ({ pageContext }) => {
+const ThemePage = ({ location, pageContext }) => {
   let historicalSites = pageContext.historicalSites?.map((item, key) => (
     <Card url="/historical-sites/" data={item} key={key} />
   ))
@@ -18,13 +18,13 @@ const ThemePage = ({ pageContext }) => {
   ))
 
   const breadcrumb = {
-    text: "Themes",
-    href:"/themes"
+    text: 'Themes',
+    href: '/themes',
   }
 
   return (
     <Layout>
-      <Article data={pageContext} breadcrumb={breadcrumb}>
+      <Article data={pageContext} breadcrumb={breadcrumb} location={location}>
         <div className="card-gallery">
           {historicalFigures}
           {historicalSites}

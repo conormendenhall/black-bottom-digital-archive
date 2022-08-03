@@ -3,7 +3,7 @@ import React from 'react'
 import Layout from './layout'
 import Article from './article'
 
-const InterviewPage = ({ pageContext }) => {
+const InterviewPage = ({ location, pageContext }) => {
   const breadcrumb = {
     text: 'Interviews',
     href: '/interviews',
@@ -11,7 +11,7 @@ const InterviewPage = ({ pageContext }) => {
 
   return (
     <Layout>
-      <Article data={pageContext} breadcrumb={breadcrumb} />
+      <Article data={pageContext} breadcrumb={breadcrumb} location={location} />
     </Layout>
   )
 }

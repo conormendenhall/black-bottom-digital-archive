@@ -3,7 +3,7 @@ import React from 'react'
 import Layout from './layout'
 import Article from './article'
 
-const EventPage = ({ pageContext }) => {
+const EventPage = ({ location, pageContext }) => {
   const breadcrumb = {
     text: 'Events',
     href: '/about',
@@ -11,7 +11,7 @@ const EventPage = ({ pageContext }) => {
 
   return (
     <Layout>
-      <Article data={pageContext} breadcrumb={breadcrumb} />
+      <Article data={pageContext} breadcrumb={breadcrumb} location={location} />
     </Layout>
   )
 }

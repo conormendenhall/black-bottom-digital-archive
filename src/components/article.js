@@ -8,14 +8,16 @@ import {
 
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
+import UseSiteMetadata from '../hooks/use-site-metadata'
 import EntryTags from './entry-tags'
 import SEO from './seo'
 import InterviewMedia from './interview-media'
 import RichText from './rich-text'
 import Breadcrumb from './breadcrumb'
 
-const Article = ({ data, breadcrumb, children }) => {
+const Article = ({ data, breadcrumb, children, location }) => {
   const image = getImage(data.image)
+  const { baseUrl } = UseSiteMetadata()
 
   return (
     <div className="article">
@@ -34,32 +36,18 @@ const Article = ({ data, breadcrumb, children }) => {
             <div className="social-text">Share this page!</div>
             <div className="social-icons">
               <a
-                href="https://twitter.com/share"
-                className="twitter-share-button"
-                data-show-count="false"
+                href={`https://twitter.com/intent/tweet?text=Oral%20history%20of%20Detroit%27s%20Black%20Bottom%20neighborhood&url=${baseUrl}${location.pathname}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <AiFillTwitterSquare title="Twitter" />
               </a>
-              <script
-                async
-                src="https://platform.twitter.com/widgets.js"
-                charSet="utf-8"
-              ></script>
               <a
-                href="https://www.facebook.com/BlackBottomArchives/"
+                href={`http://www.facebook.com/share.php?u=${baseUrl}${location.pathname}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <AiFillFacebook title="Facebook" />
-              </a>
-              <a
-                href="http://www.instagram.com/blackbottomarchives"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <AiFillInstagram title="Instagram" />
               </a>
             </div>
           </div>
