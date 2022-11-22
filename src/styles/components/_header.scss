@@ -33,7 +33,7 @@ header {
 
     &:hover {
       span {
-        border-bottom: 2px solid $gold;
+        border-bottom: 2px solid $primary;
       }
     }
 
@@ -54,7 +54,7 @@ header {
     cursor: pointer;
 
     &:hover {
-      color: $gold;
+      color: $primary;
     }
 
     @media (min-width: $laptop) {

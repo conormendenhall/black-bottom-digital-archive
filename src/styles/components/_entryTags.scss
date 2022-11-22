@@ -5,12 +5,12 @@
 
   .tag {
     padding: 5px 10px;
-    border: 2px solid $gold;
+    border: 2px solid $primary;
     margin: 0 5px 5px 0;
     background-color: $off-light;
 
     &:hover {
-      background-color: $gold;
+      background-color: $primary;
     }
 
     span {

@@ -32,6 +32,21 @@ const HistoricalSitesPage = ({ data }) => {
           </div>
         </section>
       </div>
+      <div>
+        <section className="container">
+          <h2>Share your story.</h2>
+          <p>
+            Did you or your family members live, work, or play in Black Bottom?
+            Do you have stories, photos or other media to share? Learn more
+            about contributing your history to Black Bottom Archives.
+          </p>
+          <span className="call-to-action-buttons">
+            <span className="share-call-to-action">
+              <a href="https://google.com">Submit Media / Photos / Artifacts</a>
+            </span>
+          </span>
+        </section>
+      </div>
     </Layout>
   )
 }

@@ -1,5 +1,5 @@
 .contact {
-  background-color: $gold;
+  background-color: $primary;
   color: $light;
   margin-bottom: 2em;
 
@@ -26,7 +26,7 @@
       &:hover {
         background-color: $light;
         border-bottom: none;
-        color: $gold;
+        color: $primary;
       }
     }
   }
