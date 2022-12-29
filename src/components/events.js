@@ -25,7 +25,6 @@ const Events = () => {
             image {
               fluid {
                 base64
-                tracedSVG
                 aspectRatio
                 src
                 srcSet
