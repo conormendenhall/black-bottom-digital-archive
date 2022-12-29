@@ -3,7 +3,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Head from '../components/head'
 import Card from '../components/card'
 
 const ThemesPage = ({ data }) => {
@@ -13,7 +13,7 @@ const ThemesPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Themes" />
+      <Head title="Themes" />
       <section className="container">
         <h1>Themes</h1>
         <p>
@@ -32,7 +32,7 @@ const ThemesPage = ({ data }) => {
 
 export const pageQuery = graphql`
   query {
-    themes: allContentfulTheme(sort: {order: ASC, fields: title}) {
+    themes: allContentfulTheme(sort: { order: ASC, fields: title }) {
       edges {
         node {
           id

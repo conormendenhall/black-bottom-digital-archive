@@ -3,14 +3,14 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Head from '../components/head'
 import LeafletMap from '../components/leaflet-map'
 
 const IndexPage = ({ data }) => {
   let places = [...data.sites.edges, ...data.figures.edges]
   return (
     <Layout>
-      <SEO title="Home" />
+      <Head title="Home" />
       <div className="home-title container">
         <h1 className="container">Black Bottom Digital Archive</h1>
       </div>

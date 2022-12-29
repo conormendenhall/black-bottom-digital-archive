@@ -3,7 +3,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Head from '../components/head'
 import Card from '../components/card'
 
 const HistoricalSitesPage = ({ data }) => {
@@ -13,7 +13,7 @@ const HistoricalSitesPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Historical Sites" />
+      <Head title="Historical Sites" />
       <div className="index-header">
         <section className="container">
           <h1>Historical Sites</h1>

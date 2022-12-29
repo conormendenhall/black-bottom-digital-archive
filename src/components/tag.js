@@ -1,13 +1,13 @@
 import React from 'react'
 
 import Layout from './layout'
-import SEO from './seo'
+import Head from './head'
 import Card from './card'
 
 const TagPage = ({ pageContext }) => {
   return (
     <Layout>
-      <SEO title={pageContext.title} />
+      <Head title={pageContext.title} />
       <section className="container">
         <h1>Tag: {pageContext.title}</h1>
         {pageContext.theme && <h3>Themes</h3>}
