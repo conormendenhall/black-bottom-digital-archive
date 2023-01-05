@@ -1,12 +1,12 @@
 import React from 'react'
 
+import { StaticImage } from 'gatsby-plugin-image'
+
 import {
   AiOutlineTwitter,
   AiFillFacebook,
   AiOutlineInstagram,
 } from 'react-icons/ai'
-
-import AmpLogo from '../images/amp-logo.png'
 
 const Footer = () => {
   return (
@@ -32,7 +32,14 @@ const Footer = () => {
             Copyright © {new Date().getFullYear()} Black Bottom Archives
           </h4>
         </div>
-        <img src={AmpLogo} id="ampLogo" alt="Badge for AMP Sponsored Project" />
+        <StaticImage
+          src="../images/amp-logo.png"
+          id="ampLogo"
+          alt="Badge for AMP Sponsored Project"
+          layout="fixed"
+          width={100}
+          height={100}
+        />
         <div className="social">
           <a
             href="http://twitter.com/_blackbottom"

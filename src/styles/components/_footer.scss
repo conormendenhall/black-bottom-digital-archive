@@ -11,6 +11,7 @@ footer {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    align-items: flex-end;
 
     .footer-content {
       display: flex;
@@ -28,15 +29,9 @@ footer {
       }
     }
 
-    #ampLogo {
-      width: 120px;
-      align-self: flex-end;
-    }
-
     .social {
       display: flex;
       justify-content: flex-end;
-      align-items: flex-end;
       flex-basis: 33%;
 
       a {
