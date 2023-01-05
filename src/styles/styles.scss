@@ -173,18 +173,24 @@ pre {
 .map-section {
   background-color: $primary;
 
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-
-    li {
-      margin-bottom: 0;
-    }
-  }
-
   .map-and-index {
     display: flex;
+    margin-bottom: 2em;
+
+    ul.map-index {
+      list-style-type: none;
+      padding: 0;
+      margin: 0 2em 0 0;
+  
+      li {
+        margin-bottom: 0;
+        font-size: 18px;
+        width: 300px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
   }
 }
 

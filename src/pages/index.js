@@ -86,19 +86,15 @@ const IndexPage = ({ data }) => {
             Click a pin on the historical map to learn more about the historical
             sites in Black Bottom.
           </p>
+          <h3>Historical Site Index</h3>
           <div className="map-and-index">
-            <div>
-              <h3>Historical Site Index</h3>
-              <ul>
-                {places.map(({ node }) => (
-                  <a href={node.slug} key={node.id}>
-                    <li>{node.title}</li>
-                  </a>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <div>
+            <ul className="map-index">
+              {places.map(({ node }) => (
+                <a href={node.slug} key={node.id} title={node.title}>
+                  <li>{node.title}</li>
+                </a>
+              ))}
+            </ul>
             {typeof window !== 'undefined' && (
               <LeafletMap
                 center={[42.345, -83.044]}
