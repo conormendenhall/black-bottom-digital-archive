@@ -15,38 +15,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(
     `
       query {
-        events: allContentfulEvent {
-          edges {
-            node {
-              id
-              title
-              slug
-              dateAndTime
-              body {
-                raw
-              }
-              image {
-                fluid {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
-                  sizes
-                }
-              }
-              tags {
-                id
-                title
-                slug
-              }
-              internal {
-                type
-              }
-            }
-          }
-        }
         sites: allContentfulHistoricalSite {
           edges {
             node {
@@ -207,16 +175,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     return
   }
-
-  // Create page for each Event
-  result.data.events.edges.forEach(({ node }) => {
-    const path = `events/${node.slug}`
-    createPage({
-      path,
-      component: internalPath.resolve(`src/components/event.js`),
-      context: node,
-    })
-  })
 
   // Create page for each Historical Site
   result.data.sites.edges.forEach(({ node }) => {

@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { graphql } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import Layout from '../components/layout'
 import Head from '../components/head'
@@ -12,29 +13,35 @@ const IndexPage = ({ data }) => {
     <Layout>
       <Head title="Home" />
       <div className="home-title container">
-        <h1 className="container">Black Bottom Digital Archive</h1>
+        <h1>Black Bottom Digital Archive</h1>
       </div>
-      <section className="container welcome">
-        <p>
-          Welcome to the Black Bottom Digital Archive, where the memories and
-          experiences of those from the long-gone Black Bottom neighborhood are
-          preserved for future generations.
-        </p>
-        <p>
-          Here you will find oral history interviews, historical documents and
-          media from the neighborhood, and entries about historical sites and
-          figures and events.
-        </p>
-        <span className="button-section">
-          <span className="button">
-            <a href="/about">About Black Bottom Archives</a>
-          </span>
-          <span className="button">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe4fk6G3nPZ6UkkK9IfHI9J3a5HQBeqg6oKmWrR8uNgfNyk1w/viewform">
-              Contribute to Black Bottom Archives
-            </a>
-          </span>
-        </span>
+      <section className="container">
+        <div className="welcome-text">
+          <p>
+            Welcome to the Black Bottom Digital Archive, where the memories and
+            experiences of those from the long-gone Black Bottom neighborhood
+            are preserved for future generations.
+          </p>
+          <p>
+            Here you will find oral history interviews, historical documents and
+            media from the neighborhood, and entries about historical sites and
+            figures and events.
+          </p>
+        </div>
+        <div className="button-section">
+          <a href="/about">
+            <div className="button">
+              About Black Bottom
+              <br /> Archives
+            </div>
+          </a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSe4fk6G3nPZ6UkkK9IfHI9J3a5HQBeqg6oKmWrR8uNgfNyk1w/viewform">
+            <div className="button">
+              Contribute to
+              <br /> Black Bottom Archives
+            </div>
+          </a>
+        </div>
       </section>
       <section className="featured-section">
         <div className="container">
@@ -46,7 +53,10 @@ const IndexPage = ({ data }) => {
                 <p>{data.featuredFigure.brief}</p>
               </div>
               <div className="featured-image">
-                <img src={data.featuredFigure.image.fluid.src} />
+                <GatsbyImage
+                  image={getImage(data.featuredFigure.image)}
+                  alt="featured historical figure thumbnail"
+                />
                 <div className="background-circle"></div>
               </div>
             </div>
@@ -59,7 +69,10 @@ const IndexPage = ({ data }) => {
                 <p>{data.featuredSite.brief}</p>
               </div>
               <div className="featured-image">
-                <img src={data.featuredSite.image.fluid.src} />
+                <GatsbyImage
+                  image={getImage(data.featuredSite.image)}
+                  alt="featured historical site thumbnail"
+                />
                 <div className="background-diamond"></div>
               </div>
             </div>
@@ -72,7 +85,10 @@ const IndexPage = ({ data }) => {
                 <p>{data.featuredInterview.brief}</p>
               </div>
               <div className="featured-image">
-                <img src={data.featuredInterview.image.fluid.src} />
+                <GatsbyImage
+                  image={getImage(data.featuredInterview.image)}
+                  alt="featured oral history thumbnail"
+                />
                 <div className="background-circle"></div>
               </div>
             </div>
@@ -112,28 +128,51 @@ const IndexPage = ({ data }) => {
             history of the Black Bottom community. To learn more and submit
             contributions to the map, please fill in our form.
           </p>
-          <span className="button-section">
-            <span className="button submit-site-button">
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSe4fk6G3nPZ6UkkK9IfHI9J3a5HQBeqg6oKmWrR8uNgfNyk1w/viewform">
+          <div className="button-section">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe4fk6G3nPZ6UkkK9IfHI9J3a5HQBeqg6oKmWrR8uNgfNyk1w/viewform">
+              <div className="button submit-site-button">
                 Submit a Historical Site
-              </a>
-            </span>
-          </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section className="contribute-section">
+        <div className="container">
+          <h2>Ways to Contribute</h2>
+          <p>
+            Did you or your family members live, work, or play in Black Bottom?
+            <br />
+            Do you have stories, photos or other media to share?
+          </p>
+          <p>
+            Click on one of the links below to learn more information and
+            contribute to the Black Bottom Archive community.
+          </p>
+          <div className="button-section">
+            <a href="/about">
+              <div className="button">
+                Share Your
+                <br /> Oral History
+              </div>
+            </a>
+            <a href="/about">
+              <div className="button">
+                Submit Media /<br /> Photos / Artifacts
+              </div>
+            </a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe4fk6G3nPZ6UkkK9IfHI9J3a5HQBeqg6oKmWrR8uNgfNyk1w/viewform">
+              <div className="button">
+                Donate to Black
+                <br /> Bottom Archives
+              </div>
+            </a>
+          </div>
         </div>
       </section>
     </Layout>
   )
 }
-
-export const fluidImage = graphql`
-  fragment fluidImage on File {
-    childImageSharp {
-      fluid(maxWidth: 1600) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
-`
 
 export const pageQuery = graphql`
   query {
@@ -181,9 +220,7 @@ export const pageQuery = graphql`
       slug
       brief
       image {
-        fluid {
-          src
-        }
+        gatsbyImageData
       }
     }
     featuredSite: contentfulHistoricalSite(isFeatured: { eq: true }) {
@@ -192,9 +229,7 @@ export const pageQuery = graphql`
       slug
       brief
       image {
-        fluid {
-          src
-        }
+        gatsbyImageData
       }
     }
     featuredInterview: contentfulInterview(isFeatured: { eq: true }) {
@@ -203,9 +238,7 @@ export const pageQuery = graphql`
       slug
       brief
       image {
-        fluid {
-          src
-        }
+        gatsbyImageData
       }
     }
   }

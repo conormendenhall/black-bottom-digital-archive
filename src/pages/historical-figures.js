@@ -39,11 +39,13 @@ const HistoricalFiguresPage = ({ data }) => {
             Do you have stories, photos or other media to share? Learn more
             about contributing your history to Black Bottom Archives.
           </p>
-          <span className="button-section">
-            <span className="button">
-              <a href="https://google.com">Submit a Historical Figure</a>
-            </span>
-          </span>
+          <div className="button-section">
+            <a href="https://google.com">
+              <div className="button">
+                Submit a<br /> Historical Figure
+              </div>
+            </a>
+          </div>
         </section>
       </div>
     </Layout>
