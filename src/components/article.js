@@ -58,7 +58,7 @@ const Article = ({ data, breadcrumb, children, location }) => {
           <InterviewMedia audio={data.audio} transcript={data.transcript} />
         )}
         {image && <GatsbyImage image={image} className="article-image" />}
-        {data.body?.json && <RichText data={data.body} />}
+        {data.body?.raw && <RichText data={data.body} />}
         {children && <section className="container">{children}</section>}
       </section>
       <section className="container">

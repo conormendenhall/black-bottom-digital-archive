@@ -10,7 +10,7 @@ const Team = () => {
       contentfulRichText(title: { eq: "Black Bottom Digital Archive Team" }) {
         title
         body {
-          json
+          raw
         }
       }
     }
@@ -19,7 +19,7 @@ const Team = () => {
   return (
     <>
       <h1>{data.contentfulRichText.title}</h1>
-      {data.contentfulRichText?.body?.json && (
+      {data.contentfulRichText?.body?.raw && (
         <RichText data={data.contentfulRichText.body} />
       )}
     </>

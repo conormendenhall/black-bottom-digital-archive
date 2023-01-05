@@ -23,7 +23,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               slug
               dateAndTime
               body {
-                json
+                raw
               }
               image {
                 fluid {
@@ -54,7 +54,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               title
               slug
               body {
-                json
+                raw
               }
               bibliography {
                 childMarkdownRemark {
@@ -79,7 +79,20 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               title
               slug
               body {
-                json
+                raw
+                references {
+                  ... on ContentfulImage {
+                    contentful_id
+                    altText
+                    photo {
+                      gatsbyImageData(width: 1000)
+                    }
+                    imageCaption {
+                      imageCaption
+                    }
+                    __typename
+                  }
+                }
               }
               bibliography {
                 childMarkdownRemark {
@@ -104,7 +117,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               title
               slug
               body {
-                json
+                raw
               }
               audio {
                 id
@@ -168,7 +181,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               title
               slug
               body {
-                json
+                raw
               }
               tags {
                 id

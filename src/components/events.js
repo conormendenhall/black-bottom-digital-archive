@@ -20,7 +20,7 @@ const Events = () => {
             slug
             dateAndTime
             body {
-              json
+              raw
             }
             image {
               fluid {
@@ -57,7 +57,7 @@ const Events = () => {
             <Moment format="MMMM Do, YYYY">{item.node.dateAndTime}</Moment>
           </div>
           <div>
-            {item.node.body?.json && <RichText data={item.node.body} />}
+            {item.node.body?.raw && <RichText data={item.node.body} />}
           </div>
         </div>
       </div>

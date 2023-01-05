@@ -1,7 +1,8 @@
 import React from 'react'
 
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { renderRichText } from 'gatsby-source-contentful/rich-text'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const RichText = ({ data }) => {
   const options = {
@@ -14,35 +15,27 @@ const RichText = ({ data }) => {
       [BLOCKS.OL_LIST]: (node, children) => <ol>{children}</ol>,
       [BLOCKS.LIST_ITEM]: (node, children) => <li>{children}</li>,
       [BLOCKS.QUOTE]: (node, children) => <blockquote>{children}</blockquote>,
-      [BLOCKS.EMBEDDED_ASSET]: node => {
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        const { gatsbyImageData, description } = node.data.target
         return (
-          node.data.target.fields.file['en-US']?.url && (
-            <img
-              src={node.data.target.fields.file['en-US'].url}
-              className="article-embedded-image"
-            />
-          )
+          <GatsbyImage
+            image={getImage(gatsbyImageData)}
+            alt={description}
+            className="article-embedded-image"
+          />
         )
       },
-      [BLOCKS.EMBEDDED_ENTRY]: node => {
+      [BLOCKS.EMBEDDED_ENTRY]: (node) => {
+        const { photo, altText, imageCaption } = node.data.target
         return (
-          node.data.target.fields.photo['en-US'] &&
-          node.data.target.fields.altText['en-US'] &&
-          node.data.target.fields.imageCaption['en-US'] && (
-            <>
-              <img
-                src={
-                  node.data.target.fields.photo['en-US'].fields.file['en-US']
-                    .url
-                }
-                className="article-embedded-image"
-                alt={node.data.target.fields.altText['en-US']}
-              />
-              <p className="image-caption">
-                {node.data.target.fields.imageCaption['en-US']}
-              </p>
-            </>
-          )
+          <>
+            <GatsbyImage
+              image={getImage(photo.gatsbyImageData)}
+              className="article-embedded-image"
+              alt={altText}
+            />
+            <p className="image-caption">{imageCaption.imageCaption}</p>
+          </>
         )
       },
     },
@@ -52,16 +45,14 @@ const RichText = ({ data }) => {
       },
     },
     renderMark: {
-      [MARKS.BOLD]: text => <b>{text}</b>,
-      [MARKS.ITALIC]: text => <i>{text}</i>,
-      [MARKS.UNDERLINE]: text => <u>{text}</u>,
+      [MARKS.BOLD]: (text) => <b>{text}</b>,
+      [MARKS.ITALIC]: (text) => <i>{text}</i>,
+      [MARKS.UNDERLINE]: (text) => <u>{text}</u>,
     },
   }
 
   return (
-    <div className="rich-text">
-      {data?.json && documentToReactComponents(data.json, options)}
-    </div>
+    <div className="rich-text">{data && renderRichText(data, options)}</div>
   )
 }
 

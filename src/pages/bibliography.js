@@ -13,7 +13,7 @@ const BibliographyPage = ({ data }) => {
       <section className="container">
         <h1>{data.bibliography?.name}</h1>
         <div id="bibliography">
-          {data.bibliography?.resources?.json && (
+          {data.bibliography?.resources?.raw && (
             <RichText data={data.bibliography.resources} />
           )}
         </div>
@@ -29,7 +29,7 @@ export const pageQuery = graphql`
     ) {
       name
       resources {
-        json
+        raw
       }
     }
   }
