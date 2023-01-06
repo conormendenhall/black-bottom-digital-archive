@@ -19,7 +19,7 @@ const LeafletMap = ({ center, zoom, className, data }) => {
           } else if (entry.internal.type === 'ContentfulHistoricalFigure') {
             url = 'historical-figures'
           } else if (entry.internal.type === 'ContentfulInterview') {
-            url = 'interviews'
+            url = 'oral-histories'
           }
 
           const image = getImage(entry.image)

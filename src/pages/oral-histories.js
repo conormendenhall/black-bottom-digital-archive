@@ -6,14 +6,14 @@ import Layout from '../components/layout'
 import Head from '../components/head'
 import Card from '../components/card'
 
-const InterviewsPage = ({ data }) => {
-  let interviews = data.interviews.edges.map((item, key) => (
-    <Card url="/interviews/" data={item.node} key={key} />
+const OralHistoriesPage = ({ data }) => {
+  let oralHistories = data.oralHistories.edges.map((item, key) => (
+    <Card url="/oral-histories/" data={item.node} key={key} />
   ))
 
   return (
     <Layout>
-      <Head title="Interviews" />
+      <Head title="Oral Histories" />
       <div className="index-header">
         <section className="container">
           <h1>Oral Histories</h1>
@@ -28,8 +28,8 @@ const InterviewsPage = ({ data }) => {
       </div>
       <div className="card-gallery-container">
         <section className="container">
-          <div id="interviews" className="card-gallery">
-            {interviews}
+          <div id="oralHistories" className="card-gallery">
+            {oralHistories}
           </div>
         </section>
       </div>
@@ -62,7 +62,7 @@ const InterviewsPage = ({ data }) => {
 
 export const pageQuery = graphql`
   query {
-    interviews: allContentfulInterview(sort: { order: ASC, fields: title }) {
+    oralHistories: allContentfulInterview(sort: { order: ASC, fields: title }) {
       edges {
         node {
           id
@@ -74,4 +74,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default InterviewsPage
+export default OralHistoriesPage

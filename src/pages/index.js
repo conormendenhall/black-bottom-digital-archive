@@ -55,7 +55,7 @@ const IndexPage = ({ data }) => {
               <div className="featured-image">
                 <GatsbyImage
                   image={getImage(data.featuredFigure.image)}
-                  alt="featured historical figure thumbnail"
+                  alt={data.featuredFigure.image.description}
                 />
                 <div className="background-circle"></div>
               </div>
@@ -71,23 +71,23 @@ const IndexPage = ({ data }) => {
               <div className="featured-image">
                 <GatsbyImage
                   image={getImage(data.featuredSite.image)}
-                  alt="featured historical site thumbnail"
+                  alt={data.featuredSite.image.description}
                 />
                 <div className="background-diamond"></div>
               </div>
             </div>
           </a>
-          <a href={'/interviews/' + data.featuredInterview.slug}>
+          <a href={'/oral-histories/' + data.featuredHistory.slug}>
             <div className="featured-banner">
               <div className="featured-content">
                 <h2>Featured Oral History</h2>
-                <h3>{data.featuredInterview.title}</h3>
-                <p>{data.featuredInterview.brief}</p>
+                <h3>{data.featuredHistory.title}</h3>
+                <p>{data.featuredHistory.brief}</p>
               </div>
               <div className="featured-image">
                 <GatsbyImage
-                  image={getImage(data.featuredInterview.image)}
-                  alt="featured oral history thumbnail"
+                  image={getImage(data.featuredHistory.image)}
+                  alt={data.featuredHistory.image.description}
                 />
                 <div className="background-circle"></div>
               </div>
@@ -195,7 +195,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    figures: allContentfulHistoricalFigure {
+    figures: allContentfulHistoricalFigure(sort: { fields: title }) {
       edges {
         node {
           id
@@ -221,6 +221,7 @@ export const pageQuery = graphql`
       brief
       image {
         gatsbyImageData
+        description
       }
     }
     featuredSite: contentfulHistoricalSite(isFeatured: { eq: true }) {
@@ -230,15 +231,17 @@ export const pageQuery = graphql`
       brief
       image {
         gatsbyImageData
+        description
       }
     }
-    featuredInterview: contentfulInterview(isFeatured: { eq: true }) {
+    featuredHistory: contentfulInterview(isFeatured: { eq: true }) {
       id
       title
       slug
       brief
       image {
         gatsbyImageData
+        description
       }
     }
   }

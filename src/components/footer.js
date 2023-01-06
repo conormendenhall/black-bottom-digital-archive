@@ -16,7 +16,7 @@ const Footer = () => {
           <a href="/historical-figures">
             <h4 id="bibliographyLink">Historical Figures</h4>
           </a>
-          <a href="/interviews">
+          <a href="/oral-histories">
             <h4 id="bibliographyLink">Oral Histories</h4>
           </a>
           <a href="/historical-sites">
