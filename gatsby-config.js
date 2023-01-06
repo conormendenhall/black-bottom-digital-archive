@@ -7,7 +7,7 @@ module.exports = {
     title: `Black Bottom Digital Archive`,
     description: `  `,
     author: `https://github.com/conormendenhall`,
-    baseUrl: `https://digital.blackbottomarchives.com`
+    baseUrl: `https://digital.blackbottomarchives.com`,
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -48,17 +48,13 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        // CommonMark mode (default: true)
-        commonmark: true,
         // Footnotes mode (default: true)
         footnotes: true,
-        // Pedantic mode (default: true)
-        pedantic: true,
         // GitHub Flavored Markdown mode (default: true)
         gfm: true,
         // Plugins configs
         plugins: [],
       },
-    }
+    },
   ],
 }
