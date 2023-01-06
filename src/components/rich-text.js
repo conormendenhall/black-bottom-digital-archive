@@ -29,12 +29,16 @@ const RichText = ({ data }) => {
         const { photo, altText, imageCaption } = node.data.target
         return (
           <>
-            <GatsbyImage
-              image={getImage(photo.gatsbyImageData)}
-              className="article-embedded-image"
-              alt={altText}
-            />
-            <p className="image-caption">{imageCaption.imageCaption}</p>
+            {photo && (
+              <GatsbyImage
+                image={getImage(photo.gatsbyImageData)}
+                className="article-embedded-image"
+                alt={altText}
+              />
+            )}
+            {imageCaption && (
+              <p className="image-caption">{imageCaption.imageCaption}</p>
+            )}
           </>
         )
       },

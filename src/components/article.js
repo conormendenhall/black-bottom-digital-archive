@@ -16,7 +16,6 @@ import RichText from './rich-text'
 import Breadcrumb from './breadcrumb'
 
 const Article = ({ data, breadcrumb, children, location }) => {
-  const image = getImage(data.image)
   const { baseUrl } = UseSiteMetadata()
 
   return (
@@ -57,7 +56,6 @@ const Article = ({ data, breadcrumb, children, location }) => {
         {(data.audio || data.transcript) && (
           <InterviewMedia audio={data.audio} transcript={data.transcript} />
         )}
-        {image && <GatsbyImage image={image} className="article-image" />}
         {data.body?.raw && <RichText data={data.body} />}
         {children && <section className="container">{children}</section>}
       </section>
