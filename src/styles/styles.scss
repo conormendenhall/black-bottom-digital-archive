@@ -212,6 +212,10 @@ pre {
   margin-top: 50px;
 }
 
+.team-section {
+  background-color: $primary;
+}
+
 @import './components/article';
 @import './components/breadcrumb';
 @import './components/card';

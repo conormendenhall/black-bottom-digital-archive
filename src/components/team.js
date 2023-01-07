@@ -18,7 +18,7 @@ const Team = () => {
 
   return (
     <>
-      <h1>{data.contentfulRichText.title}</h1>
+      <h2>{data.contentfulRichText.title}</h2>
       {data.contentfulRichText?.body?.raw && (
         <RichText data={data.contentfulRichText.body} />
       )}

@@ -3,7 +3,6 @@ import React from 'react'
 import Layout from '../components/layout'
 import Head from '../components/head'
 import Team from '../components/team'
-import Contact from '../components/contact'
 
 const AboutPage = () => {
   return (
@@ -40,9 +39,11 @@ const AboutPage = () => {
           of Black Detroit.
         </p>
       </section>
-      <section className="container">
-        <Team />
-      </section>
+      <div className="team-section">
+        <section className="container">
+          <Team />
+        </section>
+      </div>
       <section className="container">
         <h2>Accessibility Statement</h2>
         <p>This is an accessibility statement from the Black Bottom Archive.</p>
@@ -76,7 +77,6 @@ const AboutPage = () => {
           Accessibility Statement Generator Tool.
         </p>
       </section>
-      <Contact />
     </Layout>
   )
 }
