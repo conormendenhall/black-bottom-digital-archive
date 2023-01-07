@@ -114,7 +114,7 @@ const Article = ({ pageContext, location }) => {
         </section>
         <section className="container">
           {pageContext.next && (
-            <div className="button-section">
+            <div className="button-section reverse">
               <a href={breadcrumbPath + '/' + pageContext.next.slug}>
                 <div className="button">
                   Next {entryType}:

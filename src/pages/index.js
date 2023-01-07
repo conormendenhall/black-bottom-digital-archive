@@ -12,8 +12,10 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Head title="Home" />
-      <div className="home-title container">
-        <h1>Black Bottom Digital Archive</h1>
+      <div className="container">
+        <div className="home-title container">
+          <h1>Black Bottom Digital Archive</h1>
+        </div>
       </div>
       <section className="welcome container">
         <div className="welcome-text">
