@@ -45,17 +45,24 @@ const Article = ({ pageContext, location }) => {
             <Breadcrumb text={breadcrumbText} href={breadcrumbPath} />
           </section>
           <section className="container article-header-content">
-            {pageContext.node.image && (
-              <GatsbyImage
-                image={getImage(pageContext.node.image)}
-                alt={pageContext.node.image.description}
-              />
-            )}
-            <div>
-              <h1 className="article-title">{pageContext.node.title}</h1>
-              {pageContext.node.designation && (
-                <p>{pageContext.node.designation.toUpperCase()}</p>
-              )}
+            <div className="article-header-content">
+              <div className="thumbnail-image">
+                {pageContext.node.image && (
+                  <>
+                    <GatsbyImage
+                      image={getImage(pageContext.node.image)}
+                      alt={pageContext.node.image.description}
+                    />
+                    <div className="background-circle"></div>
+                  </>
+                )}
+              </div>
+              <div>
+                <h1 className="article-title">{pageContext.node.title}</h1>
+                {pageContext.node.designation && (
+                  <p>{pageContext.node.designation.toUpperCase()}</p>
+                )}
+              </div>
             </div>
             <div>
               <div className="social-text">Share this page!</div>

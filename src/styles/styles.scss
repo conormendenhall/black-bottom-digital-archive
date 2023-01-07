@@ -109,6 +109,52 @@ pre {
   margin-bottom: 1em;
 }
 
+.thumbnail-image {
+  min-width: 5em;
+  position: relative;
+  margin-right: 1em;
+
+  .gatsby-image-wrapper {
+    position: relative;
+    z-index: 1;
+    max-height: 10em;
+    margin: 0 1.25em 0 0;
+  }
+
+  .background-circle {
+    background-color: $primary;
+    border-radius: 50%;
+    width: 9em;
+    height: 9em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 0;
+  }
+
+  .background-diamond {
+    background-color: $primary;
+    width: 7em;
+    height: 7em;
+    position: absolute;
+    right: -2.5em;
+    top: 3em;
+    z-index: 0;
+    /* Rotate */
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    /* Rotate Origin */
+    -webkit-transform-origin: 0 100%;
+    -moz-transform-origin: 0 100%;
+    -ms-transform-origin: 0 100%;
+    -o-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+  }
+}
+
 .featured-section {
   background-color: $light;
 
@@ -125,52 +171,6 @@ pre {
 
     .featured-content {
       max-width: 80%;
-    }
-
-    .featured-image {
-      min-width: 5em;
-      position: relative;
-      margin-right: 1em;
-
-      .gatsby-image-wrapper {
-        position: relative;
-        z-index: 1;
-        max-height: 10em;
-        margin: 0 1.25em 0 0;
-      }
-
-      .background-circle {
-        background-color: $primary;
-        border-radius: 50%;
-        width: 9em;
-        height: 9em;
-        position: absolute;
-        right: 0;
-        top: 0;
-        z-index: 0;
-      }
-
-      .background-diamond {
-        background-color: $primary;
-        width: 7em;
-        height: 7em;
-        position: absolute;
-        right: -2.5em;
-        top: 3em;
-        z-index: 0;
-        /* Rotate */
-        -webkit-transform: rotate(-45deg);
-        -moz-transform: rotate(-45deg);
-        -ms-transform: rotate(-45deg);
-        -o-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-        /* Rotate Origin */
-        -webkit-transform-origin: 0 100%;
-        -moz-transform-origin: 0 100%;
-        -ms-transform-origin: 0 100%;
-        -o-transform-origin: 0 100%;
-        transform-origin: 0 100%;
-      }
     }
   }
 }

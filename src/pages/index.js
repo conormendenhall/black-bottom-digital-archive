@@ -52,8 +52,9 @@ const IndexPage = ({ data }) => {
                 <h2>Featured Historical Figure</h2>
                 <h3>{data.featuredFigure.title}</h3>
                 <p>{data.featuredFigure.brief}</p>
+                <p>Read more about {data.featuredFigure.title} &gt;&gt;</p>
               </div>
-              <div className="featured-image">
+              <div className="thumbnail-image">
                 <GatsbyImage
                   image={getImage(data.featuredFigure.image)}
                   alt={data.featuredFigure.image.description}
@@ -68,8 +69,9 @@ const IndexPage = ({ data }) => {
                 <h2>Featured Historical Site</h2>
                 <h3>{data.featuredSite.title}</h3>
                 <p>{data.featuredSite.brief}</p>
+                <p>Read more about {data.featuredSite.title} &gt;&gt;</p>
               </div>
-              <div className="featured-image">
+              <div className="thumbnail-image">
                 <GatsbyImage
                   image={getImage(data.featuredSite.image)}
                   alt={data.featuredSite.image.description}
@@ -84,8 +86,9 @@ const IndexPage = ({ data }) => {
                 <h2>Featured Oral History</h2>
                 <h3>{data.featuredHistory.title}</h3>
                 <p>{data.featuredHistory.brief}</p>
+                <p>Listen to {data.featuredHistory.title} &gt;&gt;</p>
               </div>
-              <div className="featured-image">
+              <div className="thumbnail-image">
                 <GatsbyImage
                   image={getImage(data.featuredHistory.image)}
                   alt={data.featuredHistory.image.description}
