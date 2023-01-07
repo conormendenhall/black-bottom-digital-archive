@@ -27,10 +27,10 @@ main {
   flex-direction: column;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 2em 1em 2em;
+  padding: 0 2rem 1rem 2rem;
 
   &:first-of-type {
-    padding-top: 1em;
+    padding-top: 1rem;
   }
 }
 
@@ -201,6 +201,15 @@ pre {
 
 .map-source {
   font-size: 12px;
+}
+
+.about-header {
+  background-color: $light;
+  font-size: 36px;
+}
+
+.mission-and-vision {
+  margin-top: 50px;
 }
 
 @import './components/article';
