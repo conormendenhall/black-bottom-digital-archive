@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => {
       <div className="home-title container">
         <h1>Black Bottom Digital Archive</h1>
       </div>
-      <section className="container">
+      <section className="welcome container">
         <div className="welcome-text">
           <p>
             Welcome to the Black Bottom Digital Archive, where the memories and

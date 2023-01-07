@@ -68,12 +68,12 @@ pre {
 .button-section {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 
   .button {
     color: $dark;
     border: 5px solid $dark;
     padding: 15px 45px;
-    margin: 0 90px 45px 0;
     font-size: 32px;
     font-weight: 700;
   
@@ -94,6 +94,10 @@ pre {
   background-color: $primary;
   margin: 3em 0 0 2em;
   width: 1020px;
+}
+
+.welcome {
+  padding: 150px;
 }
 
 .welcome-text {

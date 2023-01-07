@@ -41,7 +41,9 @@ const Article = ({ pageContext, location }) => {
       <div className="article">
         <Head title={pageContext.node.title} />
         <div className="article-header">
-          <Breadcrumb text={breadcrumbText} href={breadcrumbPath} />
+          <section className="container">
+            <Breadcrumb text={breadcrumbText} href={breadcrumbPath} />
+          </section>
           <section className="container article-header-content">
             {pageContext.node.image && (
               <GatsbyImage
@@ -109,6 +111,8 @@ const Article = ({ pageContext, location }) => {
               <EntryTags data={pageContext.node.tags}></EntryTags>
             </>
           )}
+        </section>
+        <section className="container">
           {pageContext.next && (
             <div className="button-section">
               <a href={breadcrumbPath + '/' + pageContext.next.slug}>
