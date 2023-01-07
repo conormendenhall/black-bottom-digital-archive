@@ -8,7 +8,6 @@ import Head from '../components/head'
 import LeafletMap from '../components/leaflet-map'
 
 const IndexPage = ({ data }) => {
-  let places = [...data.sites.edges, ...data.figures.edges]
   return (
     <Layout>
       <Head title="Home" />
@@ -107,8 +106,12 @@ const IndexPage = ({ data }) => {
           <h3>Historical Site Index</h3>
           <div className="map-and-index">
             <ul className="map-index">
-              {places.map(({ node }) => (
-                <a href={node.slug} key={node.id} title={node.title}>
+              {data.sites.edges.map(({ node }) => (
+                <a
+                  href={'/historical-sites/' + node.slug}
+                  key={node.id}
+                  title={node.title}
+                >
                   <li>{node.title}</li>
                 </a>
               ))}
@@ -117,7 +120,7 @@ const IndexPage = ({ data }) => {
               <LeafletMap
                 center={[42.345, -83.044]}
                 zoom={13}
-                data={places.map(({ node }) => node)}
+                data={data.sites.edges.map(({ node }) => node)}
                 className="leaflet-container"
               />
             )}
@@ -133,7 +136,7 @@ const IndexPage = ({ data }) => {
           <div className="button-section">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSe4fk6G3nPZ6UkkK9IfHI9J3a5HQBeqg6oKmWrR8uNgfNyk1w/viewform">
               <div className="button submit-site-button">
-                Submit a Historical Site
+                Submit a<br /> Historical Site
               </div>
             </a>
           </div>
@@ -179,25 +182,6 @@ const IndexPage = ({ data }) => {
 export const pageQuery = graphql`
   query {
     sites: allContentfulHistoricalSite(sort: { fields: title }) {
-      edges {
-        node {
-          id
-          title
-          slug
-          places {
-            title
-            location {
-              lat
-              lon
-            }
-          }
-          internal {
-            type
-          }
-        }
-      }
-    }
-    figures: allContentfulHistoricalFigure(sort: { fields: title }) {
       edges {
         node {
           id
