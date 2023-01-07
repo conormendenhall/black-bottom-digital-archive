@@ -46,17 +46,15 @@ const Article = ({ pageContext, location }) => {
           </section>
           <section className="container article-header-content">
             <div className="article-header-content">
-              <div className="thumbnail-image">
-                {pageContext.node.image && (
-                  <>
-                    <GatsbyImage
-                      image={getImage(pageContext.node.image)}
-                      alt={pageContext.node.image.description}
-                    />
-                    <div className="background-circle"></div>
-                  </>
-                )}
-              </div>
+              {pageContext.node.image && (
+                <div className="thumbnail-image">
+                  <GatsbyImage
+                    image={getImage(pageContext.node.image)}
+                    alt={pageContext.node.image.description}
+                  />
+                  <div className="background-circle"></div>
+                </div>
+              )}
               <div>
                 <h1 className="article-title">{pageContext.node.title}</h1>
                 {pageContext.node.designation && (
