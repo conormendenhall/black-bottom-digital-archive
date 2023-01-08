@@ -17,7 +17,7 @@ const Header = () => (
     <a href="/about" className="menu-link hide">
       <span>About</span>
     </a>
-    <a href="/" className="menu-link hide">
+    <a href="/submissions" className="menu-link hide">
       <span>Submissions</span>
     </a>
     <a href="/" className="menu-link hide">

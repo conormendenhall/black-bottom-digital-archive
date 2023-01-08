@@ -76,6 +76,7 @@ pre {
     padding: 15px 45px;
     font-size: 32px;
     font-weight: 700;
+    min-width: 400px;
   
     &:hover {
       background-color: $primary;
@@ -214,6 +215,18 @@ pre {
 
 .team-section {
   background-color: $primary;
+}
+
+.share-header {
+  background-color: $light;
+}
+
+.share-form {
+  background-color: $primary;
+}
+
+.oral-history-link {
+  text-decoration: underline;
 }
 
 @import './components/article';
