@@ -52,7 +52,7 @@ const SubmissionsPage = () => {
           </p>
         </section>
       </div>
-      <section className="container">
+      <section className="financially-support container">
         <h2>I'd like to financially support.</h2>
         <p>
           Black Bottom Archive relies on the support of our staff and

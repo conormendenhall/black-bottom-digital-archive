@@ -219,14 +219,20 @@ pre {
 
 .share-header {
   background-color: $light;
+  font-size: 36px;
 }
 
 .share-form {
   background-color: $primary;
+  font-size: 36px;
 }
 
 .oral-history-link {
   text-decoration: underline;
+}
+
+.financially-support {
+  font-size: 36px;
 }
 
 @import './components/article';
