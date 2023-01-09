@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { navigate } from 'gatsby'
+
 import Layout from '../components/layout'
 
 const FooPage = () => {
