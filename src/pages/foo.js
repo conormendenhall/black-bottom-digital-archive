@@ -19,6 +19,14 @@ class FooPage extends React.Component {
     this.encode = this.encode.bind(this)
   }
 
+  encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+      )
+      .join('&')
+  }
+
   handleChange = (event) => {
     const target = event.target
     const value = target.value
@@ -33,21 +41,13 @@ class FooPage extends React.Component {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
+      body: this.encode({
         'form-name': event.target.getAttribute('name'),
         ...this.state,
       }),
     })
       .then(() => navigate('/'))
       .catch((error) => alert(error))
-  }
-
-  encode = (data) => {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
-      )
-      .join('&')
   }
 
   render() {
