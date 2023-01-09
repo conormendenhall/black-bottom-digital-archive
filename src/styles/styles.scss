@@ -76,7 +76,6 @@ pre {
     padding: 15px 45px;
     font-size: 32px;
     font-weight: 700;
-    min-width: 400px;
   
     &:hover {
       background-color: $primary;
@@ -217,7 +216,7 @@ pre {
   background-color: $primary;
 }
 
-.share-header {
+.share-header, .contact-header {
   background-color: $light;
   font-size: 36px;
 }

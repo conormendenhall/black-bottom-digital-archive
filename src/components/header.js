@@ -20,7 +20,7 @@ const Header = () => (
     <a href="/submissions" className="menu-link hide">
       <span>Submissions</span>
     </a>
-    <a href="/" className="menu-link hide">
+    <a href="/contact" className="menu-link hide">
       <span>Contact</span>
     </a>
     <a id="menuBtn" onClick={toggleMenu}>
