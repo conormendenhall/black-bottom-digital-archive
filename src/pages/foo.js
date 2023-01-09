@@ -5,15 +5,24 @@ import { navigate } from 'gatsby'
 import Layout from '../components/layout'
 
 const FooPage = () => {
-  function encode(data) {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
-      )
-      .join('&')
+  state = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    subject: '',
+    message: '',
   }
 
-  const handleSubmit = (event) => {
+  handleChange = (event) => {
+    const target = event.target
+    const value = target.value
+    const name = target.name
+    this.setState({
+      [name]: value,
+    })
+  }
+
+  handleSubmit = (event) => {
     event.preventDefault()
     fetch('/', {
       method: 'POST',
@@ -27,8 +36,12 @@ const FooPage = () => {
       .catch((error) => alert(error))
   }
 
-  const handleChange = (event) => {
-    this.setState({ value: event.target.value })
+  function encode(data) {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+      )
+      .join('&')
   }
 
   return (
