@@ -24,7 +24,7 @@ const FooPage = () => {
       .then(() => navigate('/thank-you/'))
       .catch((error) => alert(error))
   }
-  
+
   return (
     <Layout>
       <section className="container">
@@ -32,7 +32,6 @@ const FooPage = () => {
         <p>*Required</p>
         <form
           name="contact"
-          action="/contact"
           method="POST"
           data-netlify="true"
           onSubmit={handleSubmit}
@@ -40,25 +39,44 @@ const FooPage = () => {
           <input type="hidden" name="contact" value="contact" />
           <p>
             <label>
-              First Name <input type="text" name="firstName" />
+              First Name{' '}
+              <input type="text" name="firstName" onChange={handleChange} />
             </label>
             <label>
-              Last Name <input type="text" name="lastName" />
-            </label>
-          </p>
-          <p>
-            <label>
-              Email* <input type="email" name="email" required />
+              Last Name{' '}
+              <input type="text" name="lastName" onChange={handleChange} />
             </label>
           </p>
           <p>
             <label>
-              Subject* <input type="text" name="subject" required />
+              Email*{' '}
+              <input
+                type="email"
+                name="email"
+                required
+                onChange={handleChange}
+              />
             </label>
           </p>
           <p>
             <label>
-              Message* <textarea name="message" required></textarea>
+              Subject*{' '}
+              <input
+                type="text"
+                name="subject"
+                required
+                onChange={handleChange}
+              />
+            </label>
+          </p>
+          <p>
+            <label>
+              Message*{' '}
+              <textarea
+                name="message"
+                required
+                onChange={handleChange}
+              ></textarea>
             </label>
           </p>
           <div className="button-section">
