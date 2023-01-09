@@ -21,8 +21,12 @@ const FooPage = () => {
         ...name,
       }),
     })
-      .then(() => navigate('/thank-you/'))
+      .then(() => navigate('/'))
       .catch((error) => alert(error))
+  }
+
+  const handleChange = (event) => {
+    this.setState({ value: event.target.value })
   }
 
   return (
