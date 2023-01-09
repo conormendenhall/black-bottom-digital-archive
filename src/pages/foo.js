@@ -20,7 +20,7 @@ const FooPage = () => {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
         'form-name': event.target.getAttribute('name'),
-        ...name,
+        ...this.state,
       }),
     })
       .then(() => navigate('/'))
