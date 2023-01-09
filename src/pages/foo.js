@@ -16,6 +16,7 @@ class FooPage extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.encode = this.encode.bind(this)
   }
 
   handleChange = (event) => {
