@@ -48,7 +48,7 @@ class ContactPage extends React.Component {
       }),
     })
       .then(() => navigate('/'))
-      .catch((error) => alert(error))
+      .catch((error) => console.log(error))
   }
 
   render() {
