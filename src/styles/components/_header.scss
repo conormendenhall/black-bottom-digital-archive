@@ -46,6 +46,15 @@ header {
     }
   }
 
+  #searchButton {
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
   #menuBtn {
     display: inline;
     position: absolute;

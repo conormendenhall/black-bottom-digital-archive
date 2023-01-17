@@ -236,6 +236,44 @@ pre {
   font-size: 36px;
 }
 
+.ReactModal__Content {
+  * {
+    color: $light;
+    background-color: #000;
+  }
+  
+  .ais-SearchBox-input {
+    font-size: 36px;
+  }
+
+  .ais-SearchBox-submit {
+    display: none;
+  }
+
+  .ais-Hits {
+    * {
+      font-size: 18px;
+    }
+
+    ol {
+      margin-left: 0;
+
+      li {
+        list-style-type: none;
+      }
+    }
+  
+    .ais-Highlight-highlighted {
+      background-color: #000;
+      border-bottom: 2px solid $primary;
+    }
+  }
+}
+
+.ReactModal__Body--open {
+  overflow-y: hidden;
+}
+
 @import './components/article';
 @import './components/breadcrumb';
 @import './components/card';
