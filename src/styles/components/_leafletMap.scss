@@ -7,6 +7,12 @@
   * {
     transition: none;
   }
+
+  .leaflet-control-attribution {
+    svg {
+      display: none;  // hide flag
+    }
+  }
 }
 
 .leaflet-popup {
