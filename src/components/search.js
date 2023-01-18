@@ -5,6 +5,7 @@ import {
   SearchBox,
   Hits,
   Highlight,
+  useInstantSearch,
 } from 'react-instantsearch-hooks-web'
 
 import algoliasearch from 'algoliasearch/lite'
@@ -27,14 +28,16 @@ function Hit({ hit }) {
 
   return (
     <a href={`/${path}/${hit.slug}`}>
-      <div>
+      <div className="hit-title">
         <Highlight attribute="title" hit={hit} />
       </div>
-      <div>
-        <Highlight attribute="designation" hit={hit} />
-      </div>
-      <div>
-        <Highlight attribute="brief" hit={hit} />
+      <div className="hit-details">
+        <div>
+          <Highlight attribute="designation" hit={hit} />
+        </div>
+        <div>
+          <Highlight attribute="brief" hit={hit} />
+        </div>
       </div>
     </a>
   )
@@ -46,12 +49,26 @@ const Search = () => {
       {/* polyfill for IE 11 */}
       <script src="https://polyfill.io/v3/polyfill.min.js?features=default%2CArray.prototype.find%2CArray.prototype.includes%2CPromise%2CObject.assign%2CObject.entries"></script>
       <InstantSearch searchClient={searchClient} indexName="Figures">
-        <HiSearch />
-        <SearchBox placeholder="Search" />
-        <Hits hitComponent={Hit} />
+        <div className="flex">
+          <HiSearch className="search-icon" />
+          <SearchBox placeholder="Search" />
+        </div>
+        <EmptyQueryBoundary fallback={null}>
+          <Hits hitComponent={Hit} />
+        </EmptyQueryBoundary>
       </InstantSearch>
     </>
   )
+}
+
+function EmptyQueryBoundary({ children, fallback }) {
+  const { indexUiState } = useInstantSearch()
+
+  if (!indexUiState.query) {
+    return fallback
+  }
+
+  return children
 }
 
 export default Search

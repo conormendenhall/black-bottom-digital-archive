@@ -65,6 +65,10 @@ pre {
   word-wrap: break-word; /* IE 5.5+ */
 }
 
+.flex {
+  display: flex;
+}
+
 .button-section {
   display: flex;
   flex-wrap: wrap;
@@ -241,12 +245,27 @@ pre {
     color: $light;
     background-color: #000;
   }
+
+  .search-icon {
+    font-size: 32px;
+    margin-top: 11px;
+    margin-right: 10px;
+  }
+
+  .ais-SearchBox-form {
+    margin-bottom: 0;
+  }
   
   .ais-SearchBox-input {
     font-size: 36px;
+    border: none;
   }
 
   .ais-SearchBox-submit {
+    display: none;
+  }
+
+  .ais-SearchBox-reset {
     display: none;
   }
 
@@ -261,6 +280,14 @@ pre {
       li {
         list-style-type: none;
       }
+    }
+
+    .hit-title * {
+      font-size: 24px;
+    }
+
+    .hit-details {
+      margin-left: 1rem;
     }
   
     .ais-Highlight-highlighted {

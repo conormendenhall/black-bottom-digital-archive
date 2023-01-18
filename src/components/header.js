@@ -13,7 +13,7 @@ const Header = () => {
       background: 'rgba(0, 0, 0, 0.85)',
     },
     content: {
-      top: '3rem',
+      top: '0',
       left: '3rem',
       right: '3rem',
       bottom: 'auto',
@@ -29,6 +29,10 @@ const Header = () => {
 
   function closeModal() {
     setIsOpen(false)
+  }
+
+  function afterOpenModal() {
+    document.getElementsByClassName('ais-SearchBox-input')[0].focus()
   }
 
   function toggleMenu() {
@@ -74,11 +78,11 @@ const Header = () => {
       </a>
       <Modal
         isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Search"
       >
-        <button onClick={closeModal}>close</button>
         <Search />
       </Modal>
     </header>
