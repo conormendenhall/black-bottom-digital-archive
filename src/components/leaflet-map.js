@@ -1,6 +1,5 @@
 import React from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const LeafletMap = ({ center, zoom, className, data }) => {
   return (
@@ -10,8 +9,8 @@ const LeafletMap = ({ center, zoom, className, data }) => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank" rel="noopener noreferrer">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank" rel="noopener noreferrer">OpenStreetMap France</a>'
       />
       {data
-        ?.filter(item => item.places)
-        .map(entry => {
+        ?.filter((item) => item.places)
+        .map((entry) => {
           let url = ''
 
           if (entry.internal.type === 'ContentfulHistoricalSite') {
@@ -22,7 +21,8 @@ const LeafletMap = ({ center, zoom, className, data }) => {
             url = 'oral-histories'
           }
 
-          const image = getImage(entry.image)
+          const briefMaximumChar = 249
+          const brief = entry.brief?.trim().substring(0, briefMaximumChar)
 
           return entry.places.map((place, key) => {
             return (
@@ -30,10 +30,11 @@ const LeafletMap = ({ center, zoom, className, data }) => {
                 key={key}
                 position={[place.location.lat, place.location.lon]}
               >
-                <Popup>
+                <Popup closeButton={false}>
                   <a href={`/${url}/${entry.slug}`}>
-                    <span>{entry.title}</span>
-                    {image && <GatsbyImage image={image} />}
+                    <div className="map-popup-header bold">{entry.title}</div>
+                    {brief && <div className="map-popup-body">{brief}</div>}
+                    <div>Read more &gt;&gt;</div>
                   </a>
                 </Popup>
               </Marker>

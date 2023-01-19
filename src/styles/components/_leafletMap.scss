@@ -8,27 +8,30 @@
     transition: none;
   }
 
+  .leaflet-popup {
+    * {
+      color: $dark;
+      font-size: 24px;
+    }
+
+    .map-popup-header,
+    .map-popup-body {
+      margin-bottom: 1rem;
+    }
+
+    .gatsby-image-wrapper {
+      width: 200px;
+      height: 200px;
+
+      picture {
+        object-fit: cover;
+      }
+    }
+  }
+
   .leaflet-control-attribution {
     svg {
-      display: none;  // hide flag
-    }
-  }
-}
-
-.leaflet-popup {
-  a {
-    span {
-      color: $dark;
-      font-size: large;
-    }
-  }
-
-  .gatsby-image-wrapper {
-    width: 200px;
-    height: 200px;
-
-    picture {
-      object-fit: cover;
+      display: none; // hide flag
     }
   }
 }

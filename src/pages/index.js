@@ -190,6 +190,7 @@ export const pageQuery = graphql`
           id
           title
           slug
+          brief
           places {
             title
             location {
