@@ -11,12 +11,12 @@
   .leaflet-popup {
     * {
       color: $dark;
-      font-size: 24px;
+      font-size: $font-ml;
     }
 
     .map-popup-header,
     .map-popup-body {
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
     }
 
     .gatsby-image-wrapper {

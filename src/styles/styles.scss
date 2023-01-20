@@ -7,7 +7,7 @@ div#gatsby-focus-wrapper {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-size: 24px;
+  font-size: $font-ml;
   transition: all 0.1s ease;
 }
 
@@ -115,7 +115,7 @@ pre {
 }
 
 .welcome-text {
-  font-size: 36px;
+  font-size: $font-l;
   margin-bottom: 1em;
 }
 
@@ -199,7 +199,7 @@ pre {
 
       li {
         margin-bottom: 0;
-        font-size: 18px;
+        font-size: $font-m;
         width: 300px;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -210,12 +210,12 @@ pre {
 }
 
 .map-source {
-  font-size: 12px;
+  font-size: $font-s;
 }
 
 .about-header {
   background-color: $light;
-  font-size: 36px;
+  font-size: $font-l;
 }
 
 .mission-and-vision {
@@ -229,12 +229,12 @@ pre {
 .share-header,
 .contact-header {
   background-color: $light;
-  font-size: 36px;
+  font-size: $font-l;
 }
 
 .share-form {
   background-color: $primary;
-  font-size: 36px;
+  font-size: $font-l;
 }
 
 .oral-history-link {
@@ -242,7 +242,7 @@ pre {
 }
 
 .financially-support {
-  font-size: 36px;
+  font-size: $font-l;
 }
 
 .ReactModal__Content {
@@ -262,7 +262,7 @@ pre {
   }
 
   .ais-SearchBox-input {
-    font-size: 36px;
+    font-size: $font-l;
     border: none;
   }
 
@@ -276,7 +276,7 @@ pre {
 
   .ais-Hits {
     * {
-      font-size: 18px;
+      font-size: $font-m;
     }
 
     ol {
@@ -288,7 +288,7 @@ pre {
     }
 
     .hit-title * {
-      font-size: 24px;
+      font-size: $font-ml;
     }
 
     .hit-details {
