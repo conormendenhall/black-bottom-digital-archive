@@ -152,16 +152,19 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 id
                 title
                 slug
+                brief
               }
               historical_site {
                 id
                 title
                 slug
+                brief
               }
               interview {
                 id
                 title
                 slug
+                brief
               }
             }
           }
