@@ -9,13 +9,16 @@ $primary: #c7b600;
 /*************
 * FONT SIZES *
 *************/
-$font-s: 12px;
-$font-ms: 16px;
-$font-m: 18px;
-$font-ml: 24px;
-$font-l: 36px;
+$font-small: 12px;
+$font-medium-small: 16px;
+$font-medium: 18px;
+$font-medium-large: 24px;
+$font-large: 36px;
 
 /***************
 * SCREEN SIZES *
 ***************/
-$laptop: 1024px;
+$laptop-large: 1400px;
+$laptop: 1100px;
+$tablet: 850px;
+$mobile: 450px;

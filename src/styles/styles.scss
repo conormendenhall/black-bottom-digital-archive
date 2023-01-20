@@ -7,7 +7,7 @@ div#gatsby-focus-wrapper {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-size: $font-ml;
+  font-size: $font-medium-large;
   transition: all 0.1s ease;
 }
 
@@ -113,7 +113,20 @@ pre {
 .home-title {
   background-color: $primary;
   margin: 3em 0 0 2em;
-  width: 1020px;
+
+  h1 {
+    font-size: 20px;
+
+    @media (min-width: $tablet) {
+      font-size: $font-large;
+      width: 900px;
+    }
+
+    @media (min-width: $laptop) {
+      font-size: 64px;
+      width: 1020px;
+    }
+  }
 }
 
 .welcome {
@@ -121,7 +134,7 @@ pre {
 }
 
 .welcome-text {
-  font-size: $font-l;
+  font-size: $font-large;
   margin-bottom: 1em;
 }
 
@@ -195,33 +208,39 @@ pre {
   background-color: $primary;
 
   .map-and-index {
-    display: flex;
     margin-bottom: 2em;
+
+    @media (min-width: $tablet) {
+      display: flex;
+    }
 
     ul.map-index {
       list-style-type: none;
       padding: 0;
-      margin: 0 2em 0 0;
+      margin: 0 2rem 1rem 0;
 
       li {
         margin-bottom: 0;
-        font-size: $font-m;
-        width: 300px;
+        font-size: $font-medium;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+
+        @media (min-width: $tablet) {
+          width: 300px;
+        }
       }
     }
   }
 }
 
 .map-source {
-  font-size: $font-s;
+  font-size: $font-small;
 }
 
 .about-header {
   background-color: $light;
-  font-size: $font-l;
+  font-size: $font-large;
 }
 
 .mission-and-vision {
@@ -235,12 +254,12 @@ pre {
 .share-header,
 .contact-header {
   background-color: $light;
-  font-size: $font-l;
+  font-size: $font-large;
 }
 
 .share-form {
   background-color: $primary;
-  font-size: $font-l;
+  font-size: $font-large;
 }
 
 .oral-history-link {
@@ -248,7 +267,7 @@ pre {
 }
 
 .financially-support {
-  font-size: $font-l;
+  font-size: $font-large;
 }
 
 .ReactModal__Content {
@@ -268,7 +287,7 @@ pre {
   }
 
   .ais-SearchBox-input {
-    font-size: $font-l;
+    font-size: $font-large;
     border: none;
   }
 
@@ -282,7 +301,7 @@ pre {
 
   .ais-Hits {
     * {
-      font-size: $font-m;
+      font-size: $font-medium;
     }
 
     ol {
@@ -294,7 +313,7 @@ pre {
     }
 
     .hit-title * {
-      font-size: $font-ml;
+      font-size: $font-medium-large;
     }
 
     .hit-details {

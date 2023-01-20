@@ -17,13 +17,13 @@
       position: relative;
       background-color: $dark;
       color: $light;
-      font-size: $font-ms;
+      font-size: $font-medium-small;
       width: 400px;
       height: 400px;
       padding: 2rem;
 
       .card-header {
-        font-size: $font-ml;
+        font-size: $font-medium-large;
         margin-bottom: 1rem;
       }
 
