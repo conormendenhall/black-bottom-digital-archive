@@ -5,10 +5,7 @@ const Card = ({ url, data }) => {
     <a href={`${url}${data.slug}`} className="card">
       <div className="card-content">
         <div className="card-header">{data.title}</div>
-        <div>
-          {/* <div>{data.body}</div> */}
-          Card body text here lorum ipsum dolor
-        </div>
+        <div className="card-body">{data.brief && <div>{data.brief}</div>}</div>
         <div className="card-footer">&gt;&gt; Read More</div>
       </div>
     </a>
