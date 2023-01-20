@@ -52,7 +52,7 @@ const IndexPage = ({ data }) => {
                 <h2>Featured Historical Figure</h2>
                 <h3>{data.featuredFigure.title}</h3>
                 <p>{data.featuredFigure.brief}</p>
-                <p>Read more about {data.featuredFigure.title} &gt;&gt;</p>
+                <p>&gt;&gt; Read more about {data.featuredFigure.title}</p>
               </div>
               <div className="thumbnail-image">
                 <GatsbyImage
@@ -69,7 +69,7 @@ const IndexPage = ({ data }) => {
                 <h2>Featured Historical Site</h2>
                 <h3>{data.featuredSite.title}</h3>
                 <p>{data.featuredSite.brief}</p>
-                <p>Read more about {data.featuredSite.title} &gt;&gt;</p>
+                <p>&gt;&gt; Read more about {data.featuredSite.title}</p>
               </div>
               <div className="thumbnail-image">
                 <GatsbyImage

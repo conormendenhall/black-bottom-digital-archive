@@ -34,7 +34,7 @@ const LeafletMap = ({ center, zoom, className, data }) => {
                   <a href={`/${url}/${entry.slug}`}>
                     <div className="map-popup-header bold">{entry.title}</div>
                     {brief && <div className="map-popup-body">{brief}</div>}
-                    <div>Read more &gt;&gt;</div>
+                    <div>&gt;&gt; Read more</div>
                   </a>
                 </Popup>
               </Marker>
