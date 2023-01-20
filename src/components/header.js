@@ -73,8 +73,8 @@ const Header = () => {
       <a id="searchButton" onClick={openModal}>
         <HiSearch title="search" />
       </a>
-      <a id="menuBtn" onClick={toggleMenu}>
-        Menu
+      <a id="menuBtn" className="flex-center" onClick={toggleMenu}>
+        <div>Menu</div>
       </a>
       <Modal
         isOpen={modalIsOpen}
