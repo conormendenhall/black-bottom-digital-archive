@@ -91,7 +91,7 @@ pre {
     min-width: 375px;
     padding: 15px 45px;
     font-size: 32px;
-    font-weight: 700;
+    font-weight: bold;
 
     &:hover {
       background-color: $primary;
@@ -117,14 +117,16 @@ pre {
   h1 {
     font-size: 20px;
 
-    @media (min-width: $tablet) {
-      font-size: $font-large;
-      width: 900px;
+    @media (min-width: $mobile) {
+      font-size: $font-medium;
     }
 
-    @media (min-width: $laptop) {
-      font-size: 64px;
-      width: 1020px;
+    @media (min-width: $tablet) {
+      font-size: $font-xlarge;
+    }
+
+    @media (min-width: $laptop-large) {
+      font-size: 72px;
     }
   }
 }
@@ -337,8 +339,8 @@ pre {
 @import './components/contact';
 @import './components/entryTags';
 @import './components/footer';
-@import './components/header';
 @import './components/index';
 @import './components/interviewMedia';
 @import './components/leafletMap';
+@import './components/nav';
 @import './components/richText';

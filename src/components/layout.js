@@ -1,13 +1,13 @@
 import React from 'react'
 
-import Header from './header'
+import Nav from './nav'
 import Footer from './footer'
 import '../styles/styles.scss'
 
 const Layout = ({ children }) => {
   return (
     <div id="layout">
-      <Header />
+      <Nav />
       <main>{children}</main>
       <Footer />
     </div>
