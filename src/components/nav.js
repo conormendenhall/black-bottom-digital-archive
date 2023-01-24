@@ -1,6 +1,7 @@
 import React from 'react'
 import Modal from 'react-modal'
 import { HiSearch } from 'react-icons/hi'
+import { IoCloseSharp } from 'react-icons/io5'
 
 import Search from './search'
 
@@ -23,8 +24,20 @@ const Nav = () => {
     },
   }
 
+  function toggleMenu() {
+    let nav = document.getElementById('mobileNav')
+    let closeButton = document.getElementById('closeMenuButton')
+    nav.classList.toggle('nav-open')
+    closeButton.classList.toggle('hidden')
+  }
+
   function openModal() {
     setIsOpen(true)
+  }
+
+  function openModalMobile() {
+    setIsOpen(true)
+    toggleMenu()
   }
 
   function closeModal() {
@@ -33,11 +46,6 @@ const Nav = () => {
 
   function afterOpenModal() {
     document.getElementsByClassName('ais-SearchBox-input')[0].focus()
-  }
-
-  function toggleMenu() {
-    let nav = document.getElementById('mobileNav')
-    nav.classList.toggle('nav-open')
   }
 
   return (
@@ -64,11 +72,19 @@ const Nav = () => {
         <a href="/contact">
           <span>Contact</span>
         </a>
-        <a href="#" className="search-button" onClick={openModal}>
+        <a href="#" className="search-button hover-primary" onClick={openModal}>
           <HiSearch title="search" />
         </a>
         <a href="#" id="menuBtn" className="flex-center" onClick={toggleMenu}>
           <span>Menu</span>
+        </a>
+        <a
+          href="#"
+          id="closeMenuButton"
+          className="flex-center hidden"
+          onClick={toggleMenu}
+        >
+          <IoCloseSharp title="Close Menu" />
         </a>
         <Modal
           isOpen={modalIsOpen}
@@ -102,7 +118,7 @@ const Nav = () => {
         <a href="/contact">
           <span>Contact</span>
         </a>
-        <a href="#" className="search-button" onClick={openModal}>
+        <a href="#" className="search-button" onClick={openModalMobile}>
           <span>Search</span>
         </a>
       </nav>

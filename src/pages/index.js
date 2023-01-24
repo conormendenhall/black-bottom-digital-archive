@@ -138,7 +138,7 @@ const IndexPage = ({ data }) => {
           </p>
           <div className="button-section">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSe4fk6G3nPZ6UkkK9IfHI9J3a5HQBeqg6oKmWrR8uNgfNyk1w/viewform">
-              <div className="button submit-site-button">
+              <div className="button submit-site-button hover-primary">
                 Submit a<br /> Historical Site
               </div>
             </a>

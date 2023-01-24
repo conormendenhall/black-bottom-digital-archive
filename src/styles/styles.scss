@@ -65,6 +65,10 @@ pre {
   word-wrap: break-word; /* IE 5.5+ */
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .flex {
   display: flex;
 }
@@ -77,6 +81,12 @@ pre {
 
 .bold {
   font-weight: bold;
+}
+
+.hover-primary {
+  &:hover {
+    color: $primary;
+  }
 }
 
 .button-section {
@@ -100,7 +110,6 @@ pre {
 
   .submit-site-button {
     &:hover {
-      color: $primary;
       background-color: $dark;
     }
   }
@@ -336,7 +345,6 @@ pre {
 @import './components/article';
 @import './components/breadcrumb';
 @import './components/card';
-@import './components/contact';
 @import './components/entryTags';
 @import './components/footer';
 @import './components/index';

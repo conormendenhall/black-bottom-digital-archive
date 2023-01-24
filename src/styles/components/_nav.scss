@@ -38,14 +38,22 @@ nav {
 
     .search-button {
       font-size: 1.5rem;
-
-      &:hover {
-        color: $primary;
-      }
     }
 
     #menuBtn {
       width: 100vw;
+
+      @media (min-width: $laptop) {
+        display: none;
+      }
+    }
+
+    #closeMenuButton {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      height: 100px;
+      font-size: $font-large;
 
       @media (min-width: $laptop) {
         display: none;
