@@ -6,11 +6,24 @@
     .article-header-content {
       background-color: $light;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: space-between;
 
-      .articl-header-title {
-        margin-bottom: 0;
+      @media (min-width: $laptop) {
+        flex-flow: row wrap;
+      }
+
+      .article-header-subject {
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: $laptop) {
+          flex-flow: row wrap;
+        }
+
+        .article-title {
+          margin-bottom: 0;
+        }
       }
 
       .social-text {

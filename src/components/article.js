@@ -45,7 +45,7 @@ const Article = ({ pageContext, location }) => {
             <Breadcrumb text={breadcrumbText} href={breadcrumbPath} />
           </section>
           <section className="container article-header-content">
-            <div className="article-header-content">
+            <div className="article-header-subject">
               {pageContext.node.image && (
                 <div className="thumbnail-image">
                   <GatsbyImage

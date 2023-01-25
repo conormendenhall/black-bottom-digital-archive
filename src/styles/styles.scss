@@ -27,7 +27,11 @@ main {
   flex-direction: column;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 2rem 1rem 2rem;
+  padding: 0 1rem 0.5rem 1rem;
+
+  @media (min-width: $mobile) {
+    padding: 0 2rem 1rem 2rem;
+  }
 
   &:first-of-type {
     padding-top: 1rem;
@@ -48,8 +52,16 @@ a {
 }
 
 h1 {
-  font-size: 64px;
+  font-size: $font-large;
   font-family: 'Rockwell', sans-serif;
+
+  @media (min-width: $tablet) {
+    font-size: $font-xlarge;
+  }
+
+  @media (min-width: $laptop) {
+    font-size: 64px;
+  }
 }
 
 h2 {
@@ -124,11 +136,7 @@ pre {
   margin: 3em 0 0 2em;
 
   h1 {
-    font-size: 20px;
-
-    @media (min-width: $mobile) {
-      font-size: $font-medium;
-    }
+    font-size: $font-large;
 
     @media (min-width: $tablet) {
       font-size: $font-xlarge;
@@ -141,16 +149,26 @@ pre {
 }
 
 .welcome {
-  padding: 1rem 150px;
-}
+  padding: 0.5rem 25px;
 
-.welcome-text {
-  font-size: $font-large;
-  margin-bottom: 1em;
+  @media (min-width: $tablet) {
+    padding: 1rem 150px;
+  }
+
+  .welcome-text {
+    font-size: $font-medium-large;
+    margin-bottom: 0.5rem;
+
+    @media (min-width: $tablet) {
+      font-size: $font-large;
+      margin-bottom: 1em;
+    }
+  }
 }
 
 .thumbnail-image {
-  min-width: 5em;
+  min-width: 5rem;
+  max-width: 10rem;
   position: relative;
   margin-right: 1em;
 
@@ -291,6 +309,7 @@ pre {
     font-size: 32px;
     margin-top: 11px;
     margin-right: 10px;
+    min-width: 32px;
   }
 
   .ais-SearchBox-form {

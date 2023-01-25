@@ -66,7 +66,7 @@ nav {
     top: 100px;
     left: -100%;
     transition: left 0.05s;
-    z-index: 1;
+    z-index: 2;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -79,7 +79,11 @@ nav {
     a {
       display: flex;
       width: 100vw;
-      padding: 20px 150px;
+      padding: 10px 25px;
+
+      @media (min-width: $tablet) {
+        padding: 20px 150px;
+      }
 
       @media (min-width: $laptop) {
         display: none;

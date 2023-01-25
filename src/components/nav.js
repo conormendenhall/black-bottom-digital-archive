@@ -15,8 +15,6 @@ const Nav = () => {
     },
     content: {
       top: '0',
-      left: '3rem',
-      right: '3rem',
       bottom: 'auto',
       background: '#000',
       color: '$light',
@@ -51,7 +49,7 @@ const Nav = () => {
   return (
     <>
       <nav id="mainNav" className="flex-center">
-        <a href="/" id="home">
+        <a href="/">
           <span>Main</span>
         </a>
         <a href="/historical-figures">
@@ -97,7 +95,7 @@ const Nav = () => {
         </Modal>
       </nav>
       <nav id="mobileNav" className="flex-center">
-        <a href="/" id="home">
+        <a href="/">
           <span>Main</span>
         </a>
         <a href="/historical-figures">
