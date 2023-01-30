@@ -1,10 +1,6 @@
 import React from 'react'
 
-import {
-  AiFillTwitterSquare,
-  AiFillFacebook,
-  AiFillInstagram,
-} from 'react-icons/ai'
+import { AiFillTwitterSquare, AiFillFacebook } from 'react-icons/ai'
 
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
