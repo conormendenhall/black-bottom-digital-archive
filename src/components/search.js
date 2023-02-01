@@ -1,10 +1,11 @@
 import React from 'react'
 import { HiSearch } from 'react-icons/hi'
 import {
+  Highlight,
+  Hits,
+  Index,
   InstantSearch,
   SearchBox,
-  Hits,
-  Highlight,
   useInstantSearch,
 } from 'react-instantsearch-hooks-web'
 
@@ -54,7 +55,15 @@ const Search = () => {
           <SearchBox placeholder="Search" />
         </div>
         <EmptyQueryBoundary fallback={null}>
-          <Hits hitComponent={Hit} />
+          <Index indexName="Figures">
+            <Hits hitComponent={Hit} />
+          </Index>
+          <Index indexName="Sites">
+            <Hits hitComponent={Hit} />
+          </Index>
+          <Index indexName="Interviews">
+            <Hits hitComponent={Hit} />
+          </Index>
         </EmptyQueryBoundary>
       </InstantSearch>
     </>
