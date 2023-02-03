@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { graphql } from 'gatsby'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image'
 
 import Layout from '../components/layout'
 import Head from '../components/head'
@@ -11,9 +11,17 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Head title="Home" />
-      <div className="container">
+      <div className="header flex-center column">
         <div className="home-title container">
           <h1>Black Bottom Digital Archive</h1>
+        </div>
+        <div id="headerImage">
+          <StaticImage
+            src="../images/Block 9 Monroe-Riopelle.png"
+            alt="Stitched image of Black Bottom neighborhood"
+            width={1440}
+            placeholder="blurred"
+          />
         </div>
       </div>
       <section className="welcome container">

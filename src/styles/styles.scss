@@ -29,12 +29,16 @@ main {
   margin: 0 auto;
   padding: 0 1rem 0.5rem 1rem;
 
-  @media (min-width: $mobile) {
-    padding: 0 2rem 1rem 2rem;
-  }
-
   &:first-of-type {
     padding-top: 1rem;
+  }
+
+  @media (min-width: $mobile) {
+    padding: 0 2rem 1rem 2rem;
+
+    &:first-of-type {
+      padding-top: 2rem;
+    }
   }
 }
 
@@ -89,6 +93,10 @@ pre {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &.column {
+    flex-direction: column;
+  }
 }
 
 .bold {
@@ -107,16 +115,24 @@ pre {
   gap: 30px;
   justify-content: space-between;
 
-  .button {
-    color: $dark;
-    border: 5px solid $dark;
-    min-width: 375px;
-    padding: 15px 45px;
-    font-size: 32px;
-    font-weight: bold;
+  a {
+    width: 100%;
 
-    &:hover {
-      background-color: $primary;
+    @media (min-width: $tablet) {
+      width: auto;
+    }
+
+    .button {
+      color: $dark;
+      border: 5px solid $dark;
+      min-width: 375px;
+      padding: 15px 45px;
+      font-size: 32px;
+      font-weight: bold;
+
+      &:hover {
+        background-color: $primary;
+      }
     }
   }
 
@@ -131,20 +147,26 @@ pre {
   }
 }
 
-.home-title {
-  background-color: $primary;
-  margin: 3em 0 0 2em;
+.header {
+  .home-title {
+    background-color: $primary;
+    margin: 3em 0 0 2em;
 
-  h1 {
-    font-size: $font-large;
+    h1 {
+      font-size: $font-large;
 
-    @media (min-width: $tablet) {
-      font-size: $font-xlarge;
+      @media (min-width: $tablet) {
+        font-size: $font-xlarge;
+      }
+
+      @media (min-width: $laptop-large) {
+        font-size: 72px;
+      }
     }
+  }
 
-    @media (min-width: $laptop-large) {
-      font-size: 72px;
-    }
+  #headerImage {
+    min-width: 1000px;
   }
 }
 
@@ -169,14 +191,11 @@ pre {
 .thumbnail-image {
   min-width: 5rem;
   max-width: 10rem;
-  position: relative;
-  margin-right: 1em;
+  margin: 1rem;
 
   .gatsby-image-wrapper {
-    position: relative;
     z-index: 1;
     max-height: 10em;
-    margin: 0 1.25em 0 0;
   }
 
   .background-circle {
@@ -184,9 +203,7 @@ pre {
     border-radius: 50%;
     width: 9em;
     height: 9em;
-    position: absolute;
-    right: 0;
-    top: 0;
+    margin-top: -100%;
     z-index: 0;
   }
 
@@ -194,9 +211,8 @@ pre {
     background-color: $primary;
     width: 7em;
     height: 7em;
-    position: absolute;
-    right: -2.5em;
-    top: 3em;
+    margin-top: -100%;
+    margin-top: -50%;
     z-index: 0;
     /* Rotate */
     -webkit-transform: rotate(-45deg);
@@ -216,19 +232,24 @@ pre {
 .featured-section {
   background-color: $light;
 
-  .featured-banner {
-    border: 5px solid $dark;
-    padding: 15px 45px;
-    margin-bottom: 1em;
-    display: flex;
-    justify-content: space-between;
+  .container {
+    align-items: center;
 
-    &:hover {
-      border-color: $primary;
-    }
+    .featured-banner {
+      border: 5px solid $dark;
+      padding: 15px 45px;
+      margin-bottom: 1em;
+      max-width: 1248px;
+      display: flex;
+      justify-content: space-between;
 
-    .featured-content {
-      max-width: 80%;
+      &:hover {
+        border-color: $primary;
+      }
+
+      .featured-content {
+        max-width: 80%;
+      }
     }
   }
 }
