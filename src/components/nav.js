@@ -67,7 +67,7 @@ const Nav = () => {
         <a href="/submissions">
           <span>Submissions</span>
         </a>
-        <a href="/contact">
+        <a href="http://www.blackbottomarchives.com/contact-us">
           <span>Contact</span>
         </a>
         <a href="#" className="search-button hover-primary" onClick={openModal}>
@@ -113,7 +113,7 @@ const Nav = () => {
         <a href="/submissions">
           <span>Submissions</span>
         </a>
-        <a href="/contact">
+        <a href="http://www.blackbottomarchives.com/contact-us">
           <span>Contact</span>
         </a>
         <a href="#" className="search-button" onClick={openModalMobile}>
