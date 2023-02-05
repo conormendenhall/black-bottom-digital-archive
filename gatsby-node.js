@@ -15,9 +15,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(
     `
       query {
-        sites: allContentfulHistoricalSite(
-          sort: { order: ASC, fields: title }
-        ) {
+        sites: allContentfulHistoricalSite(sort: { title: ASC }) {
           edges {
             node {
               id
@@ -50,9 +48,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
           }
         }
-        figures: allContentfulHistoricalFigure(
-          sort: { order: ASC, fields: title }
-        ) {
+        figures: allContentfulHistoricalFigure(sort: { title: ASC }) {
           edges {
             node {
               id
@@ -99,7 +95,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
           }
         }
-        histories: allContentfulInterview(sort: { order: ASC, fields: title }) {
+        histories: allContentfulInterview(sort: { title: ASC }) {
           edges {
             node {
               id
@@ -142,7 +138,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
           }
         }
-        tags: allContentfulTag(sort: { order: ASC, fields: title }) {
+        tags: allContentfulTag(sort: { title: ASC }) {
           edges {
             node {
               id
@@ -220,16 +216,4 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: node,
     })
   })
-}
-
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
-  if (stage.startsWith('develop')) {
-    actions.setWebpackConfig({
-      resolve: {
-        alias: {
-          'react-dom': '@hot-loader/react-dom',
-        },
-      },
-    })
-  }
 }

@@ -82,7 +82,7 @@ const HistoricalSitesPage = ({ data }) => {
 
 export const pageQuery = graphql`
   query {
-    sites: allContentfulHistoricalSite(sort: { order: ASC, fields: title }) {
+    sites: allContentfulHistoricalSite(sort: { title: ASC }) {
       edges {
         node {
           id

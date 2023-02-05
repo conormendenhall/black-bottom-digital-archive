@@ -192,7 +192,7 @@ const IndexPage = ({ data }) => {
 
 export const pageQuery = graphql`
   query {
-    sites: allContentfulHistoricalSite(sort: { fields: title }) {
+    sites: allContentfulHistoricalSite(sort: { title: ASC }) {
       edges {
         node {
           id

@@ -55,7 +55,7 @@ const HistoricalFiguresPage = ({ data }) => {
 export const pageQuery = graphql`
   query {
     figures: allContentfulHistoricalFigure(
-      sort: { order: ASC, fields: title }
+      sort: { title: ASC }
     ) {
       edges {
         node {

@@ -1,6 +1,6 @@
 const figureQuery = `{
   figures: allContentfulHistoricalFigure(
-    sort: { order: ASC, fields: title }
+    sort: { title: ASC }
   ) {
     edges {
       node {
@@ -19,7 +19,7 @@ const figureQuery = `{
 
 const siteQuery = `{
   sites: allContentfulHistoricalSite(
-    sort: { order: ASC, fields: title }
+    sort: { title: ASC }
   ) {
     edges {
       node {
@@ -37,7 +37,7 @@ const siteQuery = `{
 
 const interviewQuery = `{
   interviews: allContentfulInterview(
-    sort: { order: ASC, fields: title }
+    sort: { title: ASC }
   ) {
     edges {
       node {

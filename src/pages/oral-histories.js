@@ -62,7 +62,7 @@ const OralHistoriesPage = ({ data }) => {
 
 export const pageQuery = graphql`
   query {
-    oralHistories: allContentfulInterview(sort: { order: ASC, fields: title }) {
+    oralHistories: allContentfulInterview(sort: { title: ASC }) {
       edges {
         node {
           id

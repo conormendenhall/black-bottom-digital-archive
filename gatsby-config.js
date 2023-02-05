@@ -9,6 +9,7 @@ module.exports = {
     author: `https://github.com/conormendenhall`,
     baseUrl: `https://digital.blackbottomarchives.com`,
   },
+  trailingSlash: `always`,
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
