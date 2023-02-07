@@ -133,12 +133,13 @@ pre {
       &:hover {
         background-color: $primary;
       }
-    }
-  }
 
-  .submit-site-button {
-    &:hover {
-      background-color: $dark;
+      &.submit-site-button {
+        &:hover {
+          color: $primary;
+          background-color: $dark;
+        }
+      }
     }
   }
 
