@@ -29,9 +29,7 @@
     }
   }
 
-  .leaflet-control-attribution {
-    svg {
-      display: none; // hide flag
-    }
+  .leaflet-attribution-flag {
+    display: none !important; // hide flag
   }
 }
