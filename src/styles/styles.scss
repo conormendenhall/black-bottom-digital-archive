@@ -58,6 +58,7 @@ a {
 h1 {
   font-size: $font-large;
   font-family: 'Rockwell', sans-serif;
+  font-display: swap;
 
   @media (min-width: $tablet) {
     font-size: $font-xlarge;
@@ -125,7 +126,7 @@ pre {
     .button {
       color: $dark;
       border: 5px solid $dark;
-      min-width: 375px;
+      min-width: 370px;
       padding: 15px 45px;
       font-size: 32px;
       font-weight: bold;

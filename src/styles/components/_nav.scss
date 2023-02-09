@@ -4,11 +4,14 @@ nav {
   line-height: 28px;
   background-color: $dark;
 
-  a {
+  a,
+  button {
     display: none;
     height: 100%;
     padding: 20px;
     color: $light;
+    background-color: $dark;
+    border: none;
 
     span {
       border-bottom: 2px solid transparent;
@@ -76,7 +79,8 @@ nav {
       left: 0;
     }
 
-    a {
+    a,
+    button {
       display: flex;
       width: 100vw;
       padding: 10px 25px;

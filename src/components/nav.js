@@ -43,7 +43,9 @@ const Nav = () => {
   }
 
   function afterOpenModal() {
-    document.getElementsByClassName('ais-SearchBox-input')[0].focus()
+    setTimeout(() => {
+      document.getElementsByClassName('ais-SearchBox-input')[0]?.focus()
+    }, 10)
   }
 
   return (
@@ -70,20 +72,19 @@ const Nav = () => {
         <a href="http://www.blackbottomarchives.com/contact-us">
           <span>Contact</span>
         </a>
-        <a href="#" className="search-button hover-primary" onClick={openModal}>
+        <button className="search-button hover-primary" onClick={openModal}>
           <HiSearch title="search" />
-        </a>
-        <a href="#" id="menuBtn" className="flex-center" onClick={toggleMenu}>
+        </button>
+        <button id="menuBtn" className="flex-center" onClick={toggleMenu}>
           <span>Menu</span>
-        </a>
-        <a
-          href="#"
+        </button>
+        <button
           id="closeMenuButton"
           className="flex-center hidden"
           onClick={toggleMenu}
         >
           <IoCloseSharp title="Close Menu" />
-        </a>
+        </button>
         <Modal
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
@@ -116,9 +117,9 @@ const Nav = () => {
         <a href="http://www.blackbottomarchives.com/contact-us">
           <span>Contact</span>
         </a>
-        <a href="#" className="search-button" onClick={openModalMobile}>
+        <button className="search-button" onClick={openModalMobile}>
           <span>Search</span>
-        </a>
+        </button>
       </nav>
     </>
   )
