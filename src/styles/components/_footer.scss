@@ -6,7 +6,7 @@ footer {
   h4 {
     color: $light;
   }
-  
+
   section.container {
     display: flex;
     flex-flow: row nowrap;
@@ -50,7 +50,7 @@ footer {
     }
   }
 
-  #bibliographyLink:hover {
+  .footer-button:hover {
     color: $primary;
   }
 }

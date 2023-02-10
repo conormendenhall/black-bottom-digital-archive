@@ -14,19 +14,19 @@ const Footer = () => {
       <section className="container">
         <div className="footer-content">
           <a href="/historical-figures">
-            <h4 id="bibliographyLink">Historical Figures</h4>
+            <h4 className="footer-button">Historical Figures</h4>
           </a>
           <a href="/oral-histories">
-            <h4 id="bibliographyLink">Oral Histories</h4>
+            <h4 className="footer-button">Oral Histories</h4>
           </a>
           <a href="/historical-sites">
-            <h4 id="bibliographyLink">Historical Sites</h4>
+            <h4 className="footer-button">Historical Sites</h4>
           </a>
           <a href="/about">
-            <h4 id="bibliographyLink">About</h4>
+            <h4 className="footer-button">About</h4>
           </a>
           <a href="/bibliography">
-            <h4 id="bibliographyLink">Sources</h4>
+            <h4 className="footer-button">Sources</h4>
           </a>
           <h4 id="copyright">
             Copyright © {new Date().getFullYear()} Black Bottom Archives
