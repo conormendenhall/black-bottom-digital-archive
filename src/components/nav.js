@@ -12,6 +12,7 @@ const Nav = () => {
   const customStyles = {
     overlay: {
       background: 'rgba(0, 0, 0, 0.85)',
+      zIndex: '1',
     },
     content: {
       top: '0',
@@ -21,6 +22,7 @@ const Nav = () => {
       border: 'none',
     },
   }
+  const closeSearchButton = document.getElementById('closeSearchButton')
 
   function toggleMenu() {
     let nav = document.getElementById('mobileNav')
@@ -43,9 +45,14 @@ const Nav = () => {
   }
 
   function afterOpenModal() {
+    closeSearchButton.classList.remove('hidden')
     setTimeout(() => {
       document.getElementsByClassName('ais-SearchBox-input')[0]?.focus()
     }, 10)
+  }
+
+  function afterCloseModal() {
+    closeSearchButton.classList.add('hidden')
   }
 
   return (
@@ -89,11 +96,19 @@ const Nav = () => {
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
           onRequestClose={closeModal}
+          onAfterClose={afterCloseModal}
           style={customStyles}
           contentLabel="Search"
         >
           <Search />
         </Modal>
+        <button
+          id="closeSearchButton"
+          className="flex-center hidden"
+          onClick={closeModal}
+        >
+          <IoCloseSharp title="Close Search" />
+        </button>
       </nav>
       <nav id="mobileNav" className="flex-center">
         <a href="/">

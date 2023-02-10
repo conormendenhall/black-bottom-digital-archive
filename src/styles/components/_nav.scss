@@ -94,4 +94,13 @@ nav {
       }
     }
   }
+
+  #closeSearchButton {
+    z-index: 2;
+    font-size: 36px;
+
+    &:hover {
+      color: $primary;
+    }
+  }
 }
