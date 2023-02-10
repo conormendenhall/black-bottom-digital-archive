@@ -22,7 +22,6 @@ const Nav = () => {
       border: 'none',
     },
   }
-  const closeSearchButton = document.getElementById('closeSearchButton')
 
   function toggleMenu() {
     let nav = document.getElementById('mobileNav')
@@ -45,14 +44,14 @@ const Nav = () => {
   }
 
   function afterOpenModal() {
-    closeSearchButton.classList.remove('hidden')
+    document.getElementById('closeSearchButton').classList.remove('hidden')
     setTimeout(() => {
       document.getElementsByClassName('ais-SearchBox-input')[0]?.focus()
     }, 10)
   }
 
   function afterCloseModal() {
-    closeSearchButton.classList.add('hidden')
+    document.getElementById('closeSearchButton').classList.add('hidden')
   }
 
   return (
