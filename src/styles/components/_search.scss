@@ -1,0 +1,84 @@
+.ReactModal__Content {
+  display: flex;
+  justify-content: space-between;
+
+  * {
+    color: $light;
+    background-color: #000;
+  }
+
+  .search {
+    flex-grow: 1;
+
+    .search-icon {
+      font-size: 32px;
+      margin-top: 11px;
+      margin-right: 10px;
+      min-width: 32px;
+    }
+
+    .ais-SearchBox {
+      flex-grow: 1;
+
+      .ais-SearchBox-form {
+        display: flex;
+        margin-bottom: 0;
+
+        .ais-SearchBox-input {
+          flex-grow: 1;
+          font-size: $font-large;
+          border: none;
+        }
+      }
+    }
+
+    .ais-SearchBox-submit {
+      display: none;
+    }
+
+    .ais-SearchBox-reset {
+      display: none;
+    }
+
+    .ais-Hits {
+      * {
+        font-size: $font-medium;
+      }
+
+      ol {
+        margin-left: 0;
+
+        li {
+          list-style-type: none;
+        }
+      }
+
+      .hit-title * {
+        font-size: $font-medium-large;
+      }
+
+      .hit-details {
+        margin-left: 1rem;
+      }
+
+      .ais-Highlight-highlighted {
+        background-color: #000;
+        border-bottom: 2px solid $primary;
+      }
+    }
+  }
+
+  #closeSearchButton {
+    z-index: 2;
+    font-size: 36px;
+    border: none;
+
+    &:hover * {
+      color: $primary;
+    }
+  }
+}
+
+.ReactModal__Body--open {
+  overflow-y: hidden;
+}

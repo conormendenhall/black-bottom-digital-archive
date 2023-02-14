@@ -11,24 +11,18 @@ import {
 
 import algoliasearch from 'algoliasearch/lite'
 
+import transformType from '../utils/typeTransformer'
+
 const searchClient = algoliasearch(
   process.env.GATSBY_ALGOLIA_APP_ID,
   process.env.GATSBY_ALGOLIA_SEARCH_KEY
 )
 
 function Hit({ hit }) {
-  let path = ''
-
-  if (hit.type === 'ContentfulHistoricalSite') {
-    path = 'historical-sites'
-  } else if (hit.type === 'ContentfulHistoricalFigure') {
-    path = 'historical-figures'
-  } else if (hit.type === 'ContentfulInterview') {
-    path = 'oral-histories'
-  }
+  const pathSegment = transformType(hit.type)
 
   return (
-    <a href={`/${path}/${hit.slug}`}>
+    <a href={`/${pathSegment}/${hit.slug}`}>
       <div className="hit-title">
         <Highlight attribute="title" hit={hit} />
       </div>
@@ -46,7 +40,7 @@ function Hit({ hit }) {
 
 const Search = () => {
   return (
-    <>
+    <div className="search">
       {/* polyfill for IE 11 */}
       <script src="https://polyfill.io/v3/polyfill.min.js?features=default%2CArray.prototype.find%2CArray.prototype.includes%2CPromise%2CObject.assign%2CObject.entries"></script>
       <InstantSearch searchClient={searchClient} indexName="Figures">
@@ -66,7 +60,7 @@ const Search = () => {
           </Index>
         </EmptyQueryBoundary>
       </InstantSearch>
-    </>
+    </div>
   )
 }
 

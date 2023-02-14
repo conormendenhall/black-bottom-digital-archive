@@ -24,10 +24,8 @@ const Nav = () => {
   }
 
   function toggleMenu() {
-    let nav = document.getElementById('mobileNav')
-    let closeButton = document.getElementById('closeMenuButton')
-    nav.classList.toggle('nav-open')
-    closeButton.classList.toggle('hidden')
+    document.getElementById('mobileNav').classList.toggle('nav-open')
+    document.getElementById('closeMenuButton').classList.toggle('hidden')
   }
 
   function openModal() {
@@ -44,14 +42,9 @@ const Nav = () => {
   }
 
   function afterOpenModal() {
-    document.getElementById('closeSearchButton').classList.remove('hidden')
     setTimeout(() => {
       document.getElementsByClassName('ais-SearchBox-input')[0]?.focus()
     }, 10)
-  }
-
-  function afterCloseModal() {
-    document.getElementById('closeSearchButton').classList.add('hidden')
   }
 
   return (
@@ -95,19 +88,18 @@ const Nav = () => {
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
           onRequestClose={closeModal}
-          onAfterClose={afterCloseModal}
           style={customStyles}
           contentLabel="Search"
         >
           <Search />
+          <button
+            id="closeSearchButton"
+            className="flex-center"
+            onClick={closeModal}
+          >
+            <IoCloseSharp title="Close Search" />
+          </button>
         </Modal>
-        <button
-          id="closeSearchButton"
-          className="flex-center hidden"
-          onClick={closeModal}
-        >
-          <IoCloseSharp title="Close Search" />
-        </button>
       </nav>
       <nav id="mobileNav" className="flex-center">
         <a href="/">

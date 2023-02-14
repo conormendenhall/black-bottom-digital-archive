@@ -321,68 +321,6 @@ pre {
   font-size: $font-large;
 }
 
-.ReactModal__Content {
-  * {
-    color: $light;
-    background-color: #000;
-  }
-
-  .search-icon {
-    font-size: 32px;
-    margin-top: 11px;
-    margin-right: 10px;
-    min-width: 32px;
-  }
-
-  .ais-SearchBox-form {
-    margin-bottom: 0;
-  }
-
-  .ais-SearchBox-input {
-    font-size: $font-large;
-    border: none;
-  }
-
-  .ais-SearchBox-submit {
-    display: none;
-  }
-
-  .ais-SearchBox-reset {
-    display: none;
-  }
-
-  .ais-Hits {
-    * {
-      font-size: $font-medium;
-    }
-
-    ol {
-      margin-left: 0;
-
-      li {
-        list-style-type: none;
-      }
-    }
-
-    .hit-title * {
-      font-size: $font-medium-large;
-    }
-
-    .hit-details {
-      margin-left: 1rem;
-    }
-
-    .ais-Highlight-highlighted {
-      background-color: #000;
-      border-bottom: 2px solid $primary;
-    }
-  }
-}
-
-.ReactModal__Body--open {
-  overflow-y: hidden;
-}
-
 @import './components/article';
 @import './components/breadcrumb';
 @import './components/card';
@@ -393,3 +331,4 @@ pre {
 @import './components/leafletMap';
 @import './components/nav';
 @import './components/richText';
+@import './components/search';

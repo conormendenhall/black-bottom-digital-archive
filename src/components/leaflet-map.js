@@ -1,6 +1,8 @@
 import React from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
+import transformType from '../utils/typeTransformer'
+
 const LeafletMap = ({ center, zoom, className, data }) => {
   return (
     <MapContainer center={center} zoom={zoom} className={className}>
@@ -11,16 +13,7 @@ const LeafletMap = ({ center, zoom, className, data }) => {
       {data
         ?.filter((item) => item.places)
         .map((entry) => {
-          let url = ''
-
-          if (entry.internal.type === 'ContentfulHistoricalSite') {
-            url = 'historical-sites'
-          } else if (entry.internal.type === 'ContentfulHistoricalFigure') {
-            url = 'historical-figures'
-          } else if (entry.internal.type === 'ContentfulInterview') {
-            url = 'oral-histories'
-          }
-
+          const pathSegment = transformType(entry.internal.type)
           const briefMaximumChar = 249
           const brief = entry.brief?.trim().substring(0, briefMaximumChar)
 
@@ -31,7 +24,7 @@ const LeafletMap = ({ center, zoom, className, data }) => {
                 position={[place.location.lat, place.location.lon]}
               >
                 <Popup closeButton={false}>
-                  <a href={`/${url}/${entry.slug}`}>
+                  <a href={`/${pathSegment}/${entry.slug}`}>
                     <div className="map-popup-header bold">{entry.title}</div>
                     {brief && <div className="map-popup-body">{brief}</div>}
                     <div>&gt;&gt; Read more</div>
