@@ -199,6 +199,9 @@ export const pageQuery = graphql`
           title
           slug
           brief
+          body {
+            raw
+          }
           places {
             title
             location {

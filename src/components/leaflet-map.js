@@ -1,6 +1,8 @@
 import React from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
+import RichText from './rich-text'
+
 import transformType from '../utils/typeTransformer'
 
 const LeafletMap = ({ center, zoom, className, data }) => {
@@ -26,7 +28,9 @@ const LeafletMap = ({ center, zoom, className, data }) => {
                 <Popup closeButton={false}>
                   <a href={`/${pathSegment}/${entry.slug}`}>
                     <div className="map-popup-header bold">{entry.title}</div>
-                    {brief && <div className="map-popup-body">{brief}</div>}
+                    <div className="map-popup-body">
+                      {brief ? brief : <RichText data={entry.body} />}
+                    </div>
                     <div>&gt;&gt; Read more</div>
                   </a>
                 </Popup>

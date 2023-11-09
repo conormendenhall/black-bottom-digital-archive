@@ -17,6 +17,15 @@
     .map-popup-header,
     .map-popup-body {
       margin-bottom: 0.5rem;
+
+      * {
+        padding: 0;
+        margin: 0;
+        border: none;
+        max-height: 200px;
+        overflow: hidden;
+        // TODO: ellipsis on overflow of richtext paragraph text
+      }
     }
 
     .gatsby-image-wrapper {
