@@ -45,6 +45,7 @@ const Footer = () => {
             href="http://twitter.com/_blackbottom"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Go to Black Bottom Archives Twitter"
           >
             <AiOutlineTwitter title="Twitter" />
           </a>
@@ -52,6 +53,7 @@ const Footer = () => {
             href="https://www.facebook.com/BlackBottomArchives/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Go to Black Bottom Archives Facebook"
           >
             <AiFillFacebook title="Facebook" />
           </a>
@@ -59,6 +61,7 @@ const Footer = () => {
             href="http://www.instagram.com/blackbottomarchives"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Go to Black Bottom Archives Instagram"
           >
             <AiOutlineInstagram title="Instagram" />
           </a>

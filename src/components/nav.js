@@ -71,7 +71,11 @@ const Nav = () => {
         <a href="http://www.blackbottomarchives.com/contact-us">
           <span>Contact</span>
         </a>
-        <button className="search-button hover-primary" onClick={openModal}>
+        <button
+          className="search-button hover-primary"
+          onClick={openModal}
+          aria-label="Open search"
+        >
           <HiSearch title="search" />
         </button>
         <button id="menuBtn" className="flex-center" onClick={toggleMenu}>
@@ -81,6 +85,7 @@ const Nav = () => {
           id="closeMenuButton"
           className="flex-center hidden"
           onClick={toggleMenu}
+          aria-label="Close menu"
         >
           <IoCloseSharp title="Close Menu" />
         </button>
@@ -95,6 +100,7 @@ const Nav = () => {
           <button
             id="closeSearchButton"
             onClick={closeModal}
+            aria-label="Close search"
           >
             <IoCloseSharp title="Close Search" />
           </button>

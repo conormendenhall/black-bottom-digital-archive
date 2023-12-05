@@ -54,7 +54,10 @@ const IndexPage = ({ data }) => {
       </section>
       <section className="featured-section">
         <div className="container">
-          <a href={'/historical-figures/' + data.featuredFigure.slug}>
+          <a
+            href={'/historical-figures/' + data.featuredFigure.slug}
+            aria-label={'Read about ' + data.featuredFigure.title}
+          >
             <div className="featured-banner">
               <div className="featured-content">
                 <h2>Featured Historical Figure</h2>
@@ -71,7 +74,10 @@ const IndexPage = ({ data }) => {
               </div>
             </div>
           </a>
-          <a href={'/historical-sites/' + data.featuredSite.slug}>
+          <a
+            href={'/historical-sites/' + data.featuredSite.slug}
+            aria-label={'Read about ' + data.featuredSite.title}
+          >
             <div className="featured-banner">
               <div className="featured-content">
                 <h2>Featured Historical Site</h2>
@@ -88,7 +94,10 @@ const IndexPage = ({ data }) => {
               </div>
             </div>
           </a>
-          <a href={'/oral-histories/' + data.featuredHistory.slug}>
+          <a
+            href={'/oral-histories/' + data.featuredHistory.slug}
+            aria-label={'Read about ' + data.featuredHistory.title}
+          >
             <div className="featured-banner">
               <div className="featured-content">
                 <h2>Featured Oral History</h2>

@@ -22,7 +22,10 @@ function Hit({ hit }) {
   const pathSegment = transformType(hit.type)
 
   return (
-    <a href={`/${pathSegment}/${hit.slug}`}>
+    <a
+      href={`/${pathSegment}/${hit.slug}`}
+      aria-label="Navigate to search result"
+    >
       <div className="hit-title">
         <Highlight attribute="title" hit={hit} />
       </div>

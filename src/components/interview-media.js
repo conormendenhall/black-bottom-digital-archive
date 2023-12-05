@@ -10,6 +10,7 @@ const InterviewMedia = ({ audio, transcript }) => {
           <div key={key} className="interview-audio">
             <div className="audio-title">{item.title}</div>
             <audio controls>
+              {/* TODO: add text captions for all audio */}
               <source src={item.file.url} type={item.file.contentType}></source>
             </audio>
           </div>
@@ -21,6 +22,7 @@ const InterviewMedia = ({ audio, transcript }) => {
             href={item.file.url}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={'Go to transcript: ' + item.title}
           >
             <div className="transcript">
               <div className="icon">

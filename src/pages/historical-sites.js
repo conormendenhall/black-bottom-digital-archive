@@ -39,7 +39,11 @@ const HistoricalSitesPage = ({ data }) => {
       </div>
       <section className="container">
         <em>(Click the image to view it in high resolution.)</em>
-        <a href="/200518_Sanborn Stitch_web_8000px.jpg" target="_blank">
+        <a
+          href="/200518_Sanborn Stitch_web_8000px.jpg"
+          target="_blank"
+          aria-label="Navigate to historical map of Black Bottom"
+        >
           <HistoricalMap />
         </a>
         <em className="map-source">

@@ -65,6 +65,7 @@ const Article = ({ pageContext, location }) => {
                   href={`https://twitter.com/intent/tweet?text=Oral%20history%20of%20Detroit%27s%20Black%20Bottom%20neighborhood&url=${baseUrl}${location.pathname}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Share this page on Twitter"
                 >
                   <AiFillTwitterSquare title="Twitter" />
                 </a>
@@ -72,6 +73,7 @@ const Article = ({ pageContext, location }) => {
                   href={`http://www.facebook.com/share.php?u=${baseUrl}${location.pathname}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Share this page on Facebook"
                 >
                   <AiFillFacebook title="Facebook" />
                 </a>
