@@ -94,7 +94,6 @@ const Nav = () => {
           <Search />
           <button
             id="closeSearchButton"
-            className="flex-center"
             onClick={closeModal}
           >
             <IoCloseSharp title="Close Search" />

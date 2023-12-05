@@ -71,7 +71,9 @@
   #closeSearchButton {
     z-index: 2;
     font-size: 36px;
+    height: 1em;
     border: none;
+    margin-top: 7px;
 
     &:hover * {
       color: $primary;
