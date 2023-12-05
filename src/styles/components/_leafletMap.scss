@@ -1,29 +1,44 @@
 .leaflet-container {
-  width: 100%;
+  height: 600px;
   z-index: 0;
-  height: calc(100vh - 177px);
   flex-grow: 1;
+  border: solid black 5px;
 
   * {
     transition: none;
   }
-}
 
-.leaflet-popup {
-  a {
-    span {
+  .leaflet-popup {
+    * {
       color: $dark;
-      font-family: 'Cabin', 'sans-serif';
-      font-size: large;
+      font-size: $font-medium-large;
+    }
+
+    .map-popup-header,
+    .map-popup-body {
+      margin-bottom: 0.5rem;
+
+      * {
+        padding: 0;
+        margin: 0;
+        border: none;
+        max-height: 250px;
+        overflow: hidden;
+        // TODO: ellipsis on overflow of richtext paragraph text
+      }
+    }
+
+    .gatsby-image-wrapper {
+      width: 200px;
+      height: 200px;
+
+      picture {
+        object-fit: cover;
+      }
     }
   }
 
-  .gatsby-image-wrapper {
-    width: 200px;
-    height: 200px;
-
-    picture {
-      object-fit: cover;
-    }
+  .leaflet-attribution-flag {
+    display: none !important; // hide flag
   }
 }

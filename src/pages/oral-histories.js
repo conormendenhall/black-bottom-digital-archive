@@ -6,28 +6,30 @@ import Layout from '../components/layout'
 import Head from '../components/head'
 import Card from '../components/card'
 
-const HistoricalFiguresPage = ({ data }) => {
-  let figures = data.figures.edges.map((item, key) => (
-    <Card url="/historical-figures/" data={item.node} key={key} />
+const OralHistoriesPage = ({ data }) => {
+  let oralHistories = data.oralHistories.edges.map((item, key) => (
+    <Card url="/oral-histories/" data={item.node} key={key} />
   ))
 
   return (
     <Layout>
-      <Head title="Historical Figures" />
+      <Head title="Oral Histories" />
       <div className="index-header">
         <section className="container">
-          <h1>Historical Figures</h1>
+          <h1>Oral Histories</h1>
           <p>
-            These are some key historical figures from Black Bottom and Paradise
-            Valley history — successful entrepreneurs, civil rights activists,
-            and community leaders.
+            These oral histories are interviews with some of those who lived in
+            or around Black Bottom in the ‘40s and ‘50s (or had family in the
+            neighborhood). Each entry include transcripts, summaries of
+            interview content, and mp3 streaming audio. If you are interested in
+            doing an oral history interview, please contact us for info.
           </p>
         </section>
       </div>
       <div className="card-gallery-container">
         <section className="container">
-          <div id="historicalFigures" className="card-gallery">
-            {figures}
+          <div id="oralHistories" className="card-gallery">
+            {oralHistories}
           </div>
         </section>
       </div>
@@ -42,7 +44,13 @@ const HistoricalFiguresPage = ({ data }) => {
           <div className="button-section">
             <a href="https://google.com">
               <div className="button">
-                Submit a<br /> Historical Figure
+                Share Your
+                <br /> Oral History
+              </div>
+            </a>
+            <a href="https://google.com">
+              <div className="button">
+                Submit Media /<br /> Photos / Artifacts
               </div>
             </a>
           </div>
@@ -54,9 +62,7 @@ const HistoricalFiguresPage = ({ data }) => {
 
 export const pageQuery = graphql`
   query {
-    figures: allContentfulHistoricalFigure(
-      sort: { title: ASC }
-    ) {
+    oralHistories: allContentfulInterview(sort: { title: ASC }) {
       edges {
         node {
           id
@@ -69,4 +75,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default HistoricalFiguresPage
+export default OralHistoriesPage

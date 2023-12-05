@@ -7,19 +7,19 @@ const typography = new Typography({
   blockMarginBottom: 0.75,
   googleFonts: [
     {
-      name: 'Arvo',
-      styles: ['400'],
+      name: 'Roboto',
+      styles: ['400', '700'],
     },
     {
-      name: 'Cabin',
-      styles: ['400', '400i', '700', '700i'],
+      name: 'Rockwell',
+      styles: ['700'],
     },
   ],
-  headerFontFamily: ['Arvo', 'sans-serif'],
-  bodyFontFamily: ['Cabin', 'sans-serif'],
-  headerColor: 'hsla(0,0%,0%,1)',
-  bodyColor: 'hsla(0,0%,0%,0.8)',
-  headerWeight: 400,
+  headerFontFamily: ['Roboto', 'sans-serif'],
+  bodyFontFamily: ['Roboto', 'sans-serif'],
+  headerColor: '#000',
+  bodyColor: '#000',
+  headerWeight: 700,
   bodyWeight: 400,
   boldWeight: 700,
 })

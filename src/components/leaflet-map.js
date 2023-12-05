@@ -1,6 +1,9 @@
 import React from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+
+import RichText from './rich-text'
+
+import transformType from '../utils/typeTransformer'
 
 const LeafletMap = ({ center, zoom, className, data }) => {
   return (
@@ -10,21 +13,11 @@ const LeafletMap = ({ center, zoom, className, data }) => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank" rel="noopener noreferrer">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank" rel="noopener noreferrer">OpenStreetMap France</a>'
       />
       {data
-        ?.filter(item => item.places)
-        .map(entry => {
-          let url = ''
-
-          if (entry.internal.type === 'ContentfulHistoricalSite') {
-            url = 'historical-sites'
-          } else if (entry.internal.type === 'ContentfulHistoricalFigure') {
-            url = 'historical-figures'
-          } else if (entry.internal.type === 'ContentfulInterview') {
-            url = 'interviews'
-          } else if (entry.internal.type === 'ContentfulEvent') {
-            url = 'events'
-          }
-
-          const image = getImage(entry.image)
+        ?.filter((item) => item.places)
+        .map((entry) => {
+          const pathSegment = transformType(entry.internal.type)
+          const briefMaximumChar = 249
+          const brief = entry.brief?.trim().substring(0, briefMaximumChar)
 
           return entry.places.map((place, key) => {
             return (
@@ -32,10 +25,13 @@ const LeafletMap = ({ center, zoom, className, data }) => {
                 key={key}
                 position={[place.location.lat, place.location.lon]}
               >
-                <Popup>
-                  <a href={`/${url}/${entry.slug}`}>
-                    <span>{entry.title}</span>
-                    {image && <GatsbyImage image={image} />}
+                <Popup closeButton={false}>
+                  <a href={`/${pathSegment}/${entry.slug}`}>
+                    <div className="map-popup-header bold">{entry.title}</div>
+                    <div className="map-popup-body">
+                      {brief ? brief : <RichText data={entry.body} />}
+                    </div>
+                    <div>&gt;&gt; Read more</div>
                   </a>
                 </Popup>
               </Marker>

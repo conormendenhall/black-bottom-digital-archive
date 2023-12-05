@@ -1,14 +1,43 @@
 footer {
-  text-align: center;
-  justify-content: center;
   background-color: $dark;
   color: $light;
+  padding: 2.5em 0;
 
-  section {
-    margin: 20px 0;
+  h4 {
+    color: $light;
+  }
 
-    h1, h2, h3, h4 {
-      color: $light;
+  section.container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .footer-content {
+      display: flex;
+      flex-flow: row wrap;
+      flex-basis: 33%;
+      min-width: 445px;
+
+      a {
+        margin-right: 1.5em;
+      }
+
+      #copyright {
+        flex-basis: 100%;
+        margin-top: 2em;
+      }
+    }
+
+    .social {
+      display: flex;
+      justify-content: flex-end;
+      flex-basis: 33%;
+
+      a {
+        font-size: 60px;
+        margin-left: 20px;
+      }
     }
 
     a {
@@ -16,26 +45,12 @@ footer {
       text-decoration: none;
 
       &:hover {
-        color: $green;
-      }
-    }
-
-    .social {
-      width: 200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      border-bottom: 2px solid $light;
-      margin-bottom: 20px;
-
-      a {
-        margin: 0 20px;
-        font-size: 30px;
+        color: $primary;
       }
     }
   }
 
-  #bibliographyLink:hover {
-    color: $green;
+  .footer-button:hover {
+    color: $primary;
   }
 }

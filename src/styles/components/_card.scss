@@ -1,34 +1,39 @@
+.card-gallery-container {
+  background-color: $primary;
+  padding-top: 1em;
+}
+
 .card-gallery {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 50px;
   margin-bottom: 10px;
 
   .card {
-    margin: 0 10px 10px 0;
-    min-width: 300px;
-    flex-grow: 1;
-    flex-shrink: 0;
-    flex-basis: 48%;
+    border: 3px solid $light;
 
-    .card-body {
-      height: 100px;
-      background-color: $light;
-      display: flex;
-      justify-content: space-between;
-      border-radius: $rounded;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16);
+    .card-content {
+      position: relative;
+      background-color: $dark;
+      color: $light;
+      font-size: $font-medium-small;
+      width: 400px;
+      height: 400px;
+      padding: 2rem;
 
-      .card-title {
-        margin: 20px;
+      .card-header {
+        font-size: $font-medium-large;
+        margin-bottom: 1rem;
       }
 
-      .card-image {
-        .gatsby-image-wrapper {
-          object-fit: cover;
-          height: 100px;
-          width: 150px;
-          border-radius: 0 $rounded $rounded 0;
-        }
+      .card-body {
+        margin-bottom: 1rem;
+      }
+
+      .card-footer {
+        position: absolute;
+        bottom: 2rem;
       }
     }
   }

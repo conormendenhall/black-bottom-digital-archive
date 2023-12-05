@@ -1,33 +1,25 @@
 /**********
 * COLORS *
 ***********/
-$dark: #111;
+$dark: #000;
 $light: #fff;
 $off-light: #eee;
-$gold: #fce566;
-$green: #00ad88;
-$blue: #435bd4;
+$primary: #c7b600;
 
 /*************
 * FONT SIZES *
 *************/
-$xs-size: 10px;
-$s-size: 12px;
-$sm-size: 16px;
-$m-size: 18px;
-$ms-size: 20px;
-$ml-size: 26px;
-$l-size: 32px;
-$xl-size: 42px;
-$xxl-size: 54px;
-
-/****************
-* MISCELLANEOUS *
-****************/
-$rounded: 3px;
+$font-small: 12px;
+$font-medium-small: 16px;
+$font-medium: 18px;
+$font-medium-large: 24px;
+$font-large: 36px;
+$font-xlarge: 48px;
 
 /***************
 * SCREEN SIZES *
 ***************/
-$laptop-L: 1440px;
-$laptop: 1024px;
+$laptop-large: 1400px;
+$laptop: 1100px;
+$tablet: 810px;
+$mobile: 450px;

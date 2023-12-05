@@ -15,54 +15,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(
     `
       query {
-        events: allContentfulEvent {
+        sites: allContentfulHistoricalSite(sort: { title: ASC }) {
           edges {
             node {
               id
               title
               slug
-              dateAndTime
-              body {
-                json
-              }
               image {
-                fluid {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
-                  sizes
-                }
+                gatsbyImageData
+                description
               }
-              tags {
-                id
-                title
-                slug
-              }
-              places {
-                id
-                title
-                location {
-                  lat
-                  lon
-                }
-              }
-              internal {
-                type
-              }
-            }
-          }
-        }
-        sites: allContentfulHistoricalSite {
-          edges {
-            node {
-              id
-              title
-              slug
               body {
-                json
+                raw
               }
               bibliography {
                 childMarkdownRemark {
@@ -74,28 +38,42 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 title
                 slug
               }
-              places {
-                id
-                title
-                location {
-                  lat
-                  lon
-                }
-              }
               internal {
                 type
               }
             }
+            next {
+              slug
+              title
+            }
           }
         }
-        figures: allContentfulHistoricalFigure {
+        figures: allContentfulHistoricalFigure(sort: { title: ASC }) {
           edges {
             node {
               id
               title
+              designation
               slug
+              image {
+                gatsbyImageData
+                description
+              }
               body {
-                json
+                raw
+                references {
+                  ... on ContentfulImage {
+                    contentful_id
+                    altText
+                    photo {
+                      gatsbyImageData
+                    }
+                    imageCaption {
+                      imageCaption
+                    }
+                    __typename
+                  }
+                }
               }
               bibliography {
                 childMarkdownRemark {
@@ -107,28 +85,28 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 title
                 slug
               }
-              places {
-                id
-                title
-                location {
-                  lat
-                  lon
-                }
-              }
               internal {
                 type
               }
             }
+            next {
+              slug
+              title
+            }
           }
         }
-        interviews: allContentfulInterview {
+        histories: allContentfulInterview(sort: { title: ASC }) {
           edges {
             node {
               id
               title
               slug
+              image {
+                gatsbyImageData
+                description
+              }
               body {
-                json
+                raw
               }
               audio {
                 id
@@ -154,9 +132,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 type
               }
             }
+            next {
+              slug
+              title
+            }
           }
         }
-        tags: allContentfulTag {
+        tags: allContentfulTag(sort: { title: ASC }) {
           edges {
             node {
               id
@@ -166,43 +148,19 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 id
                 title
                 slug
+                brief
               }
               historical_site {
                 id
                 title
                 slug
+                brief
               }
               interview {
                 id
                 title
                 slug
-              }
-              theme {
-                id
-                title
-                slug
-              }
-            }
-          }
-        }
-        themes: allContentfulTheme {
-          edges {
-            node {
-              id
-              title
-              slug
-              body {
-                json
-              }
-              tags {
-                id
-                title
-                slug
-              }
-              historicalFigures {
-                id
-                title
-                slug
+                brief
               }
             }
           }
@@ -219,43 +177,33 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  // Create page for each Event
-  result.data.events.edges.forEach(({ node }) => {
-    const path = `events/${node.slug}`
-    createPage({
-      path,
-      component: internalPath.resolve(`src/components/event.js`),
-      context: node,
-    })
-  })
-
   // Create page for each Historical Site
-  result.data.sites.edges.forEach(({ node }) => {
+  result.data.sites.edges.forEach(({ node, next }) => {
     const path = `historical-sites/${node.slug}`
     createPage({
       path,
-      component: internalPath.resolve(`src/components/historical-site.js`),
-      context: node,
+      component: internalPath.resolve(`src/components/article.js`),
+      context: { node, next },
     })
   })
 
   // Create page for each Historical Figure
-  result.data.figures.edges.forEach(({ node }) => {
+  result.data.figures.edges.forEach(({ node, next }) => {
     const path = `historical-figures/${node.slug}`
     createPage({
       path,
-      component: internalPath.resolve(`src/components/historical-figure.js`),
-      context: node,
+      component: internalPath.resolve(`src/components/article.js`),
+      context: { node, next },
     })
   })
 
-  // Create page for each Interview
-  result.data.interviews.edges.forEach(({ node }) => {
-    const path = `interviews/${node.slug}`
+  // Create page for each Oral History
+  result.data.histories.edges.forEach(({ node, next }) => {
+    const path = `oral-histories/${node.slug}`
     createPage({
       path,
-      component: internalPath.resolve(`src/components/interview.js`),
-      context: node,
+      component: internalPath.resolve(`src/components/article.js`),
+      context: { node, next },
     })
   })
 
@@ -268,26 +216,4 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: node,
     })
   })
-
-  // Create page for each Theme
-  result.data.themes.edges.forEach(({ node }) => {
-    const path = `themes/${node.slug}`
-    createPage({
-      path,
-      component: internalPath.resolve(`src/components/theme.js`),
-      context: node,
-    })
-  })
-}
-
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
-  if (stage.startsWith('develop')) {
-    actions.setWebpackConfig({
-      resolve: {
-        alias: {
-          'react-dom': '@hot-loader/react-dom',
-        },
-      },
-    })
-  }
 }

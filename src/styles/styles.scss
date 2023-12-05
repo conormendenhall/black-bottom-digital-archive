@@ -1,17 +1,5 @@
 @import './variables/variables';
 
-@import './components/footer';
-@import './components/header';
-@import './components/leafletMap';
-@import './components/events';
-@import './components/entryTags';
-@import './components/breadcrumb';
-@import './components/contact';
-@import './components/card';
-@import './components/article';
-@import './components/interviewMedia';
-@import './components/richText';
-
 html,
 body,
 div#___gatsby,
@@ -19,9 +7,7 @@ div#gatsby-focus-wrapper {
   height: 100%;
   margin: 0;
   padding: 0;
-}
-
-* {
+  font-size: $font-medium-large;
   transition: all 0.1s ease;
 }
 
@@ -33,22 +19,26 @@ div#layout {
 
 main {
   flex-grow: 1;
-  background-color: #eee;
+  background-color: $off-light;
 }
 
 .container {
-  width: 90%;
-  max-width: 1200px;
   display: flex;
   flex-direction: column;
+  max-width: 1440px;
   margin: 0 auto;
-  padding-bottom: 2em;
-  @media screen and (min-width: 1024px) {
-    width: 80%;
-  }
+  padding: 0 1rem 0.5rem 1rem;
 
   &:first-of-type {
-    padding-top: 2em;
+    padding-top: 1rem;
+  }
+
+  @media (min-width: $mobile) {
+    padding: 0 2rem 1rem 2rem;
+
+    &:first-of-type {
+      padding-top: 2rem;
+    }
   }
 }
 
@@ -61,8 +51,31 @@ a {
   }
 
   &:hover span {
-    border-bottom: 2px solid $green;
+    border-bottom: 2px solid $primary;
   }
+}
+
+button {
+  cursor: pointer;
+}
+
+h1 {
+  font-size: $font-large;
+  font-family: 'Rockwell', sans-serif;
+  font-display: swap;
+
+  @media (min-width: $tablet) {
+    font-size: $font-xlarge;
+  }
+
+  @media (min-width: $laptop) {
+    font-size: 64px;
+  }
+}
+
+h2 {
+  font-size: 48px;
+  font-family: 'Rockwell', sans-serif;
 }
 
 pre {
@@ -71,5 +84,255 @@ pre {
   white-space: -o-pre-wrap; /* Opera */
   white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
   word-wrap: break-word; /* IE 5.5+ */
-  font-family: 'Cabin', 'sans-serif';
 }
+
+.hidden {
+  visibility: hidden;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.column {
+    flex-direction: column;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.hover-primary {
+  &:hover {
+    color: $primary;
+  }
+}
+
+.button-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+
+  a {
+    width: 100%;
+
+    @media (min-width: $tablet) {
+      width: auto;
+    }
+
+    .button {
+      color: $dark;
+      border: 5px solid $dark;
+      min-width: 370px;
+      padding: 15px 45px;
+      font-size: 32px;
+      font-weight: bold;
+
+      &:hover {
+        background-color: $primary;
+      }
+
+      &.submit-site-button {
+        &:hover {
+          color: $primary;
+          background-color: $dark;
+        }
+      }
+    }
+  }
+
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.header {
+  .home-title {
+    background-color: $primary;
+    margin: 3em 0 0 2em;
+
+    h1 {
+      font-size: $font-large;
+
+      @media (min-width: $tablet) {
+        font-size: $font-xlarge;
+      }
+
+      @media (min-width: $laptop-large) {
+        font-size: 72px;
+      }
+    }
+  }
+
+  #headerImage {
+    min-width: 1000px;
+  }
+}
+
+.welcome {
+  padding: 0.5rem 25px;
+
+  @media (min-width: $tablet) {
+    padding: 1rem 150px;
+  }
+
+  .welcome-text {
+    font-size: $font-medium-large;
+    margin-bottom: 0.5rem;
+
+    @media (min-width: $tablet) {
+      font-size: $font-large;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.thumbnail-image {
+  min-width: 5rem;
+  max-width: 10rem;
+  margin: 1rem;
+
+  .gatsby-image-wrapper {
+    z-index: 1;
+    max-height: 10em;
+  }
+
+  .background-circle {
+    background-color: $primary;
+    border-radius: 50%;
+    width: 9em;
+    height: 9em;
+    margin-top: -100%;
+    z-index: 0;
+  }
+
+  .background-diamond {
+    background-color: $primary;
+    width: 7em;
+    height: 7em;
+    margin-top: -100%;
+    margin-top: -50%;
+    z-index: 0;
+    /* Rotate */
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    /* Rotate Origin */
+    -webkit-transform-origin: 0 100%;
+    -moz-transform-origin: 0 100%;
+    -ms-transform-origin: 0 100%;
+    -o-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+  }
+}
+
+.featured-section {
+  background-color: $light;
+
+  .container {
+    align-items: center;
+
+    .featured-banner {
+      border: 5px solid $dark;
+      padding: 15px 45px;
+      margin-bottom: 1em;
+      max-width: 1248px;
+      display: flex;
+      justify-content: space-between;
+
+      &:hover {
+        border-color: $primary;
+      }
+
+      .featured-content {
+        max-width: 80%;
+      }
+    }
+  }
+}
+
+.map-section {
+  background-color: $primary;
+
+  .map-and-index {
+    margin-bottom: 2em;
+
+    @media (min-width: $tablet) {
+      display: flex;
+    }
+
+    ul.map-index {
+      list-style-type: none;
+      padding: 0;
+      margin: 0 2rem 1rem 0;
+
+      li {
+        margin-bottom: 0;
+        font-size: $font-medium;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        @media (min-width: $tablet) {
+          width: 300px;
+        }
+      }
+    }
+  }
+}
+
+.map-source {
+  font-size: $font-small;
+}
+
+.about-header {
+  background-color: $light;
+  font-size: $font-large;
+}
+
+.mission-and-vision {
+  margin-top: 50px;
+}
+
+.team-section {
+  background-color: $primary;
+}
+
+.share-header {
+  background-color: $light;
+  font-size: $font-large;
+}
+
+.share-form {
+  background-color: $primary;
+  font-size: $font-large;
+}
+
+.oral-history-link {
+  text-decoration: underline;
+}
+
+.financially-support {
+  font-size: $font-large;
+}
+
+@import './components/article';
+@import './components/breadcrumb';
+@import './components/card';
+@import './components/entryTags';
+@import './components/footer';
+@import './components/index';
+@import './components/interviewMedia';
+@import './components/leafletMap';
+@import './components/nav';
+@import './components/richText';
+@import './components/search';

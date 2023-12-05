@@ -3,17 +3,17 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Head from '../components/head'
 import RichText from '../components/rich-text'
 
 const BibliographyPage = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Bibliography" />
+      <Head title="Bibliography" />
       <section className="container">
         <h1>{data.bibliography?.name}</h1>
         <div id="bibliography">
-          {data.bibliography?.resources?.json && (
+          {data.bibliography?.resources?.raw && (
             <RichText data={data.bibliography.resources} />
           )}
         </div>
@@ -29,7 +29,7 @@ export const pageQuery = graphql`
     ) {
       name
       resources {
-        json
+        raw
       }
     }
   }

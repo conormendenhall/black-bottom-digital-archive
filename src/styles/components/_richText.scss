@@ -1,14 +1,13 @@
 .rich-text {
-  background-color: $light;
-  padding: 15px;
-  border-radius: $rounded;
+  padding: 1em 0;
+  border-bottom: 1px solid $dark;
 
   *:last-child {
     margin-bottom: 0;
   }
 
   .image-caption {
-    font-size: 15px;
+    font-size: $font-medium-small;
     font-style: italic;
     margin-left: 1em;
   }
