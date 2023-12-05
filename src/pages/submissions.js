@@ -63,7 +63,11 @@ const SubmissionsPage = () => {
           <em>*Clicking the link below will take you to an external page.</em>
         </p>
         <div className="button-section">
-          <a href="https://alliedmedia.org/post/donate-to-black-bottom-archives-2">
+          <a
+            href="https://alliedmedia.org/post/donate-to-black-bottom-archives-2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className="button">
               Donate to Black
               <br /> Bottom Archives
